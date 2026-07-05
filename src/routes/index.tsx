@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Menu, X, MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
 
@@ -39,11 +39,12 @@ const heroSlides = [
 ];
 
 const collections = [
-  { image: collectionRings, name: "Rings", count: "The Solitaire & Eternity Edit" },
-  { image: collectionEarrings, name: "Earrings", count: "Studs, Drops & Chandeliers" },
-  { image: collectionChains, name: "Chains", count: "Everyday & Statement" },
-  { image: collectionBracelets, name: "Bracelets", count: "Tennis, Bangles & Cuffs" },
+  { image: collectionRings, name: "Rings", count: "The Solitaire & Eternity Edit", productId: "solitaire-eternal" },
+  { image: collectionEarrings, name: "Earrings", count: "Studs, Drops & Chandeliers", productId: "aurora-drops" },
+  { image: collectionChains, name: "Chains", count: "Everyday & Statement", productId: "silhouette-chain" },
+  { image: collectionBracelets, name: "Bracelets", count: "Tennis, Bangles & Cuffs", productId: "riviera-tennis" },
 ];
+
 
 const navLinks = [
   { label: "Home", href: "#home" },
