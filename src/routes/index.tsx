@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Menu, X, MapPin, Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
 
@@ -39,11 +39,12 @@ const heroSlides = [
 ];
 
 const collections = [
-  { image: collectionRings, name: "Rings", count: "The Solitaire & Eternity Edit" },
-  { image: collectionEarrings, name: "Earrings", count: "Studs, Drops & Chandeliers" },
-  { image: collectionChains, name: "Chains", count: "Everyday & Statement" },
-  { image: collectionBracelets, name: "Bracelets", count: "Tennis, Bangles & Cuffs" },
+  { image: collectionRings, name: "Rings", count: "The Solitaire & Eternity Edit", productId: "solitaire-eternal" },
+  { image: collectionEarrings, name: "Earrings", count: "Studs, Drops & Chandeliers", productId: "aurora-drops" },
+  { image: collectionChains, name: "Chains", count: "Everyday & Statement", productId: "silhouette-chain" },
+  { image: collectionBracelets, name: "Bracelets", count: "Tennis, Bangles & Cuffs", productId: "riviera-tennis" },
 ];
+
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -276,9 +277,10 @@ function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {collections.map((c) => (
-              <a
+              <Link
                 key={c.name}
-                href="#contact"
+                to="/product/$id"
+                params={{ id: c.productId }}
                 className="group relative block overflow-hidden bg-navy"
               >
                 <div className="aspect-[4/5] overflow-hidden">
@@ -295,9 +297,14 @@ function Index() {
                     {c.count}
                   </div>
                   <div className="font-display text-3xl text-ivory">{c.name}</div>
-                  <div className="mt-4 h-[1px] w-8 bg-platinum transition-all duration-500 group-hover:w-16" />
+                  <div className="mt-4 flex items-center gap-3">
+                    <div className="h-[1px] w-8 bg-platinum transition-all duration-500 group-hover:w-16" />
+                    <span className="text-[0.6rem] uppercase tracking-[0.3em] text-platinum opacity-0 group-hover:opacity-100 transition-opacity">
+                      Discover →
+                    </span>
+                  </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
