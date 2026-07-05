@@ -185,7 +185,7 @@ function ProductPage() {
               {/* Thumbnails */}
               {product.images.length > 1 && (
                 <div className="mt-6 flex gap-3">
-                  {product.images.map((img, i) => (
+                  {product.images.map((img: string, i: number) => (
                     <button
                       key={i}
                       onClick={() => setActiveImg(i)}
@@ -291,7 +291,7 @@ function ProductPage() {
                   {k.replace(/([A-Z])/g, " $1").trim()}
                 </div>
                 <div className="font-display text-lg md:text-xl text-ivory text-right">
-                  {v}
+                  {v as string}
                 </div>
               </div>
             ))}
