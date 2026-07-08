@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler } from "lucide-react";
+import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler, Play } from "lucide-react";
+import { useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
+import atelierMasters from "@/assets/atelier-masters.jpg";
 import productRing from "@/assets/product-ring-1.jpg";
 
 export const Route = createFileRoute("/manufacturing")({
@@ -28,6 +30,14 @@ const steps = [
 ];
 
 function Manufacturing() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const handlePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play().catch(() => {/* no source available yet */});
+    setPlaying(true);
+  };
   return (
     <SiteLayout>
       <PageHero
@@ -54,6 +64,49 @@ function Manufacturing() {
           </p>
         </div>
       </section>
+
+      {/* VIDEO — inside the atelier */}
+      <section className="pb-24 md:pb-32">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+          <div className="text-center mb-10 md:mb-14">
+            <div className="eyebrow mb-4">Inside the Atelier</div>
+            <h2 className="font-display text-3xl md:text-5xl text-ivory">
+              Watch how a piece <span className="italic text-platinum-dark">is made.</span>
+            </h2>
+          </div>
+
+          <div className="relative aspect-video w-full overflow-hidden border border-platinum/15 shadow-[var(--shadow-luxe)] bg-navy-mid">
+            <video
+              ref={videoRef}
+              poster={atelierMasters}
+              controls={playing}
+              playsInline
+              preload="none"
+              className="h-full w-full object-cover"
+            >
+              {/* Add a <source src="..."/> when the atelier film is uploaded */}
+            </video>
+
+            {!playing && (
+              <button
+                onClick={handlePlay}
+                className="absolute inset-0 flex items-center justify-center group"
+                aria-label="Play atelier film"
+              >
+                <span className="absolute inset-0 bg-navy-deep/40 group-hover:bg-navy-deep/30 transition-colors" />
+                <span className="relative flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-full border border-ivory/80 bg-navy-deep/40 backdrop-blur-sm group-hover:bg-platinum group-hover:text-navy-deep transition-all">
+                  <Play size={30} className="ml-1 fill-current" />
+                </span>
+                <span className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[0.65rem] uppercase tracking-[0.4em] text-ivory/80">
+                  Play film · 2:14
+                </span>
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Process */}
       <section className="py-16 md:py-24 bg-navy-radial border-y border-platinum/10">

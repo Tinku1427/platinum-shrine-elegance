@@ -26,31 +26,24 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-navy-deep border-b border-platinum/10">
-      {/* Top: centered logo */}
-      <div className="relative flex items-center justify-between md:justify-center px-5 py-5 md:py-8">
-        {/* mobile menu button — left */}
+      {/* Top: centered logo alone */}
+      <div className="relative flex items-center justify-center px-5 py-6 md:py-10">
+        {/* mobile menu button — absolute left */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden text-ivory shrink-0"
+          className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-ivory"
           aria-label="Menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <Link to="/" className="flex items-center justify-center gap-4 group" aria-label="Pure Platinum home">
+        <Link to="/" className="flex items-center justify-center group" aria-label="Pure Platinum home">
           <img
             src={logoWhite.url}
             alt="Pure Platinum"
-            className="h-14 md:h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            className="h-20 sm:h-24 md:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="hidden sm:block leading-tight text-center">
-            <div className="font-display text-2xl md:text-3xl tracking-[0.28em] text-ivory">PURE PLATINUM</div>
-            <div className="text-[0.6rem] tracking-[0.5em] text-platinum-dark mt-1">NATURALLY RARE · SINCE 2019</div>
-          </div>
         </Link>
-
-        {/* spacer on mobile for symmetry */}
-        <span className="md:hidden w-6" />
       </div>
 
       {/* Desktop nav row with pipe separators (SRJ style) */}
