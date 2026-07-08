@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler } from "lucide-react";
+import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler, Play } from "lucide-react";
+import { useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
+import atelierMasters from "@/assets/atelier-masters.jpg";
 import productRing from "@/assets/product-ring-1.jpg";
 
 export const Route = createFileRoute("/manufacturing")({
