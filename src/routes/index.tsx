@@ -116,6 +116,45 @@ function Home() {
         </div>
       </section>
 
+      {/* DUAL TILES — Collection & Manufacturing (SRJ style) */}
+      <section className="pb-20 md:pb-32">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <Link to="/collection" className="group relative block overflow-hidden aspect-square">
+              <img
+                src={handsDetail}
+                alt="Explore the Pure Platinum collection"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-navy-deep/40 group-hover:bg-navy-deep/50 transition-colors" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-display text-4xl md:text-6xl italic text-ivory drop-shadow-lg">
+                  Collection
+                </span>
+              </div>
+            </Link>
+
+            <Link to="/manufacturing" className="group relative block overflow-hidden aspect-square">
+              <img
+                src={craftsmanship}
+                alt="Inside the Pure Platinum atelier"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-navy-deep/45 group-hover:bg-navy-deep/55 transition-colors" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-display text-4xl md:text-6xl italic text-ivory drop-shadow-lg">
+                  Manufacturing
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* CONTACT / REACH US strip — SRJ style */}
       <section className="py-16 md:py-24 bg-[oklch(0.15_0.065_265)] border-y border-platinum/10">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
