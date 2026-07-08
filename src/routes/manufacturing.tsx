@@ -30,6 +30,14 @@ const steps = [
 ];
 
 function Manufacturing() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const handlePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.play().catch(() => {/* no source available yet */});
+    setPlaying(true);
+  };
   return (
     <SiteLayout>
       <PageHero
