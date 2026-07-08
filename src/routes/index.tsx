@@ -7,6 +7,8 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import boutique from "@/assets/boutique.jpg";
+import craftsmanship from "@/assets/craftsmanship.jpg";
+import handsDetail from "@/assets/hands-detail.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
