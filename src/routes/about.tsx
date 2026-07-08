@@ -1,17 +1,18 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/hero-2.jpg";
+import atelierMasters from "@/assets/atelier-masters.jpg";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
+import handsDetail from "@/assets/hands-detail.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "Our Story — Pure Platinum Manufacturers, Hyderabad" },
-      { name: "description", content: "The story of Pure Platinum — a Hyderabad-based manufacturing house dedicated to authentic 95% pure platinum jewellery." },
+      { name: "description", content: "The story of Pure Platinum — a Hyderabad manufacturing house dedicated to authentic 95% pure platinum jewellery, crafted for retailers and bridal houses across India." },
       { property: "og:title", content: "Our Story — Pure Platinum" },
-      { property: "og:description", content: "A Hyderabad-based manufacturing house dedicated to authentic platinum jewellery." },
+      { property: "og:description", content: "A Hyderabad manufacturing house dedicated to authentic 95% pure platinum jewellery." },
       { property: "og:image", content: hero },
       { property: "og:type", content: "article" },
     ],
@@ -24,109 +25,105 @@ function About() {
     <SiteLayout>
       <PageHero
         eyebrow="Our Story"
-        title={<>Rarer than gold. <span className="italic text-platinum">Made to outlive us.</span></>}
-        subtitle="A Hyderabad manufacturing house dedicated to the world's rarest precious metal."
+        title={<>Rarer than gold.<br /><span className="italic text-platinum">Made to outlive us.</span></>}
         image={hero}
       />
 
-      {/* Origin */}
-      <section className="py-24 md:py-32">
+      {/* OUR STORY — SRJ two-column */}
+      <section className="py-20 md:py-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-start">
-            <div className="lg:col-span-5">
-              <div className="eyebrow mb-6">Origin</div>
-              <h2 className="font-display text-4xl md:text-5xl text-ivory leading-tight">
-                One metal.<br /><span className="italic text-platinum-dark">One promise.</span>
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+            <div className="md:col-span-4">
+              <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
+                OUR STORY
               </h2>
-              <div className="hairline w-20 my-8" />
+              <div className="hairline w-20 mt-6" />
             </div>
-            <div className="lg:col-span-7 space-y-6 text-platinum/80 text-base md:text-lg leading-relaxed font-light">
+            <div className="md:col-span-8 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
               <p>
                 Pure Platinum was founded on a single conviction — that the rarest metal on earth
-                deserves an equally rare standard of craftsmanship. Thirty times scarcer than gold,
-                naturally white, hypoallergenic and endlessly durable, platinum is the only metal
-                designed by nature to outlive its wearer.
+                deserves an equally rare standard of craftsmanship. Thirty times scarcer than
+                gold, naturally white, hypoallergenic and remarkably enduring, platinum is the only
+                precious metal designed by nature to outlive its wearer.
               </p>
               <p>
-                From our Hyderabad atelier, we manufacture pure platinum jewellery for a curated
-                network of retailers, bridal houses and private ateliers across India. Nothing
-                leaves our workshop until it earns our maker's mark — the quiet PT950 hallmark
-                that assures 95% platinum, and 100% intent.
+                From our atelier in Hyderabad, we manufacture authentic platinum jewellery for a
+                trusted network of retailers, bridal houses and private ateliers across India.
+                Nothing leaves our workshop until it earns our maker's mark — the quiet PT950
+                hallmark that assures 95% pure platinum and one hundred percent intent.
               </p>
-              <p className="font-display italic text-2xl text-ivory pt-4">
-                "Be rare."
+              <p>
+                Every ring, chain, earring and bracelet is cast, filed, polished and set by hand
+                by karigars whose skill has been refined across generations. We work in a single
+                metal, to a single standard, so that every piece we release into the world stands
+                the test of the next hundred years.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-24 md:py-32 bg-navy-radial border-y border-platinum/10">
+      {/* NOTE FROM FOUNDERS — SRJ style */}
+      <section className="pb-24 md:pb-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <div className="eyebrow mb-4">What we stand for</div>
-            <h2 className="font-display text-3xl md:text-5xl text-ivory">The house code.</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {[
-              { n: "01", t: "Authenticity", d: "Every piece hallmarked PT950 — 95% pure platinum, no compromise." },
-              { n: "02", t: "Craftsmanship", d: "Hand-finished by master karigars whose skill spans generations." },
-              { n: "03", t: "Transparency", d: "Traceable sourcing, honest weight, certificates on every piece." },
-              { n: "04", t: "Legacy", d: "Designed to be inherited — engineered to last a hundred years." },
-            ].map((v) => (
-              <div key={v.n} className="border-t border-platinum/20 pt-6">
-                <div className="font-display text-3xl text-platinum-dark mb-4">{v.n}</div>
-                <div className="font-display text-xl text-ivory mb-3">{v.t}</div>
-                <p className="text-sm text-platinum/70 leading-relaxed font-light">{v.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Vision / Mission */}
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            <div className="relative overflow-hidden aspect-[4/5] md:aspect-auto">
-              <img src={craftsmanship} alt="" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-navy-deep/40" />
-              <div className="absolute inset-0 p-10 md:p-14 flex flex-col justify-end">
-                <div className="eyebrow text-platinum mb-4">Our Vision</div>
-                <p className="font-display text-2xl md:text-3xl text-ivory italic leading-snug">
-                  To be the most trusted name in platinum jewellery — where rarity meets timeless craftsmanship.
-                </p>
-              </div>
-            </div>
-            <div className="relative overflow-hidden aspect-[4/5] md:aspect-auto">
-              <img src={boutique} alt="" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-navy-deep/50" />
-              <div className="absolute inset-0 p-10 md:p-14 flex flex-col justify-end">
-                <div className="eyebrow text-platinum mb-4">Our Mission</div>
-                <p className="font-display text-2xl md:text-3xl text-ivory italic leading-snug">
-                  To craft authentic platinum jewellery that inspires trust, celebrates individuality, and becomes a legacy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 md:py-32 bg-[oklch(0.15_0.065_265)]">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
-          <div className="eyebrow mb-6">Continue</div>
-          <h2 className="font-display text-3xl md:text-4xl text-ivory">
-            See the collection, or step inside the atelier.
+          <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide leading-tight">
+            NOTE FROM<br />OUR FOUNDERS
           </h2>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/collection" className="inline-flex items-center gap-3 border border-platinum px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-ivory hover:bg-platinum hover:text-navy-deep transition-all">
-              Collection <ArrowRight size={13} />
-            </Link>
-            <Link to="/manufacturing" className="inline-flex items-center gap-3 border border-platinum/40 px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-platinum hover:text-ivory transition-all">
-              Manufacturing <ArrowRight size={13} />
-            </Link>
+          <div className="hairline w-20 mt-6 mb-12" />
+
+          <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+            <div className="md:col-span-5">
+              <div className="relative overflow-hidden aspect-[4/5] border border-platinum/15 shadow-[var(--shadow-luxe)]">
+                <img
+                  src={atelierMasters}
+                  alt="Master jewellers at the Pure Platinum atelier"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="mt-5 text-center">
+                <div className="font-display text-lg text-ivory tracking-wide">THE PURE PLATINUM ATELIER</div>
+                <div className="text-[0.65rem] uppercase tracking-[0.4em] text-platinum-dark mt-2">
+                  Masters of the rarest metal
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-7 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
+              <p>
+                We built Pure Platinum with a quiet promise — to work in one metal, and to work in
+                it honestly. From our first piece to our thousandth, every ring, chain and bracelet
+                is cast in 95% pure platinum, hand-finished at our bench, and released only when
+                it earns our maker's mark.
+              </p>
+              <p>
+                Platinum is a metal of legacies. It does not tarnish, it does not fade, and it does
+                not compromise. We hold ourselves to the same standard — for our retail partners,
+                our bridal clients, and every family who chooses a Pure Platinum piece as an
+                heirloom.
+              </p>
+              <blockquote className="border-l-2 border-platinum pl-6 mt-8 font-display italic text-xl md:text-2xl text-ivory leading-snug">
+                "To manufacture platinum jewellery of the highest purity, delivered with
+                uncompromising craftsmanship — building trust that becomes a legacy."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GALLERY — atelier interiors, like SRJ */}
+      <section className="pb-24 md:pb-32">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="aspect-[4/5] overflow-hidden">
+              <img src={boutique} alt="" loading="lazy" className="h-full w-full object-cover" />
+            </div>
+            <div className="aspect-[4/5] overflow-hidden">
+              <img src={craftsmanship} alt="" loading="lazy" className="h-full w-full object-cover" />
+            </div>
+            <div className="aspect-[4/5] overflow-hidden">
+              <img src={handsDetail} alt="" loading="lazy" className="h-full w-full object-cover" />
+            </div>
           </div>
         </div>
       </section>
