@@ -25,10 +25,9 @@ export function SiteHeader() {
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
   return (
-    <header className="relative z-50 bg-navy-deep border-b border-platinum/10">
-      {/* Top: centered logo alone */}
-      <div className="relative flex items-center justify-center px-5 py-6 md:py-10">
-        {/* mobile menu button — absolute left */}
+    <header className="relative z-50 bg-navy-deep">
+      {/* Top: centered logo (scrolls away with the page) */}
+      <div className="relative flex items-center justify-center px-5 py-6 md:py-10 border-b border-platinum/10">
         <button
           onClick={() => setOpen((v) => !v)}
           className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-ivory"
@@ -37,7 +36,7 @@ export function SiteHeader() {
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Desktop: full horizontal wordmark (symbol + PURE PLATINUM + tagline) */}
+        {/* Desktop: full horizontal wordmark */}
         <Link to="/" className="hidden md:flex items-center gap-6 group" aria-label="Pure Platinum home">
           <img
             src={logoWhite.url}
@@ -54,32 +53,50 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        {/* Mobile: bigger stacked mark (the logo asset already includes PURE PLATINUM text) */}
+        {/* Mobile: bigger stacked mark */}
         <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
           <img
             src={logoWhite.url}
             alt="Pure Platinum"
-            className="h-32 w-auto object-contain"
+            className="h-40 w-auto object-contain"
           />
         </Link>
       </div>
 
-      {/* Desktop nav row with pipe separators (SRJ style) */}
-      <nav className="hidden md:flex items-center justify-center gap-0 pb-6">
-        {NAV.map((l, idx) => (
-          <span key={l.to} className="flex items-center">
-            <Link
-              to={l.to}
-              className="px-5 lg:px-7 text-[0.75rem] uppercase tracking-[0.35em] text-platinum/70 hover:text-platinum-dark transition-colors"
-              activeProps={{ className: "text-platinum-dark" }}
-              activeOptions={{ exact: true }}
-            >
-              {l.label}
-            </Link>
-            {idx < NAV.length - 1 && <span className="text-platinum/25 select-none">|</span>}
-          </span>
-        ))}
-      </nav>
+      {/* Sticky nav row — stays at the top as the user scrolls */}
+      <div className="sticky top-0 z-40 bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10">
+        <nav className="hidden md:flex items-center justify-center gap-0 py-5">
+          {NAV.map((l, idx) => (
+            <span key={l.to} className="flex items-center">
+              <Link
+                to={l.to}
+                className="px-5 lg:px-7 text-[0.75rem] uppercase tracking-[0.35em] text-platinum/70 hover:text-platinum-dark transition-colors"
+                activeProps={{ className: "text-platinum-dark" }}
+                activeOptions={{ exact: true }}
+              >
+                {l.label}
+              </Link>
+              {idx < NAV.length - 1 && <span className="text-platinum/25 select-none">|</span>}
+            </span>
+          ))}
+        </nav>
+
+        {/* Mobile sticky bar — shows a compact logo + menu button when scrolling */}
+        <div className="md:hidden flex items-center justify-between px-5 py-3">
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="text-ivory"
+            aria-label="Menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          <Link to="/" aria-label="Pure Platinum home">
+            <img src={logoWhite.url} alt="Pure Platinum" className="h-10 w-auto object-contain" />
+          </Link>
+          <span className="w-6" />
+        </div>
+      </div>
+
 
       {/* Mobile drawer */}
       {open && (
