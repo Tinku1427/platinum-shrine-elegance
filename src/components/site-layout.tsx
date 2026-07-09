@@ -37,17 +37,25 @@ export function SiteHeader() {
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
 
-          {/* Desktop: bigger logo mark + PURE PLATINUM wordmark (no tagline below) */}
+          {/* Desktop: symbol-only mark + PURE PLATINUM wordmark with tagline */}
           <Link to="/" className="hidden md:flex items-center gap-8 group" aria-label="Pure Platinum home">
-            <img
-              src={logoWhite.url}
-              alt=""
-              className="h-32 lg:h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-            />
-            <span className="font-display text-[3rem] lg:text-[4rem] text-ivory tracking-[0.14em] font-light leading-none">
-              PURE&nbsp;PLATINUM
-            </span>
+            <div className="h-24 lg:h-28 w-24 lg:w-28 overflow-hidden flex items-start justify-center transition-transform duration-500 group-hover:scale-105">
+              <img
+                src={logoWhite.url}
+                alt=""
+                className="h-36 lg:h-44 w-auto object-contain object-top"
+              />
+            </div>
+            <div className="flex flex-col items-start leading-none">
+              <span className="font-display text-[3rem] lg:text-[4rem] text-ivory tracking-[0.14em] font-light">
+                PURE&nbsp;PLATINUM
+              </span>
+              <span className="mt-4 text-[0.7rem] lg:text-[0.78rem] uppercase tracking-[0.55em] text-platinum-dark">
+                Naturally Rare · Crafted in Hyderabad
+              </span>
+            </div>
           </Link>
+
 
           {/* Mobile: single large logo */}
           <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
