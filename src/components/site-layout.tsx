@@ -54,14 +54,13 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        {/* Mobile: stacked mark — big symbol with PURE PLATINUM underneath */}
-        <Link to="/" className="md:hidden flex flex-col items-center gap-2 group" aria-label="Pure Platinum home">
+        {/* Mobile: bigger stacked mark (the logo asset already includes PURE PLATINUM text) */}
+        <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
           <img
             src={logoWhite.url}
-            alt=""
-            className="h-28 w-auto object-contain"
+            alt="Pure Platinum"
+            className="h-32 w-auto object-contain"
           />
-          <span className="font-display text-xl tracking-[0.28em] text-ivory">PURE PLATINUM</span>
         </Link>
       </div>
 
