@@ -99,7 +99,8 @@ function Manufacturing() {
                   <Play size={30} className="ml-1 fill-current" />
                 </span>
                 <span className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[0.65rem] uppercase tracking-[0.4em] text-ivory/80">
-                  Play film · 2:14
+                  Play film
+
                 </span>
               </button>
             )}
