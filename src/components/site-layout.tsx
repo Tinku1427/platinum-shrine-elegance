@@ -25,46 +25,43 @@ export function SiteHeader() {
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
   return (
-    <header className="relative z-50 bg-navy-deep">
-      {/* Top: centered logo (scrolls away with the page) */}
-      <div className="relative flex items-center justify-center px-5 py-6 md:py-10 border-b border-platinum/10">
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-ivory"
-          aria-label="Menu"
-        >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+    <>
+      {/* Top logo bar — scrolls away with the page */}
+      <div className="relative z-40 bg-navy-deep border-b border-platinum/10">
+        <div className="relative flex items-center justify-center px-5 py-6 md:py-10">
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-ivory"
+            aria-label="Menu"
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
 
-        {/* Desktop: full horizontal wordmark */}
-        <Link to="/" className="hidden md:flex items-center gap-6 group" aria-label="Pure Platinum home">
-          <img
-            src={logoWhite.url}
-            alt=""
-            className="h-24 lg:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="flex flex-col items-start leading-none">
-            <span className="font-display text-[2.75rem] lg:text-[3.5rem] text-ivory tracking-[0.14em] font-light">
+          {/* Desktop: bigger logo mark + PURE PLATINUM wordmark (no tagline below) */}
+          <Link to="/" className="hidden md:flex items-center gap-8 group" aria-label="Pure Platinum home">
+            <img
+              src={logoWhite.url}
+              alt=""
+              className="h-32 lg:h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+            <span className="font-display text-[3rem] lg:text-[4rem] text-ivory tracking-[0.14em] font-light leading-none">
               PURE&nbsp;PLATINUM
             </span>
-            <span className="mt-3 text-[0.7rem] lg:text-[0.75rem] uppercase tracking-[0.5em] text-platinum-dark">
-              Naturally Rare · Since 2019
-            </span>
-          </div>
-        </Link>
+          </Link>
 
-        {/* Mobile: bigger stacked mark */}
-        <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
-          <img
-            src={logoWhite.url}
-            alt="Pure Platinum"
-            className="h-40 w-auto object-contain"
-          />
-        </Link>
+          {/* Mobile: single large logo */}
+          <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
+            <img
+              src={logoWhite.url}
+              alt="Pure Platinum"
+              className="h-44 w-auto object-contain"
+            />
+          </Link>
+        </div>
       </div>
 
-      {/* Sticky nav row — stays at the top as the user scrolls */}
-      <div className="sticky top-0 z-40 bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10">
+      {/* Sticky nav — sibling of the logo bar, sticks to viewport top when scrolling */}
+      <div className="sticky top-0 z-50 bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10">
         <nav className="hidden md:flex items-center justify-center gap-0 py-5">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
@@ -81,8 +78,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        {/* Mobile sticky bar — shows a compact logo + menu button when scrolling */}
-        <div className="md:hidden flex items-center justify-between px-5 py-3">
+        {/* Mobile sticky bar — menu only, no duplicate logo */}
+        <div className="md:hidden flex items-center justify-between px-5 py-4">
           <button
             onClick={() => setOpen((v) => !v)}
             className="text-ivory"
@@ -90,17 +87,14 @@ export function SiteHeader() {
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
-          <Link to="/" aria-label="Pure Platinum home">
-            <img src={logoWhite.url} alt="Pure Platinum" className="h-10 w-auto object-contain" />
-          </Link>
+          <span className="text-[0.7rem] uppercase tracking-[0.4em] text-platinum/70">Menu</span>
           <span className="w-6" />
         </div>
       </div>
 
-
       {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden border-t border-platinum/10 bg-navy-deep">
+        <div className="md:hidden sticky top-[52px] z-40 border-t border-platinum/10 bg-navy-deep">
           <nav className="flex flex-col px-6 py-4">
             {NAV.map((l) => (
               <Link
@@ -114,9 +108,10 @@ export function SiteHeader() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
+
 
 const IG_TILES = [
   collectionRings, collectionEarrings, collectionChains, collectionBracelets,
