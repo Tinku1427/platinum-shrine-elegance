@@ -5,6 +5,7 @@ import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
+import atelierFilm from "@/assets/atelier-film.mp4.asset.json";
 import productRing from "@/assets/product-ring-1.jpg";
 
 export const Route = createFileRoute("/manufacturing")({
@@ -81,11 +82,11 @@ function Manufacturing() {
               poster={atelierMasters}
               controls={playing}
               playsInline
-              preload="none"
+              preload="metadata"
               className="h-full w-full object-cover"
-            >
-              {/* Add a <source src="..."/> when the atelier film is uploaded */}
-            </video>
+              src={atelierFilm.url}
+            />
+
 
             {!playing && (
               <button
