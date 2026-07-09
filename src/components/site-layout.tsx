@@ -25,7 +25,7 @@ export function SiteHeader() {
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy-deep border-b border-platinum/10">
+    <header className="relative z-50 bg-navy-deep border-b border-platinum/10">
       {/* Top: centered logo alone */}
       <div className="relative flex items-center justify-center px-5 py-6 md:py-10">
         {/* mobile menu button — absolute left */}
@@ -34,14 +34,32 @@ export function SiteHeader() {
           className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-ivory"
           aria-label="Menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <Link to="/" className="flex items-center justify-center group" aria-label="Pure Platinum home">
+        {/* Desktop: full horizontal wordmark (symbol + PURE PLATINUM + tagline) */}
+        <Link to="/" className="hidden md:flex items-center gap-6 group" aria-label="Pure Platinum home">
+          <img
+            src={logoWhite.url}
+            alt=""
+            className="h-24 lg:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="flex flex-col items-start leading-none">
+            <span className="font-display text-[2.75rem] lg:text-[3.5rem] text-ivory tracking-[0.14em] font-light">
+              PURE&nbsp;PLATINUM
+            </span>
+            <span className="mt-3 text-[0.7rem] lg:text-[0.75rem] uppercase tracking-[0.5em] text-platinum-dark">
+              Naturally Rare · Since 2019
+            </span>
+          </div>
+        </Link>
+
+        {/* Mobile: bigger stacked mark (the logo asset already includes PURE PLATINUM text) */}
+        <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
           <img
             src={logoWhite.url}
             alt="Pure Platinum"
-            className="h-20 sm:h-24 md:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            className="h-32 w-auto object-contain"
           />
         </Link>
       </div>
