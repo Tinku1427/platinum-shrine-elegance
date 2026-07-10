@@ -29,6 +29,15 @@ export function SiteHeader() {
       {/* Top logo bar — scrolls away with the page */}
       <div className="relative z-40 bg-navy-deep border-b border-platinum/10">
         <div className="relative flex items-center justify-center px-5 py-6 md:py-10">
+          {/* Mobile: hamburger pinned top-left */}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden absolute left-4 top-4 text-ivory"
+            aria-label="Menu"
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+
           {/* Desktop: symbol mark + PURE PLATINUM wordmark with "Since 2010" tagline */}
           <Link to="/" className="hidden md:flex items-center gap-6 lg:gap-8 group" aria-label="Pure Platinum home">
             <img
@@ -46,7 +55,7 @@ export function SiteHeader() {
             </div>
           </Link>
 
-          {/* Mobile: single large logo (menu lives in sticky nav below) */}
+          {/* Mobile: single large logo */}
           <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
             <img
               src={logoWhite.url}
@@ -57,9 +66,9 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Sticky nav — sibling of the logo bar, sticks to viewport top when scrolling */}
-      <div className="sticky top-0 z-50 bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10">
-        <nav className="hidden md:flex items-center justify-center gap-0 py-5">
+      {/* Sticky nav — desktop only; mobile uses hamburger in logo bar */}
+      <div className="sticky top-0 z-50 bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10 hidden md:block">
+        <nav className="flex items-center justify-center gap-0 py-5">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
               <Link
@@ -74,24 +83,16 @@ export function SiteHeader() {
             </span>
           ))}
         </nav>
-
-        {/* Mobile sticky bar — menu only, no duplicate logo */}
-        <div className="md:hidden flex items-center justify-between px-5 py-4">
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="text-ivory"
-            aria-label="Menu"
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
-          <span className="text-[0.7rem] uppercase tracking-[0.4em] text-platinum/70">Menu</span>
-          <span className="w-6" />
-        </div>
       </div>
 
       {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden sticky top-[52px] z-40 border-t border-platinum/10 bg-navy-deep">
+        <div className="md:hidden fixed top-0 left-0 right-0 z-50 border-b border-platinum/10 bg-navy-deep">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-platinum/10">
+            <button onClick={() => setOpen(false)} className="text-ivory" aria-label="Close menu">
+              <X size={26} />
+            </button>
+          </div>
           <nav className="flex flex-col px-6 py-4">
             {NAV.map((l) => (
               <Link
@@ -106,6 +107,7 @@ export function SiteHeader() {
         </div>
       )}
     </>
+
   );
 }
 
