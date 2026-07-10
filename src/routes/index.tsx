@@ -153,43 +153,45 @@ function Home() {
 
       {/* CONTACT / REACH US strip — SRJ style */}
       <section className="py-16 md:py-24 bg-[oklch(0.15_0.065_265)] border-y border-platinum/10">
-        <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <img src={boutique} alt="Pure Platinum atelier" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-            <div>
-              <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
-                REACH US
-              </h2>
-              <div className="hairline w-20 mt-6 mb-8" />
+        <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
+          <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
+            REACH US
+          </h2>
+          <div className="hairline w-20 mt-6 mb-10 mx-auto" />
 
-              <ul className="space-y-5 text-platinum/85 text-[15px] md:text-base font-light">
-                <li className="flex items-start gap-3">
-                  <MapPin size={16} className="mt-1 text-platinum-dark shrink-0" />
-                  <span>MG Road, Secunderabad<br />Hyderabad · 500003 · India</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail size={16} className="text-platinum-dark shrink-0" />
-                  <a href="mailto:info@pureplatinum.com" className="hover:text-ivory transition-colors">
-                    info@pureplatinum.com
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone size={16} className="text-platinum-dark shrink-0" />
-                  <span>Trade enquiries: <a href="tel:+917380009000" className="hover:text-ivory transition-colors">+91 73 8000 9000</a></span>
-                </li>
-              </ul>
+          <ul className="grid md:grid-cols-3 gap-8 md:gap-10 text-platinum/85 text-[15px] md:text-base font-light">
+            <li className="flex flex-col items-center gap-3">
+              <MapPin size={20} className="text-platinum-dark" />
+              <span>
+                Unit E-1, Plot F11 &amp; F12<br />
+                WICEL Compound, Marol Central Road<br />
+                MIDC, Opp. SEEPZ Gate 1<br />
+                Andheri (E), Mumbai · 400 093
+              </span>
+            </li>
+            <li className="flex flex-col items-center gap-3">
+              <Mail size={20} className="text-platinum-dark" />
+              <a href="mailto:sales@pureplatinum.co.in" className="hover:text-ivory transition-colors">
+                sales@pureplatinum.co.in
+              </a>
+            </li>
+            <li className="flex flex-col items-center gap-3">
+              <Phone size={20} className="text-platinum-dark" />
+              <span>
+                <a href="tel:+919122663797" className="hover:text-ivory transition-colors">+91 91226 63797</a>
+                <br />
+                <span className="text-platinum-dark text-xs">Trade enquiries</span>
+              </span>
+            </li>
+          </ul>
 
-              <div className="mt-10">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center border border-platinum px-10 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
-                >
-                  Reach Us
-                </Link>
-              </div>
-            </div>
+          <div className="mt-12">
+            <Link
+              to="/contact"
+              className="inline-flex items-center border border-platinum px-10 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
+            >
+              Reach Us
+            </Link>
           </div>
         </div>
       </section>
