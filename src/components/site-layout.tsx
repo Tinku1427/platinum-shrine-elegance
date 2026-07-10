@@ -37,21 +37,21 @@ export function SiteHeader() {
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
 
-          {/* Desktop: symbol-only mark + PURE PLATINUM wordmark with tagline */}
-          <Link to="/" className="hidden md:flex items-center gap-8 group" aria-label="Pure Platinum home">
-            <div className="h-24 lg:h-28 w-24 lg:w-28 overflow-hidden flex items-start justify-center transition-transform duration-500 group-hover:scale-105">
+          {/* Desktop: big symbol mark + PURE PLATINUM wordmark with "Since 2010" tagline */}
+          <Link to="/" className="hidden md:flex items-center gap-6 lg:gap-8 group" aria-label="Pure Platinum home">
+            <div className="h-32 lg:h-40 w-32 lg:w-40 overflow-hidden flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
               <img
                 src={logoWhite.url}
                 alt=""
-                className="h-36 lg:h-44 w-auto object-contain object-top"
+                className="h-[220%] w-auto object-contain object-top -translate-y-[8%]"
               />
             </div>
             <div className="flex flex-col items-start leading-none">
-              <span className="font-display text-[3rem] lg:text-[4rem] text-ivory tracking-[0.14em] font-light">
+              <span className="font-display text-[3.25rem] lg:text-[4.5rem] text-ivory tracking-[0.14em] font-light">
                 PURE&nbsp;PLATINUM
               </span>
-              <span className="mt-4 text-[0.7rem] lg:text-[0.78rem] uppercase tracking-[0.55em] text-platinum-dark">
-                Naturally Rare · Crafted in Hyderabad
+              <span className="mt-4 text-[0.72rem] lg:text-[0.82rem] uppercase tracking-[0.55em] text-platinum-dark self-end">
+                Since 2010
               </span>
             </div>
           </Link>
