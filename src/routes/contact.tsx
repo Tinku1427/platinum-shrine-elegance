@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-const WHATSAPP = "917380009000";
+const WHATSAPP = "919122663797";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", type: "Trade / Wholesale", message: "" });
@@ -49,15 +49,15 @@ function Contact() {
               <div>
                 <div className="eyebrow mb-4">The Atelier</div>
                 <h2 className="font-display text-3xl md:text-4xl text-ivory">
-                  Pure Platinum<br /><span className="italic text-platinum-dark">Hyderabad Atelier</span>
+                  Pure Platinum<br /><span className="italic text-platinum-dark">Mumbai Atelier</span>
                 </h2>
                 <div className="hairline w-20 my-6" />
               </div>
 
               {[
-                { icon: MapPin, label: "Visit", value: <>1-6-56, MG Road<br />Near Gandhi Statue<br />Secunderabad · 500003</> },
-                { icon: Phone, label: "Call", value: <><a href="tel:+917380009000" className="hover:text-ivory">+91 73 8000 9000</a><br /><span className="text-platinum-dark text-xs">Trade & bridal enquiries</span></> },
-                { icon: Mail, label: "Email", value: <><a href="mailto:info@pureplatinum.com" className="hover:text-ivory">info@pureplatinum.com</a></> },
+                { icon: MapPin, label: "Visit", value: <>Unit E-1, Plot F11 &amp; F12<br />WICEL Compound, Marol Central Road<br />MIDC, Opp. SEEPZ Gate 1<br />Andheri (E), Mumbai · 400 093</> },
+                { icon: Phone, label: "Call", value: <><a href="tel:+919122663797" className="hover:text-ivory">+91 91226 63797</a><br /><a href="tel:+912228255050" className="hover:text-ivory">+91 22 2825 5050</a><br /><span className="text-platinum-dark text-xs">Trade &amp; bridal enquiries</span></> },
+                { icon: Mail, label: "Email", value: <><a href="mailto:sales@pureplatinum.co.in" className="hover:text-ivory">sales@pureplatinum.co.in</a></> },
                 { icon: Clock, label: "Hours", value: <>Monday — Saturday<br />10:30 – 20:00</> },
               ].map((b) => (
                 <div key={b.label} className="flex gap-5 items-start border-t border-platinum/10 pt-6">
