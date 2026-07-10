@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-const WHATSAPP = "917380009000";
+const WHATSAPP = "919122663797";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", type: "Trade / Wholesale", message: "" });
