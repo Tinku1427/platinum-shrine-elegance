@@ -79,39 +79,35 @@ function Home() {
         </div>
       </section>
 
-      {/* OUR STORY — SRJ two-column */}
+      {/* OUR STORY — centered */}
       <section className="py-20 md:py-32">
-        <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <div className="md:col-span-4">
-              <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
-                OUR STORY
-              </h2>
-              <div className="hairline w-20 mt-6" />
-            </div>
-            <div className="md:col-span-8 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
-              <p>
-                Pure Platinum is a Hyderabad-based manufacturing house dedicated to the world's
-                rarest precious metal. Rooted in the belief that a metal thirty times scarcer than
-                gold deserves an equally rare standard of craftsmanship, our atelier crafts
-                authentic 95% pure platinum jewellery for a curated network of retailers,
-                bridal houses and private ateliers across India.
-              </p>
-              <p>
-                Every piece we manufacture is naturally white, hypoallergenic and endlessly durable
-                — cast, filed and finished by hand by karigars whose skill has been refined across
-                generations. Our quiet PT950 hallmark is a promise: rarity, purity, and a legacy
-                built to outlive its wearer.
-              </p>
-              <div className="pt-4">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center border border-platinum/70 px-8 py-3 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
-                >
-                  Read More
-                </Link>
-              </div>
-            </div>
+        <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
+          <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
+            OUR STORY
+          </h2>
+          <div className="hairline w-20 mt-6 mx-auto" />
+          <div className="mt-10 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
+            <p>
+              Pure Platinum is a manufacturing house dedicated to the world's rarest precious
+              metal. Rooted in the belief that a metal thirty times scarcer than gold deserves an
+              equally rare standard of craftsmanship, our atelier crafts authentic 95% pure
+              platinum jewellery for a curated network of retailers, bridal houses and private
+              ateliers across India.
+            </p>
+            <p>
+              Every piece we manufacture is naturally white, hypoallergenic and endlessly durable
+              — cast, filed and finished by hand by karigars whose skill has been refined across
+              generations. Our quiet PT950 hallmark is a promise: rarity, purity, and a legacy
+              built to outlive its wearer.
+            </p>
+          </div>
+          <div className="pt-10">
+            <Link
+              to="/about"
+              className="inline-flex items-center border border-platinum/70 px-8 py-3 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
+            >
+              Read More
+            </Link>
           </div>
         </div>
       </section>
