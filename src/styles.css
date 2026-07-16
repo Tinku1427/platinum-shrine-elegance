@@ -46,51 +46,55 @@
 :root {
   --radius: 0.125rem;
 
-  /* Pure Platinum — Cool platinum palette (metallic, architectural, European).
-     Matte charcoal surfaces, platinum-white text, ice-blue accent (no gold).
-     Legacy navy and champagne token names are kept and remapped, so every
-     existing class (bg-navy-deep, text-ivory, text-champagne) re-themes at once. */
-  --navy-deep: #0F1113;        /* Matte charcoal — primary background */
-  --navy-mid: #171A1D;         /* Secondary charcoal — cards / bands */
-  --navy: #1E2226;             /* Elevated charcoal — hovers */
-  --accent-blue: #C7D8E6;      /* Ice blue — accent (hover / links / dividers) */
-  --platinum: #B9BEC5;         /* Steel silver — secondary text & hairlines */
-  --platinum-dark: #7C8792;    /* Slate grey — small labels / eyebrows */
-  --ivory: #F4F5F7;            /* Platinum white — primary text */
-  --champagne: #C7D8E6;        /* remapped → Ice blue accent (never gold) */
-  --champagne-hover: #DCE7F0;  /* Ice blue hover */
+  /* Pure Platinum — White & navy palette (Forever Mark direction).
+     White-dominant surfaces, deep-navy ink and accents.
+     Legacy navy/champagne token names are kept and remapped, so every
+     existing class (bg-navy-deep, text-ivory, text-champagne) re-themes at once.
+     NOTE: header/footer are set to solid navy directly in site-layout.tsx. */
+  --navy-deep: #FFFFFF;        /* White — primary background */
+  --navy-mid: #F4F6FA;         /* Very light navy tint — secondary sections / cards */
+  --navy: #E9EDF4;             /* Elevated tint — hovers */
+  --accent-blue: #24386B;      /* Navy blue — accent */
+  --platinum: #5C6B85;         /* Slate blue-grey — secondary text & hairlines */
+  --platinum-dark: #8A94A6;    /* Muted slate — small labels / eyebrows */
+  --ivory: #101B3C;            /* Deep navy — primary text */
+  --champagne: #24386B;        /* remapped → Navy-blue accent (hover / links) */
+  --champagne-hover: #16213E;  /* Deeper navy hover */
 
-  /* Light-section tokens (for alternating dark ↓ light rhythm) */
-  --light-bg: #F7F7F5;         /* Light background */
-  --light-fg: #0F1113;         /* Charcoal text on light */
+  /* Brand navy — used for the header, footer and any solid navy band */
+  --brand-navy: #101B3C;
 
-  /* App defaults: matte charcoal background, platinum-white foreground */
-  --background: #0F1113;
-  --foreground: #F4F5F7;
-  --card: #171A1D;
-  --card-foreground: #F4F5F7;
-  --popover: #171A1D;
-  --popover-foreground: #F4F5F7;
-  --primary: #F4F5F7;
-  --primary-foreground: #0F1113;
-  --secondary: #171A1D;
-  --secondary-foreground: #F4F5F7;
-  --muted: #171A1D;
-  --muted-foreground: #7C8792;
-  --accent: #C7D8E6;
-  --accent-foreground: #0F1113;
+  /* Light-section tokens (for alternating white ↓ tint rhythm) */
+  --light-bg: #F4F6FA;         /* Light navy-tint background */
+  --light-fg: #101B3C;         /* Navy text on light */
+
+  /* App defaults: white background, deep-navy foreground */
+  --background: #FFFFFF;
+  --foreground: #101B3C;
+  --card: #F4F6FA;
+  --card-foreground: #101B3C;
+  --popover: #FFFFFF;
+  --popover-foreground: #101B3C;
+  --primary: #101B3C;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F6FA;
+  --secondary-foreground: #101B3C;
+  --muted: #F4F6FA;
+  --muted-foreground: #8A94A6;
+  --accent: #24386B;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: #F4F5F7;
-  --border: #262A2F;
-  --input: #262A2F;
-  --ring: #C7D8E6;
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E6EE;
+  --input: #E2E6EE;
+  --ring: #24386B;
 
-  --gradient-platinum: linear-gradient(135deg, #F4F5F7 0%, #B9BEC5 50%, #F4F5F7 100%);
-  --gradient-navy: linear-gradient(180deg, #12151700 0%, #0F1113 100%);
-  --gradient-navy-radial: radial-gradient(ellipse at top, #1E2226 0%, #141719 45%, #0C0E10 100%);
-  --shadow-luxe: 0 40px 100px -24px rgba(0, 0, 0, 0.7);
-  --shadow-soft: 0 14px 44px -16px rgba(0, 0, 0, 0.5);
-  --shadow-inset-platinum: inset 0 0 0 1px rgba(185, 190, 197, 0.16);
+  --gradient-platinum: linear-gradient(135deg, #5C6B85 0%, #101B3C 50%, #5C6B85 100%);
+  --gradient-navy: linear-gradient(180deg, #FFFFFF00 0%, #FFFFFF 100%);
+  --gradient-navy-radial: radial-gradient(ellipse at top, #FFFFFF 0%, #F4F6FA 45%, #E9EDF4 100%);
+  --shadow-luxe: 0 30px 80px -26px rgba(16, 27, 60, 0.22);
+  --shadow-soft: 0 14px 44px -18px rgba(16, 27, 60, 0.14);
+  --shadow-inset-platinum: inset 0 0 0 1px rgba(16, 27, 60, 0.10);
 }
 
 @layer base {

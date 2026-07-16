@@ -51,13 +51,13 @@ export function SiteHeader() {
 
   return (
     <>
-      {/* Logo bar — one centered logo, identical on all breakpoints */}
-      <div className="relative z-40 bg-navy-deep border-b border-platinum/10">
+      {/* Logo bar — solid navy, one centered logo, identical on all breakpoints */}
+      <div className="relative z-40 bg-[#101B3C] border-b border-white/10">
         <div className="relative flex items-center justify-center px-14 py-7 md:py-9">
           {/* Mobile: the single menu trigger, vertically centered with the logo */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-ivory/90 hover:text-ivory transition-colors"
+            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-white/90 hover:text-white transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.25} />
@@ -67,21 +67,21 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Sticky nav — desktop only; mobile navigation lives in the drawer */}
-      <div className="sticky top-0 z-50 hidden md:block bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10">
+      {/* Sticky nav — solid navy; desktop only; mobile navigation lives in the drawer */}
+      <div className="sticky top-0 z-50 hidden md:block bg-[#101B3C]/95 backdrop-blur-sm border-b border-white/10">
         <nav className="flex items-center justify-center py-5">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
               <Link
                 to={l.to}
-                className="px-5 lg:px-7 text-[0.72rem] uppercase tracking-[0.34em] text-platinum/70 hover:text-champagne transition-colors"
-                activeProps={{ className: "text-champagne" }}
+                className="px-5 lg:px-7 text-[0.72rem] uppercase tracking-[0.34em] text-white/70 hover:text-white transition-colors"
+                activeProps={{ className: "text-white" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
               </Link>
               {idx < NAV.length - 1 && (
-                <span className="text-platinum/20 select-none" aria-hidden="true">
+                <span className="text-white/25 select-none" aria-hidden="true">
                   ·
                 </span>
               )}
@@ -90,14 +90,14 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      {/* Mobile drawer — single source of navigation on mobile */}
+      {/* Mobile drawer — solid navy; single source of navigation on mobile */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-[60] bg-navy-deep">
-          <div className="flex items-center justify-between px-5 py-5 border-b border-platinum/10">
+        <div className="md:hidden fixed inset-0 z-[60] bg-[#101B3C]">
+          <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
             <img src={logoMark} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
-              className="text-ivory/90 hover:text-ivory transition-colors"
+              className="text-white/90 hover:text-white transition-colors"
               aria-label="Close menu"
             >
               <X size={24} strokeWidth={1.25} />
@@ -108,8 +108,8 @@ export function SiteHeader() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-4 text-[0.8rem] uppercase tracking-[0.38em] text-ivory/90 hover:text-champagne border-b border-platinum/10 last:border-0 text-center transition-colors"
-                activeProps={{ className: "text-champagne" }}
+                className="py-4 text-[0.8rem] uppercase tracking-[0.38em] text-white/85 hover:text-white border-b border-white/10 last:border-0 text-center transition-colors"
+                activeProps={{ className: "text-white" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -135,15 +135,15 @@ const IG_TILES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy-deep">
+    <footer className="bg-[#101B3C]">
       {/* Instagram gallery — each tile links to the profile */}
-      <div className="bg-navy-mid/60 py-14 border-t border-platinum/10">
+      <div className="bg-[#16213E] py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <a
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-3 mb-8 text-platinum hover:text-champagne transition-colors"
+            className="flex items-center justify-center gap-3 mb-8 text-white/80 hover:text-white transition-colors"
             aria-label="Follow Pure Platinum on Instagram"
           >
             <Instagram size={18} strokeWidth={1.25} />
@@ -172,11 +172,11 @@ export function SiteFooter() {
       </div>
 
       {/* Bottom */}
-      <div className="py-14 border-t border-platinum/10">
+      <div className="py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
           <BrandLogo className="h-16 w-16 md:h-20 md:w-20" />
 
-          <div className="text-[0.62rem] uppercase tracking-[0.4em] text-platinum/60 text-center px-4">
+          <div className="text-[0.62rem] uppercase tracking-[0.4em] text-white/55 text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
           </div>
 
@@ -186,21 +186,21 @@ export function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="h-9 w-9 border border-platinum/20 flex items-center justify-center text-platinum/80 hover:text-champagne hover:border-champagne/40 transition-colors"
+              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Instagram size={14} strokeWidth={1.5} />
             </a>
             <a
               href="#"
               aria-label="Facebook"
-              className="h-9 w-9 border border-platinum/20 flex items-center justify-center text-platinum/80 hover:text-champagne hover:border-champagne/40 transition-colors"
+              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Facebook size={14} strokeWidth={1.5} />
             </a>
             <a
               href="#"
               aria-label="LinkedIn"
-              className="h-9 w-9 border border-platinum/20 flex items-center justify-center text-platinum/80 hover:text-champagne hover:border-champagne/40 transition-colors"
+              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Linkedin size={14} strokeWidth={1.5} />
             </a>

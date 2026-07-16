@@ -62,10 +62,10 @@ function Home() {
           <div className="text-[0.7rem] uppercase tracking-[0.5em] text-[#7C8792] pl-[0.5em] mb-6">
             The House
           </div>
-          <h2 className="font-display font-light text-3xl md:text-5xl text-[#0F1113] tracking-[0.18em] pl-[0.18em] leading-tight">
+          <h2 className="font-display font-light text-3xl md:text-5xl text-[#101B3C] tracking-[0.18em] pl-[0.18em] leading-tight">
             WHERE ENGINEERING<br />MEETS ELEGANCE
           </h2>
-          <div className="mx-auto mt-7 h-px w-16 bg-[#0F1113]/25" />
+          <div className="mx-auto mt-7 h-px w-16 bg-[#101B3C]/25" />
           <div className="mt-10 space-y-5 text-[#545A63] text-[15px] md:text-[17px] leading-[1.9] font-light">
             <p>
               Pure Platinum is a manufacturing house devoted to the world's rarest precious metal.
@@ -82,7 +82,7 @@ function Home() {
           <div className="pt-11">
             <Link
               to="/about"
-              className="inline-flex items-center gap-3 border border-[#0F1113]/40 rounded-[2px] px-9 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] pl-[0.4em] text-[#0F1113] hover:bg-[#0F1113] hover:text-[#F7F7F5] transition-colors duration-700"
+              className="inline-flex items-center gap-3 border border-[#101B3C]/40 rounded-[2px] px-9 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] pl-[0.4em] text-[#101B3C] hover:bg-[#101B3C] hover:text-white transition-colors duration-700"
             >
               Read More <ArrowRight size={13} />
             </Link>
