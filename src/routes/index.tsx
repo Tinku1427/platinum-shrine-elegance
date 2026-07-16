@@ -47,7 +47,8 @@ function Home() {
               }`}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/25 to-navy-deep/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-navy-deep/25 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(252,251,248,0.82)_0%,rgba(252,251,248,0.35)_42%,transparent_72%)] pointer-events-none" />
 
           {/* Hero headline + primary CTA */}
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
