@@ -174,7 +174,7 @@ function Home() {
 
 
       {/* CONTACT / REACH US strip — SRJ style */}
-      <section className="py-16 md:py-24 bg-[oklch(0.15_0.065_265)] border-y border-platinum/10">
+      <section className="py-16 md:py-24 bg-navy-mid border-y border-platinum/10">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
           <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.22em] pl-[0.22em]">
             REACH US

@@ -92,7 +92,7 @@ function Collection() {
         <section
           key={c.id}
           id={c.id}
-          className={`py-24 md:py-32 ${idx % 2 === 1 ? "bg-[oklch(0.15_0.065_265)]" : ""}`}
+          className={`py-24 md:py-32 ${idx % 2 === 1 ? "bg-navy-mid" : ""}`}
         >
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${idx % 2 === 1 ? "lg:[direction:rtl]" : ""}`}>

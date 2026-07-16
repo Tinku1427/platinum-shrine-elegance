@@ -109,7 +109,7 @@ function ProductPage() {
                   className="absolute inset-0 opacity-40"
                   style={{
                     background:
-                      "radial-gradient(circle at 50% 45%, oklch(0.92 0.005 260 / 0.5) 0%, oklch(0.28 0.10 266 / 0.4) 50%, transparent 75%)",
+                      "radial-gradient(circle at 50% 45%, rgba(200, 205, 211, 0.35) 0%, rgba(36, 36, 36, 0.5) 50%, transparent 75%)",
                   }}
                 />
                 <img
