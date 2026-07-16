@@ -191,7 +191,7 @@ function Manufacturing() {
               retailers, ateliers and private houses. Enquire for portfolio access and lead times.
             </p>
             <div className="mt-10">
-              <Link to="/contact" className="inline-flex items-center gap-3 bg-platinum text-navy-deep px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-ivory transition-colors">
+              <Link to="/contact" className="inline-flex items-center gap-3 bg-champagne text-white px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-champagne-hover transition-colors">
                 Start a Commission <ArrowRight size={13} />
               </Link>
             </div>

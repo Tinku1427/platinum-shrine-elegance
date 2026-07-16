@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/hero-2.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
@@ -98,7 +99,7 @@ function About() {
 
             <div className="md:col-span-7 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
               <p>
-                From a family legacy in fine craftsmanship to founding Pure Platinum in 2010,
+                From a family legacy in fine craftsmanship to founding Pure Platinum in 2012,
                 [Founder Name]'s vision was to bring the world's rarest precious metal to India's
                 finest jewellery houses — and to do so without compromise. What began as a single
                 bench has grown into a dedicated platinum atelier trusted by retailers, bridal
@@ -121,6 +122,17 @@ function About() {
                 Placeholder copy — to be replaced with client-provided founder narrative.
               </p>
             </div>
+          </div>
+
+          {/* Premium heritage timeline */}
+          <div className="mt-20 md:mt-28">
+            <div className="text-center mb-14 md:mb-20">
+              <div className="eyebrow mb-4">The Journey</div>
+              <h3 className="font-display font-light text-2xl md:text-4xl text-ivory tracking-[0.16em] pl-[0.16em]">
+                A HERITAGE IN THE MAKING
+              </h3>
+            </div>
+            <FounderTimeline />
           </div>
         </div>
       </section>
@@ -190,5 +202,76 @@ function About() {
         </div>
       </section>
     </SiteLayout>
+  );
+}
+
+/* ---------- Founder heritage timeline (scroll-reveal) ---------- */
+
+const TIMELINE = [
+  { year: "2012", title: "The Beginning", body: "Pure Platinum is founded on a single conviction — that the rarest metal on earth deserves an equally rare standard of craftsmanship." },
+  { year: "2016", title: "First Platinum Collection", body: "Our first full collection of PT950 jewellery leaves the atelier, cast, filed and finished entirely by hand." },
+  { year: "2020", title: "Expansion", body: "The workshop grows into a dedicated platinum manufacturing house, trusted by retailers and bridal partners across India." },
+  { year: "2026", title: "Global Manufacturing", body: "Today Pure Platinum manufactures for a curated network of retailers, bridal houses and private ateliers — with an eye on the world." },
+];
+
+function FounderTimeline() {
+  return (
+    <div className="relative mx-auto max-w-3xl">
+      {/* vertical spine */}
+      <div className="absolute left-[19px] md:left-1/2 top-2 bottom-2 w-px bg-platinum/20 md:-translate-x-1/2" aria-hidden="true" />
+      <ol className="space-y-14 md:space-y-20">
+        {TIMELINE.map((item, idx) => (
+          <TimelineNode key={item.year} item={item} idx={idx} />
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function TimelineNode({
+  item,
+  idx,
+}: {
+  item: { year: string; title: string; body: string };
+  idx: number;
+}) {
+  const ref = useRef<HTMLLIElement>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const left = idx % 2 === 0;
+
+  return (
+    <li ref={ref} className={`reveal ${shown ? "reveal-in" : ""} relative pl-14 md:pl-0`}>
+      {/* node marker */}
+      <span className="absolute left-[13px] md:left-1/2 top-1.5 h-3 w-3 rounded-full bg-champagne ring-4 ring-navy-deep md:-translate-x-1/2" aria-hidden="true" />
+      <div className={`md:grid md:grid-cols-2 md:gap-12 ${left ? "" : "md:[direction:rtl]"}`}>
+        <div className={`md:[direction:ltr] ${left ? "md:text-right md:pr-12" : "md:pl-12"}`}>
+          <div className="font-display text-4xl md:text-5xl text-champagne leading-none">{item.year}</div>
+          <h4 className="mt-3 text-[0.7rem] uppercase tracking-[0.4em] text-platinum pl-[0.4em] md:pl-0">
+            {item.title}
+          </h4>
+        </div>
+        <div className={`mt-3 md:mt-0 md:[direction:ltr] ${left ? "md:pl-12" : "md:text-right md:pr-12"}`}>
+          <p className="text-[15px] md:text-base text-platinum/75 leading-relaxed font-light max-w-sm md:inline-block">
+            {item.body}
+          </p>
+        </div>
+      </div>
+    </li>
   );
 }

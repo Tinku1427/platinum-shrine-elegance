@@ -154,7 +154,7 @@ function Contact() {
 
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-3 bg-platinum text-navy-deep px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-ivory transition-colors"
+                    className="group inline-flex items-center gap-3 bg-champagne text-white px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-champagne-hover transition-colors"
                   >
                     Send Enquiry <Send size={14} className="transition-transform group-hover:translate-x-1" />
                   </button>

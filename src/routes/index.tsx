@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Mail, Phone, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site-layout";
 import hero1 from "@/assets/hero-1.jpg";
@@ -47,7 +47,23 @@ function Home() {
               }`}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/50 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/25 to-navy-deep/40 pointer-events-none" />
+
+          {/* Hero headline + primary CTA */}
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+            <div className="animate-fade-up pointer-events-auto">
+              <div className="eyebrow text-champagne mb-5 md:mb-7">Manufacturers of Pure Platinum</div>
+              <h1 className="font-display font-light text-ivory leading-[1.08] text-4xl md:text-6xl lg:text-7xl">
+                Crafted in Platinum.<br />
+                <span className="italic text-platinum">Refined for Generations.</span>
+              </h1>
+              <div className="mt-8 md:mt-10 flex justify-center">
+                <Link to="/collection" className="btn-gold hover:btn-gold-hover">
+                  Explore Our Craft <ArrowRight size={13} />
+                </Link>
+              </div>
+            </div>
+          </div>
 
           <button
             onClick={() => setI((s) => (s - 1 + slides.length) % slides.length)}

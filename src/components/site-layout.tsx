@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Instagram, Facebook, Linkedin } from "lucide-react";
+import logoMark from "@/assets/pure-platinum-mark-white.png";
 import collectionRings from "@/assets/collection-rings.jpg";
 import collectionEarrings from "@/assets/collection-earrings.jpg";
 import collectionChains from "@/assets/collection-chains.jpg";
@@ -22,49 +23,21 @@ const NAV = [
 const IG_URL = "https://www.instagram.com/pureplatinum";
 
 /**
- * Diamond line-icon mark — thin, brilliant-cut outline in platinum.
- * Scales identically at any size; no external image dependency.
+ * Brand logo — the Pure Platinum monogram mark only (no wordmark, no tagline).
+ * One consistent scale across desktop and mobile.
  */
-function DiamondMark({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 44 38"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1"
-      strokeLinejoin="round"
-      strokeLinecap="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M11 3 H33 L41 14 L22 35 L3 14 Z" />
-      <path d="M3 14 H41" />
-      <path d="M11 3 L16 14" />
-      <path d="M33 3 L28 14" />
-      <path d="M16 14 L22 35" />
-      <path d="M28 14 L22 35" />
-    </svg>
-  );
-}
-
-/**
- * Unified brand logo — diamond mark + PURE PLATINUM wordmark + SINCE 2010.
- * Rendered at one consistent scale across desktop and mobile.
- */
-function BrandLogo() {
+function BrandLogo({ className = "h-14 w-14 md:h-16 md:w-16" }: { className?: string }) {
   return (
     <Link
       to="/"
       aria-label="Pure Platinum — home"
-      className="group flex flex-col items-center text-center leading-none text-ivory"
+      className="group inline-flex items-center justify-center"
     >
-      <DiamondMark className="h-7 w-7 md:h-8 md:w-8 text-platinum transition-transform duration-500 group-hover:scale-105" />
-      <span className="mt-3 font-display font-light tracking-[0.34em] text-ivory text-[1.35rem] md:text-[1.7rem]">
-        PURE&nbsp;PLATINUM
-      </span>
-      <span className="mt-2 text-champagne uppercase tracking-[0.55em] text-[0.5rem] md:text-[0.58rem] pl-[0.55em]">
-        Since 2010
-      </span>
+      <img
+        src={logoMark}
+        alt="Pure Platinum"
+        className={`${className} w-auto object-contain transition-transform duration-500 group-hover:scale-105`}
+      />
     </Link>
   );
 }
@@ -120,10 +93,8 @@ export function SiteHeader() {
       {/* Mobile drawer — single source of navigation on mobile */}
       {open && (
         <div className="md:hidden fixed inset-0 z-[60] bg-navy-deep">
-          <div className="flex items-center justify-between px-5 py-6 border-b border-platinum/10">
-            <span className="text-champagne uppercase tracking-[0.5em] text-[0.55rem] pl-[0.5em]">
-              Pure Platinum
-            </span>
+          <div className="flex items-center justify-between px-5 py-5 border-b border-platinum/10">
+            <img src={logoMark} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
               className="text-ivory/90 hover:text-ivory transition-colors"
@@ -203,7 +174,7 @@ export function SiteFooter() {
       {/* Bottom */}
       <div className="py-14 border-t border-platinum/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
-          <BrandLogo />
+          <BrandLogo className="h-16 w-16 md:h-20 md:w-20" />
 
           <div className="text-[0.62rem] uppercase tracking-[0.4em] text-platinum/60 text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
