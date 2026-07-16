@@ -28,10 +28,9 @@ function Home() {
           {/* Left — statement */}
           <div className="flex items-center order-2 lg:order-1 px-6 sm:px-10 lg:px-16 py-16 lg:py-0">
             <div className="animate-fade-up max-w-xl">
-              <div className="eyebrow text-platinum-dark mb-6 md:mb-8">Platinum Manufacturers · Est. 1998</div>
+              <div className="eyebrow text-platinum-dark mb-6 md:mb-8">Platinum Manufacturers</div>
               <h1 className="font-display font-light text-ivory leading-[0.98] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-[0.02em]">
-                CRAFTING<br />PLATINUM<br />
-                <span className="text-platinum">SINCE 1998</span>
+                CRAFTING<br /><span className="text-platinum">PLATINUM</span>
               </h1>
               <p className="mt-8 md:mt-10 text-platinum/80 font-light text-[15px] md:text-base leading-relaxed max-w-md">
                 Manufacturing exceptional platinum jewellery for premium jewellery houses worldwide.
