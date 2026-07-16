@@ -19,8 +19,6 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const slides = [hero1, hero2, hero3];
-
 function Home() {
   return (
     <SiteLayout>

@@ -48,8 +48,8 @@
 
   /* Pure Platinum — Cool platinum palette (metallic, architectural, European).
      Matte charcoal surfaces, platinum-white text, ice-blue accent (no gold).
-     Legacy --navy-*/--champagne names are kept as tokens and remapped, so every
-     existing class (bg-navy-deep, text-ivory, text-champagne, ...) re-themes at once. */
+     Legacy navy and champagne token names are kept and remapped, so every
+     existing class (bg-navy-deep, text-ivory, text-champagne) re-themes at once. */
   --navy-deep: #0F1113;        /* Matte charcoal — primary background */
   --navy-mid: #171A1D;         /* Secondary charcoal — cards / bands */
   --navy: #1E2226;             /* Elevated charcoal — hovers */
