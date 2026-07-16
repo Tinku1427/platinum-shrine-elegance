@@ -185,7 +185,7 @@ function ProductPage() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 bg-champagne text-white px-8 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-champagne-hover transition-all flex-1"
+                  className="group inline-flex items-center justify-center gap-3 border border-platinum rounded-[2px] text-ivory px-8 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-ivory hover:text-navy-deep transition-all flex-1"
                 >
                   <MessageCircle size={15} />
                   Trade Enquiry
@@ -292,7 +292,7 @@ function ProductPage() {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-champagne text-white pl-4 pr-5 py-3 rounded-full shadow-[var(--shadow-luxe)] hover:bg-champagne-hover transition-all hover:scale-105 group"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-navy-mid border border-platinum text-ivory pl-4 pr-5 py-3 rounded-full shadow-[var(--shadow-luxe)] hover:bg-ivory hover:text-navy-deep transition-all hover:scale-105 group"
         aria-label="Enquire on WhatsApp"
       >
         <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-navy-deep text-platinum">

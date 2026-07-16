@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Instagram, Facebook, Linkedin } from "lucide-react";
-import logoMark from "@/assets/pure-platinum-mark-dark.png";
+import logoMark from "@/assets/pure-platinum-mark-white.png";
 import collectionRings from "@/assets/collection-rings.jpg";
 import collectionEarrings from "@/assets/collection-earrings.jpg";
 import collectionChains from "@/assets/collection-chains.jpg";

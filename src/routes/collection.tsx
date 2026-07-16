@@ -151,7 +151,7 @@ function Collection() {
             Retailers, bridal houses and private ateliers may request the complete Pure Platinum catalogue and wholesale terms.
           </p>
           <div className="mt-10">
-            <Link to="/contact" className="inline-flex items-center gap-3 bg-champagne text-white px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-champagne-hover transition-colors">
+            <Link to="/contact" className="inline-flex items-center gap-3 border border-platinum rounded-[2px] text-ivory px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-ivory hover:text-navy-deep transition-colors duration-700">
               Request Catalogue <ArrowRight size={13} />
             </Link>
           </div>

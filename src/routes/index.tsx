@@ -1,12 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site-layout";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-
+import heroRing from "@/assets/product-ring-1.jpg";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 import handsDetail from "@/assets/hands-detail.jpg";
 
@@ -26,104 +22,72 @@ export const Route = createFileRoute("/")({
 const slides = [hero1, hero2, hero3];
 
 function Home() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI((s) => (s + 1) % slides.length), 6500);
-    return () => clearInterval(t);
-  }, []);
-
   return (
     <SiteLayout>
-      {/* HERO CAROUSEL — SRJ style, full-bleed, side arrows */}
-      <section className="relative w-full overflow-hidden bg-navy-mid">
-        <div className="relative aspect-[16/10] md:aspect-[21/9] w-full">
-          {slides.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt=""
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
-                idx === i ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-          <div className="absolute inset-0 bg-navy-deep/25 pointer-events-none" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(252,251,248,0.82)_0%,rgba(252,251,248,0.35)_42%,transparent_72%)] pointer-events-none" />
-
-          {/* Hero headline + primary CTA */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-            <div className="animate-fade-up pointer-events-auto">
-              <div className="eyebrow text-champagne mb-5 md:mb-7">Manufacturers of Pure Platinum</div>
-              <h1 className="font-display font-light text-ivory leading-[1.08] text-4xl md:text-6xl lg:text-7xl">
-                Crafted in Platinum.<br />
-                <span className="italic text-platinum">Refined for Generations.</span>
+      {/* HERO — split: statement left, a single platinum ring right */}
+      <section className="relative w-full overflow-hidden bg-navy-deep">
+        <div className="grid lg:grid-cols-2 min-h-[78vh]">
+          {/* Left — statement */}
+          <div className="flex items-center order-2 lg:order-1 px-6 sm:px-10 lg:px-16 py-16 lg:py-0">
+            <div className="animate-fade-up max-w-xl">
+              <div className="eyebrow text-platinum-dark mb-6 md:mb-8">Platinum Manufacturers · Est. 1998</div>
+              <h1 className="font-display font-light text-ivory leading-[0.98] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-[0.02em]">
+                CRAFTING<br />PLATINUM<br />
+                <span className="text-platinum">SINCE 1998</span>
               </h1>
-              <div className="mt-8 md:mt-10 flex justify-center">
-                <Link to="/collection" className="btn-gold hover:btn-gold-hover">
-                  Explore Our Craft <ArrowRight size={13} />
+              <p className="mt-8 md:mt-10 text-platinum/80 font-light text-[15px] md:text-base leading-relaxed max-w-md">
+                Manufacturing exceptional platinum jewellery for premium jewellery houses worldwide.
+              </p>
+              <div className="mt-9 md:mt-11">
+                <Link to="/manufacturing" className="btn-gold hover:btn-gold-hover">
+                  Explore Craftsmanship <ArrowRight size={13} />
                 </Link>
               </div>
             </div>
           </div>
 
-          <button
-            onClick={() => setI((s) => (s - 1 + slides.length) % slides.length)}
-            className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-full border border-ivory/70 text-ivory hover:bg-ivory hover:text-navy-deep flex items-center justify-center transition-colors"
-            aria-label="Previous"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            onClick={() => setI((s) => (s + 1) % slides.length)}
-            className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-full border border-ivory/70 text-ivory hover:bg-ivory hover:text-navy-deep flex items-center justify-center transition-colors"
-            aria-label="Next"
-          >
-            <ChevronRight size={18} />
-          </button>
-
-          <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setI(idx)}
-                className={`h-[3px] transition-all duration-500 ${
-                  idx === i ? "w-10 bg-platinum" : "w-4 bg-platinum/40"
-                }`}
-                aria-label={`Slide ${idx + 1}`}
-              />
-            ))}
+          {/* Right — one platinum ring on charcoal */}
+          <div className="relative order-1 lg:order-2 min-h-[42vh] lg:min-h-full overflow-hidden bg-navy-mid">
+            <img
+              src={heroRing}
+              alt="A single platinum band"
+              className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+            />
+            <div className="absolute inset-0 bg-navy-deep/30" />
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-navy-deep to-transparent hidden lg:block" />
           </div>
         </div>
       </section>
 
-      {/* OUR STORY — centered */}
-      <section className="py-20 md:py-32">
+      {/* WHERE ENGINEERING MEETS ELEGANCE — light section (alternating rhythm) */}
+      <section className="section-light py-24 md:py-36">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-          <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.22em] pl-[0.22em]">
-            OUR STORY
+          <div className="text-[0.7rem] uppercase tracking-[0.5em] text-[#7C8792] pl-[0.5em] mb-6">
+            The House
+          </div>
+          <h2 className="font-display font-light text-3xl md:text-5xl text-[#0F1113] tracking-[0.18em] pl-[0.18em] leading-tight">
+            WHERE ENGINEERING<br />MEETS ELEGANCE
           </h2>
-          <div className="hairline w-20 mt-6 mx-auto" />
-          <div className="mt-10 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
+          <div className="mx-auto mt-7 h-px w-16 bg-[#0F1113]/25" />
+          <div className="mt-10 space-y-5 text-[#545A63] text-[15px] md:text-[17px] leading-[1.9] font-light">
             <p>
-              Pure Platinum is a manufacturing house dedicated to the world's rarest precious
-              metal. Rooted in the belief that a metal thirty times scarcer than gold deserves an
-              equally rare standard of craftsmanship, our atelier crafts authentic 95% pure
-              platinum jewellery for a curated network of retailers, bridal houses and private
-              ateliers across India.
+              Pure Platinum is a manufacturing house devoted to the world's rarest precious metal.
+              Rooted in the belief that a metal thirty times scarcer than gold deserves an equally
+              rare standard of craftsmanship, we manufacture authentic 95% pure platinum jewellery
+              for premium jewellery houses worldwide.
             </p>
             <p>
-              Every piece we manufacture is naturally white, hypoallergenic and endlessly durable
-              — cast, filed and finished by hand by karigars whose skill has been refined across
-              generations. Our quiet PT950 hallmark is a promise: rarity, purity, and a legacy
-              built to outlive its wearer.
+              Naturally white, hypoallergenic and endlessly durable — every piece is cast, filed
+              and finished by hand, then struck with our quiet PT950 hallmark: a promise of rarity,
+              purity, and precision built to outlive its wearer.
             </p>
           </div>
-          <div className="pt-10">
+          <div className="pt-11">
             <Link
               to="/about"
-              className="inline-flex items-center border border-platinum/70 px-8 py-3 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
+              className="inline-flex items-center gap-3 border border-[#0F1113]/40 rounded-[2px] px-9 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] pl-[0.4em] text-[#0F1113] hover:bg-[#0F1113] hover:text-[#F7F7F5] transition-colors duration-700"
             >
-              Read More
+              Read More <ArrowRight size={13} />
             </Link>
           </div>
         </div>

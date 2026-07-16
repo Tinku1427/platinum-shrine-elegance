@@ -46,47 +46,51 @@
 :root {
   --radius: 0.125rem;
 
-  /* Pure Platinum — Warm-white premium palette (Italian luxury direction).
-     Legacy --navy-* names are kept as tokens but now map to light surfaces,
-     and --ivory/--platinum map to dark ink, so every existing class
-     (bg-navy-deep, text-ivory, text-platinum, ...) re-themes to a light look at once. */
-  --navy-deep: #FCFBF8;        /* Warm white — primary background (was dark) */
-  --navy-mid: #F2EEE7;         /* Soft stone — secondary background / cards */
-  --navy: #E9E4DB;             /* Elevated stone — hovers */
-  --accent-blue: #B89A5E;      /* repurposed → Champagne Gold accent */
-  --platinum: #46423B;         /* Warm charcoal-grey — secondary text & hairlines */
-  --platinum-dark: #8C857B;    /* Muted warm grey — small labels / eyebrows */
-  --ivory: #171511;            /* Near-black warm ink — primary text (was light) */
-  --champagne: #A9843A;        /* Champagne Gold — premium accent (deepened for white bg) */
-  --champagne-hover: #916E2C;  /* Champagne Gold hover */
+  /* Pure Platinum — Cool platinum palette (metallic, architectural, European).
+     Matte charcoal surfaces, platinum-white text, ice-blue accent (no gold).
+     Legacy --navy-*/--champagne names are kept as tokens and remapped, so every
+     existing class (bg-navy-deep, text-ivory, text-champagne, ...) re-themes at once. */
+  --navy-deep: #0F1113;        /* Matte charcoal — primary background */
+  --navy-mid: #171A1D;         /* Secondary charcoal — cards / bands */
+  --navy: #1E2226;             /* Elevated charcoal — hovers */
+  --accent-blue: #C7D8E6;      /* Ice blue — accent (hover / links / dividers) */
+  --platinum: #B9BEC5;         /* Steel silver — secondary text & hairlines */
+  --platinum-dark: #7C8792;    /* Slate grey — small labels / eyebrows */
+  --ivory: #F4F5F7;            /* Platinum white — primary text */
+  --champagne: #C7D8E6;        /* remapped → Ice blue accent (never gold) */
+  --champagne-hover: #DCE7F0;  /* Ice blue hover */
 
-  /* App defaults: warm white background, near-black foreground */
-  --background: #FCFBF8;
-  --foreground: #171511;
-  --card: #F5F1EA;
-  --card-foreground: #171511;
-  --popover: #F5F1EA;
-  --popover-foreground: #171511;
-  --primary: #171511;
-  --primary-foreground: #FCFBF8;
-  --secondary: #F2EEE7;
-  --secondary-foreground: #171511;
-  --muted: #F2EEE7;
-  --muted-foreground: #8C857B;
-  --accent: #A9843A;
-  --accent-foreground: #FFFFFF;
+  /* Light-section tokens (for alternating dark ↓ light rhythm) */
+  --light-bg: #F7F7F5;         /* Light background */
+  --light-fg: #0F1113;         /* Charcoal text on light */
+
+  /* App defaults: matte charcoal background, platinum-white foreground */
+  --background: #0F1113;
+  --foreground: #F4F5F7;
+  --card: #171A1D;
+  --card-foreground: #F4F5F7;
+  --popover: #171A1D;
+  --popover-foreground: #F4F5F7;
+  --primary: #F4F5F7;
+  --primary-foreground: #0F1113;
+  --secondary: #171A1D;
+  --secondary-foreground: #F4F5F7;
+  --muted: #171A1D;
+  --muted-foreground: #7C8792;
+  --accent: #C7D8E6;
+  --accent-foreground: #0F1113;
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: #FCFBF8;
-  --border: #E4DFD6;
-  --input: #E4DFD6;
-  --ring: #A9843A;
+  --destructive-foreground: #F4F5F7;
+  --border: #262A2F;
+  --input: #262A2F;
+  --ring: #C7D8E6;
 
-  --gradient-platinum: linear-gradient(135deg, #7A736A 0%, #B3AC9F 50%, #7A736A 100%);
-  --gradient-navy: linear-gradient(180deg, #FDFCFA 0%, #F2EEE7 100%);
-  --gradient-navy-radial: radial-gradient(ellipse at top, #FFFFFF 0%, #F6F2EB 45%, #EDE7DD 100%);
-  --shadow-luxe: 0 30px 80px -24px rgba(30, 26, 20, 0.20);
-  --shadow-soft: 0 12px 40px -16px rgba(30, 26, 20, 0.12);
-  --shadow-inset-platinum: inset 0 0 0 1px rgba(70, 66, 59, 0.14);
+  --gradient-platinum: linear-gradient(135deg, #F4F5F7 0%, #B9BEC5 50%, #F4F5F7 100%);
+  --gradient-navy: linear-gradient(180deg, #12151700 0%, #0F1113 100%);
+  --gradient-navy-radial: radial-gradient(ellipse at top, #1E2226 0%, #141719 45%, #0C0E10 100%);
+  --shadow-luxe: 0 40px 100px -24px rgba(0, 0, 0, 0.7);
+  --shadow-soft: 0 14px 44px -16px rgba(0, 0, 0, 0.5);
+  --shadow-inset-platinum: inset 0 0 0 1px rgba(185, 190, 197, 0.16);
 }
 
 @layer base {
@@ -169,35 +173,47 @@
   animation: platinum-sheen 4s linear infinite;
 }
 
-/* Premium buttons — champagne gold primary, silver-outline secondary */
+/* Premium button — transparent, 1px platinum border, 2px radius.
+   Hover: fills platinum-white, text becomes charcoal. (No gold, no shadow.) */
 @utility btn-gold {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--color-champagne);
-  color: #ffffff;
-  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--color-ivory);
+  border: 1px solid var(--color-platinum);
+  border-radius: 2px;
+  padding: 0.95rem 2.5rem;
+  padding-left: 2.85rem;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.35em;
-  padding-left: 2.85rem;
-  transition: background-color 0.4s ease, transform 0.4s ease;
+  transition: background-color 0.7s ease, color 0.7s ease, border-color 0.7s ease;
 }
 @utility btn-gold-hover {
-  background: var(--color-champagne-hover);
+  background: var(--color-ivory);
+  color: var(--color-navy-deep);
+  border-color: var(--color-ivory);
 }
 @utility btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   border: 1px solid var(--color-platinum);
+  border-radius: 2px;
   color: var(--color-ivory);
-  padding: 1rem 2.5rem;
+  padding: 0.95rem 2.5rem;
+  padding-left: 2.85rem;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.35em;
-  padding-left: 2.85rem;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+/* Light section — for the alternating dark ↓ light ↓ dark rhythm */
+@utility section-light {
+  background: var(--light-bg);
+  color: var(--light-fg);
 }
 
 /* Scroll reveal — used by the founder timeline */
