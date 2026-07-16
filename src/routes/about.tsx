@@ -5,6 +5,8 @@ import atelierMasters from "@/assets/atelier-masters.jpg";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
 import handsDetail from "@/assets/hands-detail.jpg";
+// Placeholder founder portrait — swap this asset for the real portrait when supplied.
+import founderPortrait from "@/assets/atelier-masters.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -34,7 +36,7 @@ function About() {
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
             <div className="md:col-span-4">
-              <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
+              <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.2em] pl-[0.2em]">
                 OUR STORY
               </h2>
               <div className="hairline w-20 mt-6" />
@@ -63,10 +65,70 @@ function About() {
         </div>
       </section>
 
+      {/* FOUNDER JOURNEY — full-width alternating image / text block */}
+      <section className="bg-navy-radial border-y border-platinum/10 py-20 md:py-32">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+          <div className="text-center mb-14 md:mb-20">
+            <div className="eyebrow mb-5">The Founder</div>
+            <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.18em] pl-[0.18em]">
+              FOUNDER JOURNEY
+            </h2>
+            <div className="hairline w-20 mt-6 mx-auto" />
+          </div>
+
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+            {/* Portrait — placeholder until client provides the final image */}
+            <div className="md:col-span-5">
+              <div className="relative overflow-hidden aspect-[4/5] border border-platinum/15 shadow-[var(--shadow-luxe)]">
+                <img
+                  src={founderPortrait}
+                  alt="Founder of Pure Platinum"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-navy-deep/15" />
+              </div>
+              <div className="mt-5 text-center">
+                <div className="font-display text-lg text-ivory tracking-wide">[ Founder Name ]</div>
+                <div className="text-[0.62rem] uppercase tracking-[0.4em] text-champagne mt-2 pl-[0.4em]">
+                  Founder &amp; Custodian of the Craft
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-7 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
+              <p>
+                From a family legacy in fine craftsmanship to founding Pure Platinum in 2010,
+                [Founder Name]'s vision was to bring the world's rarest precious metal to India's
+                finest jewellery houses — and to do so without compromise. What began as a single
+                bench has grown into a dedicated platinum atelier trusted by retailers, bridal
+                houses and private ateliers across the country.
+              </p>
+              <p>
+                Raised among master karigars, the founder learned early that platinum rewards
+                patience and punishes shortcuts. That conviction became the house philosophy: work
+                in one metal, hold to one standard, and let every piece speak quietly for itself.
+                Each commission is treated less as a product and more as an heirloom in waiting.
+              </p>
+              <p>
+                Today, that founding vision endures in every PT950 hallmark we strike — a promise
+                of rarity, purity, and craftsmanship built to outlive its wearer.
+              </p>
+              <blockquote className="border-l-2 border-champagne/70 pl-6 mt-8 font-display italic text-xl md:text-2xl text-ivory leading-snug">
+                "We do not chase trends. We manufacture pieces meant to be inherited."
+              </blockquote>
+              <p className="text-[0.62rem] uppercase tracking-[0.35em] text-platinum-dark pt-2">
+                Placeholder copy — to be replaced with client-provided founder narrative.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* NOTE FROM FOUNDERS — SRJ style */}
       <section className="pb-24 md:pb-32">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide leading-tight">
+          <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.18em] pl-[0.18em] leading-tight">
             NOTE FROM<br />OUR FOUNDERS
           </h2>
           <div className="hairline w-20 mt-6 mb-12" />

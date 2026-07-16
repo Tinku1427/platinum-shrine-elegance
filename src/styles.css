@@ -39,6 +39,7 @@
   --color-navy-mid: var(--navy-mid);
   --color-accent-blue: var(--accent-blue);
   --color-ivory: var(--ivory);
+  --color-champagne: var(--champagne);
 }
 
 :root {
@@ -51,7 +52,8 @@
   --accent-blue: oklch(0.38 0.13 268);     /* #233A84 Accent blue */
   --platinum: oklch(0.92 0.005 260);       /* #E5E7EB Platinum silver */
   --platinum-dark: oklch(0.78 0.008 260);  /* #B8BDC7 Dark platinum */
-  --ivory: oklch(0.97 0.003 90);
+  --ivory: oklch(0.97 0.003 90);           /* #F8F6F1 Ivory / off-white */
+  --champagne: oklch(0.83 0.028 82);       /* #D4C5A9 Muted champagne — used sparingly */
 
   /* App defaults: deep navy background, platinum foreground */
   --background: oklch(0.18 0.07 265);

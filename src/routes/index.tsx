@@ -82,7 +82,7 @@ function Home() {
       {/* OUR STORY — centered */}
       <section className="py-20 md:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-          <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
+          <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.22em] pl-[0.22em]">
             OUR STORY
           </h2>
           <div className="hairline w-20 mt-6 mx-auto" />
@@ -123,10 +123,13 @@ function Home() {
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-navy-deep/40 group-hover:bg-navy-deep/50 transition-colors" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-display text-4xl md:text-6xl italic text-ivory drop-shadow-lg">
-                  Collection
+              <div className="absolute inset-0 bg-navy-deep/45 group-hover:bg-navy-deep/55 transition-colors" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                <span className="font-display text-3xl md:text-4xl text-ivory leading-tight max-w-xs drop-shadow-lg">
+                  Explore the Pure Platinum collection
+                </span>
+                <span className="mt-6 text-champagne uppercase tracking-[0.4em] text-[0.6rem] pl-[0.4em] opacity-90">
+                  View
                 </span>
               </div>
             </Link>
@@ -138,10 +141,13 @@ function Home() {
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-navy-deep/45 group-hover:bg-navy-deep/55 transition-colors" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-display text-4xl md:text-6xl italic text-ivory drop-shadow-lg">
-                  Manufacturing
+              <div className="absolute inset-0 bg-navy-deep/50 group-hover:bg-navy-deep/60 transition-colors" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                <span className="font-display text-3xl md:text-4xl text-ivory leading-tight max-w-xs drop-shadow-lg">
+                  Inside the Pure Platinum atelier
+                </span>
+                <span className="mt-6 text-champagne uppercase tracking-[0.4em] text-[0.6rem] pl-[0.4em] opacity-90">
+                  Discover
                 </span>
               </div>
             </Link>
@@ -154,7 +160,7 @@ function Home() {
       {/* CONTACT / REACH US strip — SRJ style */}
       <section className="py-16 md:py-24 bg-[oklch(0.15_0.065_265)] border-y border-platinum/10">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
-          <h2 className="font-display text-3xl md:text-5xl text-ivory tracking-wide">
+          <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.22em] pl-[0.22em]">
             REACH US
           </h2>
           <div className="hairline w-20 mt-6 mb-10 mx-auto" />
