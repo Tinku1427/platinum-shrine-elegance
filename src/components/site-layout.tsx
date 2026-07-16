@@ -1,233 +1,165 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
-import { Menu, X, Instagram, Facebook, Linkedin } from "lucide-react";
-import logoWhite from "@/assets/pure-platinum-logo-white.asset.json";
-import collectionRings from "@/assets/collection-rings.jpg";
-import collectionEarrings from "@/assets/collection-earrings.jpg";
-import collectionChains from "@/assets/collection-chains.jpg";
-import collectionBracelets from "@/assets/collection-bracelets.jpg";
-import productRing from "@/assets/product-ring-1.jpg";
-import productEarring from "@/assets/product-earring-1.jpg";
-import productChain from "@/assets/product-chain-1.jpg";
-import productBracelet from "@/assets/product-bracelet-1.jpg";
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
 
-const NAV = [
-  { label: "Home", to: "/" as const },
-  { label: "Our Story", to: "/about" as const },
-  { label: "Collection", to: "/collection" as const },
-  { label: "Manufacturing", to: "/manufacturing" as const },
-  { label: "Contact", to: "/contact" as const },
-];
+@custom-variant dark (&:is(.dark *));
 
-export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-  const { location } = useRouterState();
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+@theme inline {
+  --font-display: "Cormorant Garamond", "Playfair Display", serif;
+  --font-sans: "Jost", "Helvetica Neue", "Inter", sans-serif;
 
-  return (
-    <>
-      {/* Top logo bar — scrolls away with the page */}
-      <div className="relative z-40 bg-navy-deep border-b border-platinum/10">
-        <div className="relative flex items-center justify-center px-5 py-6 md:py-10">
-          {/* Mobile: hamburger pinned top-left */}
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden absolute left-4 top-4 text-ivory"
-            aria-label="Menu"
-          >
-            {open ? <X size={26} /> : <Menu size={26} />}
-          </button>
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
-          {/* Desktop: symbol mark + PURE PLATINUM wordmark with "Since 2010" tagline */}
-          <Link to="/" className="hidden md:flex items-center gap-6 lg:gap-8 group" aria-label="Pure Platinum home">
-            <img
-              src={logoWhite.url}
-              alt=""
-              className="h-28 lg:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="flex flex-col items-start leading-none">
-              <span className="font-display text-[3.25rem] lg:text-[4.5rem] text-ivory tracking-[0.14em] font-light">
-                PURE&nbsp;PLATINUM
-              </span>
-              <span className="mt-4 text-[0.72rem] lg:text-[0.82rem] uppercase tracking-[0.55em] text-platinum-dark self-end">
-                Since 2010
-              </span>
-            </div>
-          </Link>
-
-          {/* Mobile: single large logo */}
-          <Link to="/" className="md:hidden flex items-center justify-center group" aria-label="Pure Platinum home">
-            <img
-              src={logoWhite.url}
-              alt="Pure Platinum"
-              className="h-44 w-auto object-contain"
-            />
-          </Link>
-        </div>
-      </div>
-
-      {/* Sticky nav — desktop only; mobile uses hamburger in logo bar */}
-      <div className="sticky top-0 z-50 bg-navy-deep/95 backdrop-blur-sm border-b border-platinum/10 hidden md:block">
-        <nav className="flex items-center justify-center gap-0 py-5">
-          {NAV.map((l, idx) => (
-            <span key={l.to} className="flex items-center">
-              <Link
-                to={l.to}
-                className="px-5 lg:px-7 text-[0.75rem] uppercase tracking-[0.35em] text-platinum/70 hover:text-platinum-dark transition-colors"
-                activeProps={{ className: "text-platinum-dark" }}
-                activeOptions={{ exact: true }}
-              >
-                {l.label}
-              </Link>
-              {idx < NAV.length - 1 && <span className="text-platinum/25 select-none">|</span>}
-            </span>
-          ))}
-        </nav>
-      </div>
-
-      {/* Mobile drawer */}
-      {open && (
-        <div className="md:hidden fixed top-0 left-0 right-0 z-50 border-b border-platinum/10 bg-navy-deep">
-          <div className="flex items-center justify-between px-5 py-4 border-b border-platinum/10">
-            <button onClick={() => setOpen(false)} className="text-ivory" aria-label="Close menu">
-              <X size={26} />
-            </button>
-          </div>
-          <nav className="flex flex-col px-6 py-4">
-            {NAV.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="py-3.5 text-xs uppercase tracking-[0.35em] text-ivory border-b border-platinum/10 last:border-0 text-center"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
-    </>
-
-  );
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-platinum: var(--platinum);
+  --color-platinum-dark: var(--platinum-dark);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-accent-blue: var(--accent-blue);
+  --color-ivory: var(--ivory);
+  --color-champagne: var(--champagne);
 }
 
+:root {
+  --radius: 0.125rem;
 
-const IG_TILES = [
-  collectionRings, collectionEarrings, collectionChains, collectionBracelets,
-  productRing, productEarring, productChain, productBracelet,
-];
+  /* Pure Platinum brand palette (from brand guidelines) */
+  --navy-deep: oklch(0.18 0.07 265);      /* #07163A Primary background */
+  --navy-mid: oklch(0.22 0.09 265);        /* #0B1F4D Secondary navy */
+  --navy: oklch(0.28 0.10 266);
+  --accent-blue: oklch(0.38 0.13 268);     /* #233A84 Accent blue */
+  --platinum: oklch(0.92 0.005 260);       /* #E5E7EB Platinum silver */
+  --platinum-dark: oklch(0.78 0.008 260);  /* #B8BDC7 Dark platinum */
+  --ivory: oklch(0.97 0.003 90);
+  --champagne: oklch(0.84 0.035 80);       /* #D4C5A9 Muted champagne accent */
 
-export function SiteFooter() {
-  return (
-    <footer className="bg-navy-deep">
-      {/* Instagram strip */}
-      <div className="bg-navy-mid/60 py-14 border-t border-platinum/10">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer"
-            className="flex justify-center mb-8"
-            aria-label="Instagram"
-          >
-            <Instagram size={26} className="text-platinum hover:text-ivory transition-colors" />
-          </a>
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-2 md:gap-3">
-            {IG_TILES.map((src, i) => (
-              <a
-                key={i}
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                className="block aspect-square overflow-hidden group"
-              >
-                <img
-                  src={src}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+  /* App defaults: deep navy background, platinum foreground */
+  --background: oklch(0.18 0.07 265);
+  --foreground: oklch(0.97 0.003 90);
+  --card: oklch(0.22 0.09 265);
+  --card-foreground: oklch(0.97 0.003 90);
+  --popover: oklch(0.22 0.09 265);
+  --popover-foreground: oklch(0.97 0.003 90);
+  --primary: oklch(0.92 0.005 260);
+  --primary-foreground: oklch(0.18 0.07 265);
+  --secondary: oklch(0.22 0.09 265);
+  --secondary-foreground: oklch(0.97 0.003 90);
+  --muted: oklch(0.24 0.08 265);
+  --muted-foreground: oklch(0.78 0.008 260);
+  --accent: oklch(0.38 0.13 268);
+  --accent-foreground: oklch(0.97 0.003 90);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.97 0.003 90);
+  --border: oklch(0.35 0.05 265 / 0.35);
+  --input: oklch(0.35 0.05 265 / 0.35);
+  --ring: oklch(0.38 0.13 268);
 
-      {/* Bottom */}
-      <div className="py-14 border-t border-platinum/10">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-6">
-          <Link to="/" aria-label="Pure Platinum home">
-            <img
-              src={logoWhite.url}
-              alt="Pure Platinum"
-              className="h-24 md:h-28 w-auto object-contain"
-            />
-          </Link>
-
-          <div className="text-[0.65rem] uppercase tracking-[0.4em] text-platinum/70 text-center px-4">
-            © {new Date().getFullYear()} Pure Platinum · All rights reserved
-          </div>
-
-          <div className="flex gap-4 mt-2">
-            <a href="#" aria-label="Facebook" className="h-9 w-9 bg-navy-mid flex items-center justify-center text-platinum/80 hover:text-ivory transition-colors">
-              <Facebook size={14} />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="h-9 w-9 bg-navy-mid flex items-center justify-center text-platinum/80 hover:text-ivory transition-colors">
-              <Linkedin size={14} />
-            </a>
-            <a href="#" aria-label="Instagram" className="h-9 w-9 bg-navy-mid flex items-center justify-center text-platinum/80 hover:text-ivory transition-colors">
-              <Instagram size={14} />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+  --gradient-platinum: linear-gradient(135deg, oklch(0.95 0.004 260) 0%, oklch(0.78 0.008 260) 50%, oklch(0.95 0.004 260) 100%);
+  --gradient-navy: linear-gradient(180deg, oklch(0.18 0.07 265) 0%, oklch(0.13 0.06 265) 100%);
+  --gradient-navy-radial: radial-gradient(ellipse at top, oklch(0.28 0.10 266) 0%, oklch(0.18 0.07 265) 45%, oklch(0.13 0.06 265) 100%);
+  --shadow-luxe: 0 40px 100px -20px oklch(0.08 0.05 265 / 0.6);
+  --shadow-soft: 0 10px 40px -12px oklch(0.08 0.05 265 / 0.35);
+  --shadow-inset-platinum: inset 0 0 0 1px oklch(0.78 0.008 260 / 0.25);
 }
 
-export function SiteLayout({ children }: { children: ReactNode; transparentHeader?: boolean }) {
-  return (
-    <div className="min-h-screen bg-navy-deep text-ivory flex flex-col">
-      <SiteHeader />
-      <main className="flex-1">{children}</main>
-      <SiteFooter />
-    </div>
-  );
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html { scroll-behavior: smooth; background: var(--color-background); }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  ::selection { background: var(--color-champagne); color: var(--color-navy-deep); }
 }
 
-export function PageHero({
-  eyebrow,
-  title,
-  subtitle,
-  image,
-}: {
-  eyebrow?: string;
-  title: ReactNode;
-  subtitle?: string;
-  image: string;
-}) {
-  return (
-    <section className="relative h-[55vh] min-h-[380px] md:h-[70vh] md:min-h-[520px] w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={image} alt="" className="h-full w-full object-cover animate-ken-burns" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-navy-deep/40 to-navy-deep" />
-      </div>
-      <div className="relative z-10 flex h-full items-end pb-14 md:pb-24">
-        <div className="mx-auto max-w-7xl w-full px-6 lg:px-10">
-          <div className="max-w-3xl animate-fade-up">
-            {eyebrow && <div className="eyebrow text-platinum mb-4 md:mb-6">{eyebrow}</div>}
-            <h1 className="font-display text-4xl md:text-7xl leading-[1.05] text-ivory font-light">
-              {title}
-            </h1>
-            {subtitle && (
-              <>
-                <div className="hairline w-20 md:w-24 my-6 md:my-8" />
-                <p className="text-sm md:text-lg text-platinum/80 max-w-xl font-light">{subtitle}</p>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+@utility text-platinum-gradient {
+  background: var(--gradient-platinum);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--color-platinum-dark);
+}
+
+@utility hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-platinum), transparent);
+}
+
+@utility hairline-solid {
+  height: 1px;
+  background: var(--color-platinum-dark);
+  opacity: 0.35;
+}
+
+@utility bg-navy-radial {
+  background: var(--gradient-navy-radial);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes ken-burns {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.14); }
+}
+@keyframes platinum-sheen {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@utility animate-fade-up { animation: fade-up 1.1s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@utility animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+@utility animate-ken-burns { animation: ken-burns 14s ease-in-out infinite alternate; }
+@utility platinum-sheen {
+  background: linear-gradient(90deg, transparent 0%, oklch(0.92 0.005 260 / 0.4) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: platinum-sheen 4s linear infinite;
 }
