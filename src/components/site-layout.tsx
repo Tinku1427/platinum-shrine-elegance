@@ -52,7 +52,7 @@ export function SiteHeader() {
   return (
     <>
       {/* Logo bar — solid navy, one centered logo, identical on all breakpoints */}
-      <div className="relative z-40 bg-[#101B3C] border-b border-white/10">
+      <div className="relative z-40 bg-[#16213E] border-b border-white/10">
         <div className="relative flex items-center justify-center px-14 py-7 md:py-9">
           {/* Mobile: the single menu trigger, vertically centered with the logo */}
           <button
@@ -68,14 +68,14 @@ export function SiteHeader() {
       </div>
 
       {/* Sticky nav — solid navy; desktop only; mobile navigation lives in the drawer */}
-      <div className="sticky top-0 z-50 hidden md:block bg-[#101B3C]/95 backdrop-blur-sm border-b border-white/10">
+      <div className="sticky top-0 z-50 hidden md:block bg-[#16213E]/95 backdrop-blur-sm border-b border-white/10">
         <nav className="flex items-center justify-center py-5">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
               <Link
                 to={l.to}
-                className="px-5 lg:px-7 text-[0.72rem] uppercase tracking-[0.34em] text-white/70 hover:text-white transition-colors"
-                activeProps={{ className: "text-white" }}
+                className="px-5 lg:px-7 text-[0.72rem] uppercase tracking-[0.34em] text-white/70 hover:text-champagne transition-colors"
+                activeProps={{ className: "text-champagne" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -92,7 +92,7 @@ export function SiteHeader() {
 
       {/* Mobile drawer — solid navy; single source of navigation on mobile */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-[60] bg-[#101B3C]">
+        <div className="md:hidden fixed inset-0 z-[60] bg-[#16213E]">
           <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
             <img src={logoMark} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
@@ -108,8 +108,8 @@ export function SiteHeader() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-4 text-[0.8rem] uppercase tracking-[0.38em] text-white/85 hover:text-white border-b border-white/10 last:border-0 text-center transition-colors"
-                activeProps={{ className: "text-white" }}
+                className="py-4 text-[0.8rem] uppercase tracking-[0.38em] text-white/85 hover:text-champagne border-b border-white/10 last:border-0 text-center transition-colors"
+                activeProps={{ className: "text-champagne" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -135,7 +135,7 @@ const IG_TILES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#101B3C]">
+    <footer className="bg-[#16213E]">
       {/* Instagram gallery — each tile links to the profile */}
       <div className="bg-[#16213E] py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">

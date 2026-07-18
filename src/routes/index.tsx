@@ -28,7 +28,7 @@ function Home() {
           {/* Left — statement */}
           <div className="flex items-center order-2 lg:order-1 px-6 sm:px-10 lg:px-16 py-16 lg:py-0">
             <div className="animate-fade-up max-w-xl">
-              <div className="eyebrow text-platinum-dark mb-6 md:mb-8">Platinum Manufacturers</div>
+              <div className="eyebrow text-champagne mb-6 md:mb-8">Platinum Manufacturers</div>
               <h1 className="font-display font-light text-ivory leading-[0.98] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-[0.02em]">
                 CRAFTING<br /><span className="text-platinum">PLATINUM</span>
               </h1>
@@ -56,17 +56,17 @@ function Home() {
         </div>
       </section>
 
-      {/* WHERE ENGINEERING MEETS ELEGANCE — light section (alternating rhythm) */}
-      <section className="section-light py-24 md:py-36">
+      {/* WHERE ENGINEERING MEETS ELEGANCE — navy band */}
+      <section className="bg-navy-mid py-24 md:py-36 border-y border-champagne/15">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-          <div className="text-[0.7rem] uppercase tracking-[0.5em] text-[#7C8792] pl-[0.5em] mb-6">
+          <div className="text-[0.7rem] uppercase tracking-[0.5em] text-champagne pl-[0.5em] mb-6">
             The House
           </div>
-          <h2 className="font-display font-light text-3xl md:text-5xl text-[#101B3C] tracking-[0.18em] pl-[0.18em] leading-tight">
+          <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.18em] pl-[0.18em] leading-tight">
             WHERE ENGINEERING<br />MEETS ELEGANCE
           </h2>
-          <div className="mx-auto mt-7 h-px w-16 bg-[#101B3C]/25" />
-          <div className="mt-10 space-y-5 text-[#545A63] text-[15px] md:text-[17px] leading-[1.9] font-light">
+          <div className="mx-auto mt-7 h-px w-16 bg-champagne/60" />
+          <div className="mt-10 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
             <p>
               Pure Platinum is a manufacturing house devoted to the world's rarest precious metal.
               Rooted in the belief that a metal thirty times scarcer than gold deserves an equally
@@ -82,7 +82,7 @@ function Home() {
           <div className="pt-11">
             <Link
               to="/about"
-              className="inline-flex items-center gap-3 border border-[#101B3C]/40 rounded-[2px] px-9 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] pl-[0.4em] text-[#101B3C] hover:bg-[#101B3C] hover:text-white transition-colors duration-700"
+              className="btn-gold hover:btn-gold-hover"
             >
               Read More <ArrowRight size={13} />
             </Link>
