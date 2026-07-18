@@ -46,20 +46,20 @@
 :root {
   --radius: 0.125rem;
 
-  /* Pure Platinum — Warm ivory & charcoal (Bang & Olufsen direction).
-     80% warm neutral surfaces, 15% charcoal type/nav, 5% platinum-silver accent.
+  /* Pure Platinum — Warm greige & mauve-taupe (Vienna atelier reference).
+     Warm cream/greige surfaces, warm charcoal type, mauve-taupe accent labels.
      Legacy navy/champagne token names are kept and remapped, so every existing
      class (bg-navy-deep, text-ivory, text-champagne) re-themes at once.
      NOTE: header is light, footer/drawer are dark — set directly in site-layout.tsx. */
-  --navy-deep: #F3EFE8;        /* Warm ivory — primary background / hero */
-  --navy-mid: #ECE6DD;         /* Sand — secondary / alternate sections */
-  --navy: #FAF8F4;             /* Soft ivory — tertiary / showcase */
-  --accent-blue: #C8CCD1;      /* Platinum silver — decorative accent */
-  --platinum: #5F5A55;         /* Warm grey — body / secondary text */
-  --platinum-dark: #8C857C;    /* Muted taupe — captions / small labels */
-  --ivory: #232323;            /* Charcoal — primary text & dark buttons */
-  --champagne: #8C857C;        /* remapped → muted taupe accent text/hover */
-  --champagne-hover: #5F5A55;  /* Darker taupe hover */
+  --navy-deep: #F4F0E7;        /* Warm cream — primary background / hero */
+  --navy-mid: #EBE4DA;         /* Warm greige — secondary / alternate sections */
+  --navy: #FAF6EF;             /* Soft cream — tertiary / showcase */
+  --accent-blue: #A08D84;      /* Mauve-taupe — accent */
+  --platinum: #6E675E;         /* Warm grey — body / secondary text */
+  --platinum-dark: #9A8C82;    /* Muted taupe — captions / small labels */
+  --ivory: #2A2521;            /* Warm charcoal — primary text */
+  --champagne: #A08D84;        /* remapped → mauve-taupe accent labels/eyebrows */
+  --champagne-hover: #8A7970;  /* Darker mauve-taupe hover */
 
   /* Surfaces referenced directly in components */
   --surface-white: #FFFFFF;    /* Cards / feature boxes */
@@ -68,35 +68,35 @@
 
   /* Light-section tokens (used by the section-light utility) */
   --light-bg: #FFFFFF;
-  --light-fg: #232323;
+  --light-fg: #2A2521;
 
-  /* App defaults: warm ivory background, charcoal foreground */
-  --background: #F3EFE8;
-  --foreground: #232323;
+  /* App defaults: warm cream background, warm-charcoal foreground */
+  --background: #F4F0E7;
+  --foreground: #2A2521;
   --card: #FFFFFF;
-  --card-foreground: #232323;
+  --card-foreground: #2A2521;
   --popover: #FFFFFF;
-  --popover-foreground: #232323;
-  --primary: #232323;
+  --popover-foreground: #2A2521;
+  --primary: #1C1815;
   --primary-foreground: #FFFFFF;
-  --secondary: #ECE6DD;
-  --secondary-foreground: #232323;
-  --muted: #ECE6DD;
-  --muted-foreground: #8C857C;
-  --accent: #C8CCD1;
-  --accent-foreground: #232323;
+  --secondary: #EBE4DA;
+  --secondary-foreground: #2A2521;
+  --muted: #EBE4DA;
+  --muted-foreground: #9A8C82;
+  --accent: #A08D84;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: #FFFFFF;
-  --border: #D8D2CA;
-  --input: #D8D2CA;
-  --ring: #232323;
+  --border: #D8D0C6;
+  --input: #D8D0C6;
+  --ring: #2A2521;
 
-  --gradient-platinum: linear-gradient(135deg, #E6E8EA 0%, #C8CCD1 50%, #E6E8EA 100%);
-  --gradient-navy: linear-gradient(180deg, #F3EFE8 0%, #ECE6DD 100%);
-  --gradient-navy-radial: radial-gradient(ellipse at top, #FAF8F4 0%, #F3EFE8 45%, #ECE6DD 100%);
-  --shadow-luxe: 0 20px 60px rgba(0, 0, 0, 0.08);
-  --shadow-soft: 0 15px 40px rgba(0, 0, 0, 0.07);
-  --shadow-inset-platinum: inset 0 0 0 1px rgba(200, 204, 209, 0.5);
+  --gradient-platinum: linear-gradient(135deg, #C6B7AE 0%, #A08D84 50%, #C6B7AE 100%);
+  --gradient-navy: linear-gradient(180deg, #F4F0E7 0%, #EBE4DA 100%);
+  --gradient-navy-radial: radial-gradient(ellipse at top, #FAF6EF 0%, #F4F0E7 45%, #EBE4DA 100%);
+  --shadow-luxe: 0 20px 60px rgba(30, 24, 21, 0.08);
+  --shadow-soft: 0 15px 40px rgba(30, 24, 21, 0.07);
+  --shadow-inset-platinum: inset 0 0 0 1px rgba(160, 141, 132, 0.35);
 }
 
 @layer base {
@@ -185,9 +185,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: #232323;
+  background: #1C1815;
   color: #FFFFFF;
-  border: 1px solid #232323;
+  border: 1px solid #1C1815;
   border-radius: 2px;
   padding: 0.95rem 2.5rem;
   padding-left: 2.85rem;
@@ -197,8 +197,8 @@
   transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 @utility btn-gold-hover {
-  background: #111111;
-  border-color: #111111;
+  background: #0F0C09;
+  border-color: #0F0C09;
 }
 @utility btn-outline {
   display: inline-flex;

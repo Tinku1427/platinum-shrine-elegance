@@ -59,7 +59,7 @@ export function SiteHeader() {
   return (
     <>
       {/* Logo bar — light ivory, one centered logo, identical on all breakpoints */}
-      <div className="relative z-40 bg-[#F3EFE8] border-b border-[#D8D2CA]">
+      <div className="relative z-40 bg-[#F4F0E7] border-b border-[#D8D0C6]">
         <div className="relative flex items-center justify-center px-14 py-7 md:py-9">
           {/* Mobile: the single menu trigger, vertically centered with the logo */}
           <button
@@ -75,7 +75,7 @@ export function SiteHeader() {
       </div>
 
       {/* Sticky nav — frosted ivory; desktop only; mobile navigation lives in the drawer */}
-      <div className="sticky top-0 z-50 hidden md:block bg-[#F3EFE8]/85 backdrop-blur-md border-b border-[#D8D2CA]">
+      <div className="sticky top-0 z-50 hidden md:block bg-[#F4F0E7]/85 backdrop-blur-md border-b border-[#D8D0C6]">
         <nav className="flex items-center justify-center py-5">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
