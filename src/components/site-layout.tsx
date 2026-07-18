@@ -20,16 +20,6 @@ const NAV = [
   { label: "Contact", to: "/contact" as const },
 ];
 
-// Split around the centred logo (Home is reached via the logo)
-const NAV_LEFT = [
-  { label: "Our Story", to: "/about" as const },
-  { label: "Collection", to: "/collection" as const },
-];
-const NAV_RIGHT = [
-  { label: "Manufacturing", to: "/manufacturing" as const },
-  { label: "Contact", to: "/contact" as const },
-];
-
 // Instagram profile — update handle to the brand's live account.
 const IG_URL = "https://www.instagram.com/pureplatinum";
 
@@ -59,84 +49,57 @@ function BrandLogo({
   );
 }
 
-function Wordmark({ dark = true, size = "text-[1.15rem]" }: { dark?: boolean; size?: string }) {
-  return (
-    <Link to="/" aria-label="Pure Platinum — home" className="group inline-flex items-center gap-3">
-      <img src={dark ? logoDark : logoWhite} alt="" className="h-6 w-6 object-contain" aria-hidden="true" />
-      <span
-        className={`font-display ${size} tracking-[0.32em] pl-[0.32em] ${dark ? "text-[#2A2521]" : "text-white"}`}
-      >
-        PURE&nbsp;PLATINUM
-      </span>
-    </Link>
-  );
-}
-
-export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
+export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { location } = useRouterState();
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
-  useEffect(() => {
-    if (!transparent) return;
-    const onScroll = () => setScrolled(window.scrollY > 48);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [transparent]);
-
-  const solid = !transparent || scrolled;
-  const navLink =
-    "text-[14px] font-medium uppercase tracking-[0.2em] text-[#2A2521]/80 hover:text-[#A08D84] transition-colors duration-300";
 
   return (
     <>
-      <header
-        className={`${transparent ? "absolute" : "sticky"} top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-          solid ? "bg-[#F4F0E7]/90 backdrop-blur-md border-b border-[#D8D0C6]" : "bg-transparent"
-        }`}
-      >
-        {/* Desktop: centred logo with the nav split around it */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center px-10 lg:px-16 py-6">
-          <nav className="flex items-center gap-8 lg:gap-12">
-            {NAV_LEFT.map((l) => (
-              <Link key={l.to} to={l.to} className={navLink} activeProps={{ className: "text-[#2A2521]" }}>
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="justify-self-center">
-            <Wordmark dark />
-          </div>
-          <nav className="flex items-center gap-8 lg:gap-12 justify-self-end">
-            {NAV_RIGHT.map((l) => (
-              <Link key={l.to} to={l.to} className={navLink} activeProps={{ className: "text-[#2A2521]" }}>
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        {/* Mobile: hamburger left, centred wordmark */}
-        <div className="md:hidden relative flex items-center justify-center px-5 py-5">
+      {/* Logo bar — centred mark only (no wordmark text) */}
+      <div className="relative z-40 bg-[#F4F0E7] border-b border-[#D8D0C6]">
+        <div className="relative flex items-center justify-center px-14 py-6 md:py-7">
           <button
             onClick={() => setOpen(true)}
-            className="absolute left-5 top-1/2 -translate-y-1/2 text-[#2A2521]/80 hover:text-[#2A2521] transition-colors"
+            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-[#2A2521]/80 hover:text-[#2A2521] transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.25} />
           </button>
-          <Wordmark dark size="text-[0.95rem]" />
+          <BrandLogo variant="dark" className="h-12 w-12 md:h-14 md:w-14" />
         </div>
-      </header>
+      </div>
 
-      {/* Mobile drawer — charcoal; single source of navigation on mobile */}
+      {/* Sticky nav — one centred row, all items */}
+      <div className="sticky top-0 z-50 hidden md:block bg-[#F4F0E7]/90 backdrop-blur-md border-b border-[#D8D0C6]">
+        <nav className="flex items-center justify-center py-4">
+          {NAV.map((l, idx) => (
+            <span key={l.to} className="flex items-center">
+              <Link
+                to={l.to}
+                className="px-5 lg:px-7 text-[13px] font-medium uppercase tracking-[0.2em] text-[#2A2521]/75 hover:text-[#A08D84] transition-colors"
+                activeProps={{ className: "text-[#2A2521]" }}
+                activeOptions={{ exact: true }}
+              >
+                {l.label}
+              </Link>
+              {idx < NAV.length - 1 && (
+                <span className="text-[#2A2521]/25 select-none" aria-hidden="true">
+                  ·
+                </span>
+              )}
+            </span>
+          ))}
+        </nav>
+      </div>
+
+      {/* Mobile drawer — charcoal; mark only */}
       {open && (
         <div className="md:hidden fixed inset-0 z-[60] bg-[#1B1B1B]">
           <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
-            <Wordmark dark={false} size="text-[0.95rem]" />
+            <img src={logoWhite} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
               className="text-white/90 hover:text-white transition-colors"
@@ -253,16 +216,10 @@ export function SiteFooter() {
   );
 }
 
-export function SiteLayout({
-  children,
-  transparentHeader = false,
-}: {
-  children: ReactNode;
-  transparentHeader?: boolean;
-}) {
+export function SiteLayout({ children }: { children: ReactNode; transparentHeader?: boolean }) {
   return (
     <div className="min-h-screen bg-navy-deep text-ivory flex flex-col">
-      <SiteHeader transparent={transparentHeader} />
+      <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>

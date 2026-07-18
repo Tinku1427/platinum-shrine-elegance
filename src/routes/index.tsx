@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <SiteLayout transparentHeader>
+    <SiteLayout>
       {/* HERO — full-bleed image with editorial overlay */}
       <section className="relative w-full h-screen min-h-[640px] overflow-hidden">
         <img
