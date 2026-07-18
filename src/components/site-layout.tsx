@@ -1,7 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Instagram, Facebook, Linkedin } from "lucide-react";
-import logoMark from "@/assets/pure-platinum-mark-white.png";
+import logoDark from "@/assets/pure-platinum-mark-dark.png";
+import logoWhite from "@/assets/pure-platinum-mark-white.png";
 import collectionRings from "@/assets/collection-rings.jpg";
 import collectionEarrings from "@/assets/collection-earrings.jpg";
 import collectionChains from "@/assets/collection-chains.jpg";
@@ -26,7 +27,13 @@ const IG_URL = "https://www.instagram.com/pureplatinum";
  * Brand logo — the Pure Platinum monogram mark only (no wordmark, no tagline).
  * One consistent scale across desktop and mobile.
  */
-function BrandLogo({ className = "h-14 w-14 md:h-16 md:w-16" }: { className?: string }) {
+function BrandLogo({
+  className = "h-14 w-14 md:h-16 md:w-16",
+  variant = "dark",
+}: {
+  className?: string;
+  variant?: "dark" | "white";
+}) {
   return (
     <Link
       to="/"
@@ -34,7 +41,7 @@ function BrandLogo({ className = "h-14 w-14 md:h-16 md:w-16" }: { className?: st
       className="group inline-flex items-center justify-center"
     >
       <img
-        src={logoMark}
+        src={variant === "white" ? logoWhite : logoDark}
         alt="Pure Platinum"
         className={`${className} w-auto object-contain transition-transform duration-500 group-hover:scale-105`}
       />
@@ -51,37 +58,37 @@ export function SiteHeader() {
 
   return (
     <>
-      {/* Logo bar — solid navy, one centered logo, identical on all breakpoints */}
-      <div className="relative z-40 bg-[#16213E] border-b border-white/10">
+      {/* Logo bar — light ivory, one centered logo, identical on all breakpoints */}
+      <div className="relative z-40 bg-[#F3EFE8] border-b border-[#D8D2CA]">
         <div className="relative flex items-center justify-center px-14 py-7 md:py-9">
           {/* Mobile: the single menu trigger, vertically centered with the logo */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-white/90 hover:text-white transition-colors"
+            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-[#232323]/80 hover:text-[#232323] transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.25} />
           </button>
 
-          <BrandLogo />
+          <BrandLogo variant="dark" />
         </div>
       </div>
 
-      {/* Sticky nav — solid navy; desktop only; mobile navigation lives in the drawer */}
-      <div className="sticky top-0 z-50 hidden md:block bg-[#16213E]/95 backdrop-blur-sm border-b border-white/10">
+      {/* Sticky nav — frosted ivory; desktop only; mobile navigation lives in the drawer */}
+      <div className="sticky top-0 z-50 hidden md:block bg-[#F3EFE8]/85 backdrop-blur-md border-b border-[#D8D2CA]">
         <nav className="flex items-center justify-center py-5">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
               <Link
                 to={l.to}
-                className="px-5 lg:px-7 text-[0.72rem] uppercase tracking-[0.34em] text-white/70 hover:text-champagne transition-colors"
-                activeProps={{ className: "text-champagne" }}
+                className="px-5 lg:px-7 text-[0.72rem] uppercase tracking-[0.34em] text-[#232323]/75 hover:text-[#9FA5AA] transition-colors"
+                activeProps={{ className: "text-[#111111]" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
               </Link>
               {idx < NAV.length - 1 && (
-                <span className="text-white/25 select-none" aria-hidden="true">
+                <span className="text-[#232323]/25 select-none" aria-hidden="true">
                   ·
                 </span>
               )}
@@ -90,11 +97,11 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      {/* Mobile drawer — solid navy; single source of navigation on mobile */}
+      {/* Mobile drawer — charcoal; single source of navigation on mobile */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-[60] bg-[#16213E]">
+        <div className="md:hidden fixed inset-0 z-[60] bg-[#1B1B1B]">
           <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
-            <img src={logoMark} alt="Pure Platinum" className="h-9 w-auto object-contain" />
+            <img src={logoWhite} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
               className="text-white/90 hover:text-white transition-colors"
@@ -108,8 +115,8 @@ export function SiteHeader() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-4 text-[0.8rem] uppercase tracking-[0.38em] text-white/85 hover:text-champagne border-b border-white/10 last:border-0 text-center transition-colors"
-                activeProps={{ className: "text-champagne" }}
+                className="py-4 text-[0.8rem] uppercase tracking-[0.38em] text-white/85 hover:text-[#C8CCD1] border-b border-white/10 last:border-0 text-center transition-colors"
+                activeProps={{ className: "text-[#C8CCD1]" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -135,9 +142,9 @@ const IG_TILES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#16213E]">
+    <footer className="bg-[#111111]">
       {/* Instagram gallery — each tile links to the profile */}
-      <div className="bg-[#16213E] py-14 border-t border-white/10">
+      <div className="bg-[#1B1B1B] py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <a
             href={IG_URL}
@@ -174,7 +181,7 @@ export function SiteFooter() {
       {/* Bottom */}
       <div className="py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
-          <BrandLogo className="h-16 w-16 md:h-20 md:w-20" />
+          <BrandLogo variant="white" className="h-16 w-16 md:h-20 md:w-20" />
 
           <div className="text-[0.62rem] uppercase tracking-[0.4em] text-white/55 text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
