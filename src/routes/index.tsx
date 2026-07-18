@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site-layout";
-import heroRing from "@/assets/product-ring-1.jpg";
+import heroImage from "@/assets/hero-2.jpg";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 import handsDetail from "@/assets/hands-detail.jpg";
 
@@ -21,38 +21,55 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <SiteLayout>
-      {/* HERO — split: statement left, a single platinum ring right */}
-      <section className="relative w-full overflow-hidden bg-navy-deep">
-        <div className="grid lg:grid-cols-2 min-h-[78vh]">
-          {/* Left — statement */}
-          <div className="flex items-center order-2 lg:order-1 px-6 sm:px-10 lg:px-16 py-16 lg:py-0">
-            <div className="animate-fade-up max-w-xl">
-              <div className="eyebrow text-champagne mb-6 md:mb-8">Platinum Manufacturers</div>
-              <h1 className="font-display font-light text-ivory leading-[0.98] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-[0.02em]">
-                CRAFTING<br /><span className="text-platinum">PLATINUM</span>
-              </h1>
-              <p className="mt-8 md:mt-10 text-platinum/80 font-light text-[15px] md:text-base leading-relaxed max-w-md">
-                Manufacturing exceptional platinum jewellery for premium jewellery houses worldwide.
-              </p>
-              <div className="mt-9 md:mt-11">
-                <Link to="/manufacturing" className="btn-gold hover:btn-gold-hover">
-                  Explore Craftsmanship <ArrowRight size={13} />
-                </Link>
-              </div>
+    <SiteLayout transparentHeader>
+      {/* HERO — full-bleed image with editorial overlay */}
+      <section className="relative w-full h-screen min-h-[640px] overflow-hidden">
+        <img
+          src={heroImage}
+          alt="Platinum jewellery worn on the hand"
+          className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+        />
+        {/* Keep the image visible — light overlays only for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+        <div className="relative z-10 h-full mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 flex items-center">
+          <div className="animate-fade-up max-w-2xl pt-24">
+            <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#F4EFE6]/80 pl-[0.2em] mb-8">
+              European Platinum Manufacture — Est. 1987
+            </div>
+            <h1
+              className="font-display text-[#F7F2EA] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-8xl"
+              style={{ textShadow: "0 2px 40px rgba(0,0,0,0.35)" }}
+            >
+              Form Follows
+              <br />
+              <span className="italic">Precision</span>
+            </h1>
+            <p className="mt-8 text-[#F4EFE6]/90 text-[18px] leading-[1.7] max-w-md">
+              Supplying Europe's finest jewellery houses with 950 platinum. Crafted with the
+              precision of the hand.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
+              <Link
+                to="/collection"
+                className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#F7F2EA] border-b border-[#F7F2EA]/70 pb-1.5 hover:border-[#F7F2EA] transition-colors"
+              >
+                View Collection
+                <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/manufacturing"
+                className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#F4EFE6]/75 hover:text-[#EAD9CE] transition-colors"
+              >
+                Our Atelier
+              </Link>
             </div>
           </div>
+        </div>
 
-          {/* Right — one platinum ring on charcoal */}
-          <div className="relative order-1 lg:order-2 min-h-[42vh] lg:min-h-full overflow-hidden bg-navy-mid">
-            <img
-              src={heroRing}
-              alt="A single platinum band"
-              className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
-            />
-            <div className="absolute inset-0 bg-navy-deep/30" />
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-navy-deep to-transparent hidden lg:block" />
-          </div>
+        <div className="hidden md:block absolute right-8 bottom-16 text-[11px] tracking-[0.35em] uppercase text-[#F4EFE6]/60 [writing-mode:vertical-rl]">
+          Scroll
         </div>
       </section>
 
