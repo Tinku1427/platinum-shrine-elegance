@@ -46,57 +46,57 @@
 :root {
   --radius: 0.125rem;
 
-  /* Pure Platinum — Warm greige & mauve-taupe (Vienna atelier reference).
-     Warm cream/greige surfaces, warm charcoal type, mauve-taupe accent labels.
+  /* Pure Platinum — Forevermark-inspired deep navy & gold reference.
+     Deep navy surfaces, warm ivory type, antique-gold accent labels.
      Legacy navy/champagne token names are kept and remapped, so every existing
      class (bg-navy-deep, text-ivory, text-champagne) re-themes at once.
-     NOTE: header is light, footer/drawer are dark — set directly in site-layout.tsx. */
-  --navy-deep: #F4F0E7;        /* Warm cream — primary background / hero */
-  --navy-mid: #EBE4DA;         /* Warm greige — secondary / alternate sections */
-  --navy: #FAF6EF;             /* Soft cream — tertiary / showcase */
-  --accent-blue: #A08D84;      /* Mauve-taupe — accent */
-  --platinum: #6E675E;         /* Warm grey — body / secondary text */
-  --platinum-dark: #9A8C82;    /* Muted taupe — captions / small labels */
-  --ivory: #2A2521;            /* Warm charcoal — primary text */
-  --champagne: #A08D84;        /* remapped → mauve-taupe accent labels/eyebrows */
-  --champagne-hover: #8A7970;  /* Darker mauve-taupe hover */
+     NOTE: header/hero-wash is light, footer/drawer are dark navy — set directly in site-layout.tsx. */
+  --navy-deep: #0B1730;        /* Deep navy — primary background / dark bands */
+  --navy-mid: #11213F;         /* Secondary navy — alternate sections */
+  --navy: #17284A;             /* Tertiary navy — showcase / overlays */
+  --accent-blue: #C9A667;      /* Antique gold — accent */
+  --platinum: #C7CEDC;         /* Cool platinum-grey — body / secondary text on navy */
+  --platinum-dark: #8791A6;    /* Muted blue-grey — captions / small labels */
+  --ivory: #F7F4EC;            /* Warm ivory — headings / primary text on navy */
+  --champagne: #C9A667;        /* remapped → antique-gold accent labels/eyebrows */
+  --champagne-hover: #B3904F;  /* Darker gold hover */
 
   /* Surfaces referenced directly in components */
   --surface-white: #FFFFFF;    /* Cards / feature boxes */
-  --footer-dark: #111111;      /* Footer */
-  --menu-dark: #1B1B1B;        /* Mobile drawer */
+  --footer-dark: #0A1122;      /* Footer */
+  --menu-dark: #0A1122;        /* Mobile drawer */
 
   /* Light-section tokens (used by the section-light utility) */
   --light-bg: #FFFFFF;
-  --light-fg: #2A2521;
+  --light-fg: #141B33;
 
-  /* App defaults: warm cream background, warm-charcoal foreground */
-  --background: #F4F0E7;
-  --foreground: #2A2521;
+  /* App defaults: deep navy background, warm ivory foreground */
+  --background: #FFFFFF;
+  --foreground: #141B33;
   --card: #FFFFFF;
-  --card-foreground: #2A2521;
+  --card-foreground: #141B33;
   --popover: #FFFFFF;
-  --popover-foreground: #2A2521;
-  --primary: #1C1815;
+  --popover-foreground: #141B33;
+  --primary: #0B1730;
   --primary-foreground: #FFFFFF;
-  --secondary: #EBE4DA;
-  --secondary-foreground: #2A2521;
-  --muted: #EBE4DA;
-  --muted-foreground: #9A8C82;
-  --accent: #A08D84;
-  --accent-foreground: #FFFFFF;
+  --secondary: #F2EFE7;
+  --secondary-foreground: #141B33;
+  --muted: #F2EFE7;
+  --muted-foreground: #6B7280;
+  --accent: #C9A667;
+  --accent-foreground: #141B33;
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: #FFFFFF;
-  --border: #D8D0C6;
-  --input: #D8D0C6;
-  --ring: #2A2521;
+  --border: #D9D4C8;
+  --input: #D9D4C8;
+  --ring: #0B1730;
 
-  --gradient-platinum: linear-gradient(135deg, #C6B7AE 0%, #A08D84 50%, #C6B7AE 100%);
-  --gradient-navy: linear-gradient(180deg, #F4F0E7 0%, #EBE4DA 100%);
-  --gradient-navy-radial: radial-gradient(ellipse at top, #FAF6EF 0%, #F4F0E7 45%, #EBE4DA 100%);
-  --shadow-luxe: 0 20px 60px rgba(30, 24, 21, 0.08);
-  --shadow-soft: 0 15px 40px rgba(30, 24, 21, 0.07);
-  --shadow-inset-platinum: inset 0 0 0 1px rgba(160, 141, 132, 0.35);
+  --gradient-platinum: linear-gradient(135deg, #E7D6A9 0%, #C9A667 50%, #E7D6A9 100%);
+  --gradient-navy: linear-gradient(180deg, #0B1730 0%, #11213F 100%);
+  --gradient-navy-radial: radial-gradient(ellipse at top, #17284A 0%, #11213F 45%, #0B1730 100%);
+  --shadow-luxe: 0 20px 60px rgba(6, 12, 26, 0.18);
+  --shadow-soft: 0 15px 40px rgba(6, 12, 26, 0.14);
+  --shadow-inset-platinum: inset 0 0 0 1px rgba(201, 166, 103, 0.35);
 }
 
 @layer base {
@@ -189,9 +189,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: #1C1815;
+  background: #0B1730;
   color: #FFFFFF;
-  border: 1px solid #1C1815;
+  border: 1px solid #0B1730;
   border-radius: 2px;
   padding: 1.05rem 2.6rem;
   font-family: var(--font-sans);
@@ -202,8 +202,8 @@
   transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 @utility btn-gold-hover {
-  background: #0F0C09;
-  border-color: #0F0C09;
+  background: #050B18;
+  border-color: #050B18;
 }
 @utility btn-outline {
   display: inline-flex;
