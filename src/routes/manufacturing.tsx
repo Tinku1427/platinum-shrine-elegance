@@ -3,7 +3,6 @@ import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler, Play } fr
 import { useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/craftsmanship.jpg";
-import boutique from "@/assets/boutique.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
 import atelierFilm from "@/assets/atelier-film.mp4.asset.json";
 import productRing from "@/assets/product-ring-1.jpg";
@@ -174,12 +173,8 @@ function Manufacturing() {
       </section>
 
       {/* Trade CTA banner */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={boutique} alt="" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-navy-deep/85" />
-        </div>
-        <div className="relative py-24 md:py-32">
+      <section className="relative bg-navy-mid">
+        <div className="py-24 md:py-32">
           <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
             <div className="eyebrow mb-6">Manufacture with us</div>
             <h2 className="font-display text-3xl md:text-5xl text-ivory leading-tight">
