@@ -144,7 +144,7 @@ export function SiteFooter() {
       {/* Instagram gallery — each tile links to the profile */}
       <div className="bg-[#0A1122] py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          
+          <a
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
@@ -156,7 +156,7 @@ export function SiteFooter() {
           </a>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-2 md:gap-3">
             {IG_TILES.map((src, i) => (
-              
+              <a
                 key={i}
                 href={IG_URL}
                 target="_blank"
@@ -186,7 +186,7 @@ export function SiteFooter() {
           </div>
 
           <div className="flex gap-4 mt-1">
-            
+            <a
               href={IG_URL}
               target="_blank"
               rel="noreferrer"
@@ -195,14 +195,14 @@ export function SiteFooter() {
             >
               <Instagram size={14} strokeWidth={1.5} />
             </a>
-            
+            <a
               href="#"
               aria-label="Facebook"
               className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Facebook size={14} strokeWidth={1.5} />
             </a>
-            
+            <a
               href="#"
               aria-label="LinkedIn"
               className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
