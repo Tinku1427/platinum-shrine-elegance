@@ -22,49 +22,53 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <SiteLayout>
-      {/* HERO — full-bleed image with editorial overlay */}
-      <section className="relative w-full h-screen min-h-[640px] overflow-hidden">
-        <img
-          src={heroImage}
-          alt="A platinum diamond ring"
-          className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
-        />
-        {/* Bright image — soft light wash on the left keeps the dark text legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/80 via-[#FFFFFF]/25 to-transparent" />
+      {/* HERO — clean split: text left, photo right (Forevermark editorial layout) */}
+      <section className="relative w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[640px] md:h-screen">
+          {/* LEFT — text on white */}
+          <div className="relative z-10 flex items-center bg-white px-6 sm:px-10 lg:px-16 py-20 md:py-0 order-2 md:order-1">
+            <div className="animate-fade-up max-w-xl">
+              <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#16234A] pl-[0.2em] mb-8">
+                European Platinum Manufacture — Est. 1987
+              </div>
+              <h1 className="font-display text-[#10193A] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-7xl">
+                Form Follows
+                <br />
+                <span className="italic">Precision</span>
+              </h1>
+              <p className="mt-8 text-[#4B5568] text-[18px] leading-[1.7] max-w-md">
+                Supplying Europe's finest jewellery houses with 950 platinum. Crafted with the
+                precision of the hand.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
+                <Link
+                  to="/collection"
+                  className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#10193A] border-b border-[#10193A]/60 pb-1.5 hover:border-[#10193A] transition-colors"
+                >
+                  View Collection
+                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  to="/manufacturing"
+                  className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#10193A]/70 hover:text-[#16234A] transition-colors"
+                >
+                  Our Atelier
+                </Link>
+              </div>
+            </div>
+          </div>
 
-        <div className="relative z-10 h-full mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 flex items-center">
-          <div className="animate-fade-up max-w-2xl pt-24">
-            <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#9C8352] pl-[0.2em] mb-8">
-              European Platinum Manufacture — Est. 1987
-            </div>
-            <h1 className="font-display text-[#141B33] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-8xl">
-              Form Follows
-              <br />
-              <span className="italic">Precision</span>
-            </h1>
-            <p className="mt-8 text-[#4B5266] text-[18px] leading-[1.7] max-w-md">
-              Supplying Europe's finest jewellery houses with 950 platinum. Crafted with the
-              precision of the hand.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
-              <Link
-                to="/collection"
-                className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#141B33] border-b border-[#141B33]/60 pb-1.5 hover:border-[#141B33] transition-colors"
-              >
-                View Collection
-                <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                to="/manufacturing"
-                className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#141B33]/70 hover:text-[#B3904F] transition-colors"
-              >
-                Our Atelier
-              </Link>
-            </div>
+          {/* RIGHT — full-bleed photo */}
+          <div className="relative order-1 md:order-2 h-[42vh] md:h-auto overflow-hidden">
+            <img
+              src={heroImage}
+              alt="A platinum diamond ring"
+              className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+            />
           </div>
         </div>
 
-        <div className="hidden md:block absolute right-8 bottom-16 text-[11px] tracking-[0.35em] uppercase text-[#141B33]/40 [writing-mode:vertical-rl]">
+        <div className="hidden md:block absolute right-8 bottom-8 text-[11px] tracking-[0.35em] uppercase text-[#10193A]/40 [writing-mode:vertical-rl]">
           Scroll
         </div>
       </section>
