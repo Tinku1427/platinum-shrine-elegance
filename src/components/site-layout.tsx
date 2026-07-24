@@ -238,25 +238,27 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative h-[55vh] min-h-[380px] md:h-[70vh] md:min-h-[520px] w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={image} alt="" className="h-full w-full object-cover animate-ken-burns" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-navy-deep/40 to-navy-deep" />
-      </div>
-      <div className="relative z-10 flex h-full items-end pb-14 md:pb-24">
-        <div className="mx-auto max-w-7xl w-full px-6 lg:px-10">
-          <div className="max-w-3xl animate-fade-up">
-            {eyebrow && <div className="eyebrow text-platinum mb-4 md:mb-6">{eyebrow}</div>}
-            <h1 className="font-display text-4xl md:text-7xl leading-[1.05] text-ivory font-light">
+    <section className="relative w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] md:min-h-[560px]">
+        {/* LEFT — text on solid white, no overlay, always crisp */}
+        <div className="relative z-10 flex items-center bg-white px-6 sm:px-10 lg:px-16 py-16 md:py-0 order-2 md:order-1">
+          <div className="max-w-xl animate-fade-up">
+            {eyebrow && <div className="eyebrow text-[#16234A] mb-4 md:mb-6">{eyebrow}</div>}
+            <h1 className="font-display text-4xl md:text-6xl leading-[1.08] text-[#10193A] font-light">
               {title}
             </h1>
             {subtitle && (
               <>
                 <div className="hairline w-20 md:w-24 my-6 md:my-8" />
-                <p className="text-sm md:text-lg text-platinum/80 max-w-xl font-light">{subtitle}</p>
+                <p className="text-sm md:text-lg text-[#4B5568] max-w-xl font-light">{subtitle}</p>
               </>
             )}
           </div>
+        </div>
+
+        {/* RIGHT — full-bleed photo, sharp, no wash */}
+        <div className="relative order-1 md:order-2 h-[38vh] md:h-auto overflow-hidden">
+          <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover animate-ken-burns" />
         </div>
       </div>
     </section>
