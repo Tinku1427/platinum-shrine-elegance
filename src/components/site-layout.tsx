@@ -59,11 +59,11 @@ export function SiteHeader() {
   return (
     <>
       {/* Logo bar — centred mark only (no wordmark text) */}
-      <div className="relative z-40 bg-[#F4F0E7] border-b border-[#D8D0C6]">
+      <div className="relative z-40 bg-[#FFFFFF] border-b border-[#E4E0D6]">
         <div className="relative flex items-center justify-center px-14 py-6 md:py-7">
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-[#2A2521]/80 hover:text-[#2A2521] transition-colors"
+            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-[#141B33]/80 hover:text-[#141B33] transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.25} />
@@ -73,20 +73,20 @@ export function SiteHeader() {
       </div>
 
       {/* Sticky nav — one centred row, all items */}
-      <div className="sticky top-0 z-50 hidden md:block bg-[#F4F0E7]/90 backdrop-blur-md border-b border-[#D8D0C6]">
+      <div className="sticky top-0 z-50 hidden md:block bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E4E0D6]">
         <nav className="flex items-center justify-center py-4">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
               <Link
                 to={l.to}
-                className="px-5 lg:px-7 text-[13px] font-medium uppercase tracking-[0.2em] text-[#2A2521]/75 hover:text-[#A08D84] transition-colors"
-                activeProps={{ className: "text-[#2A2521]" }}
+                className="px-5 lg:px-7 text-[13px] font-medium uppercase tracking-[0.2em] text-[#141B33]/75 hover:text-[#B3904F] transition-colors"
+                activeProps={{ className: "text-[#141B33]" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
               </Link>
               {idx < NAV.length - 1 && (
-                <span className="text-[#2A2521]/25 select-none" aria-hidden="true">
+                <span className="text-[#141B33]/25 select-none" aria-hidden="true">
                   ·
                 </span>
               )}
@@ -97,7 +97,7 @@ export function SiteHeader() {
 
       {/* Mobile drawer — charcoal; mark only */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-[60] bg-[#1B1B1B]">
+        <div className="md:hidden fixed inset-0 z-[60] bg-[#0A1122]">
           <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
             <img src={logoWhite} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
@@ -113,8 +113,8 @@ export function SiteHeader() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-4 text-[14px] font-medium uppercase tracking-[0.2em] text-white/85 hover:text-[#C8B7AE] border-b border-white/10 last:border-0 text-center transition-colors"
-                activeProps={{ className: "text-[#C8B7AE]" }}
+                className="py-4 text-[14px] font-medium uppercase tracking-[0.2em] text-white/85 hover:text-[#C9A667] border-b border-white/10 last:border-0 text-center transition-colors"
+                activeProps={{ className: "text-[#C9A667]" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -140,11 +140,11 @@ const IG_TILES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#111111]">
+    <footer className="bg-[#080D1C]">
       {/* Instagram gallery — each tile links to the profile */}
-      <div className="bg-[#1B1B1B] py-14 border-t border-white/10">
+      <div className="bg-[#0A1122] py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <a
+          
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
@@ -156,7 +156,7 @@ export function SiteFooter() {
           </a>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-2 md:gap-3">
             {IG_TILES.map((src, i) => (
-              <a
+              
                 key={i}
                 href={IG_URL}
                 target="_blank"
@@ -186,7 +186,7 @@ export function SiteFooter() {
           </div>
 
           <div className="flex gap-4 mt-1">
-            <a
+            
               href={IG_URL}
               target="_blank"
               rel="noreferrer"
@@ -195,14 +195,14 @@ export function SiteFooter() {
             >
               <Instagram size={14} strokeWidth={1.5} />
             </a>
-            <a
+            
               href="#"
               aria-label="Facebook"
               className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Facebook size={14} strokeWidth={1.5} />
             </a>
-            <a
+            
               href="#"
               aria-label="LinkedIn"
               className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
