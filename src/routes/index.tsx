@@ -30,33 +30,33 @@ function Home() {
           className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
         />
         {/* Bright image — soft light wash on the left keeps the dark text legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F4F0E7]/80 via-[#F4F0E7]/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/80 via-[#FFFFFF]/25 to-transparent" />
 
         <div className="relative z-10 h-full mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 flex items-center">
           <div className="animate-fade-up max-w-2xl pt-24">
-            <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#8C7F76] pl-[0.2em] mb-8">
+            <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#9C8352] pl-[0.2em] mb-8">
               European Platinum Manufacture — Est. 1987
             </div>
-            <h1 className="font-display text-[#2A2521] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-8xl">
+            <h1 className="font-display text-[#141B33] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-8xl">
               Form Follows
               <br />
               <span className="italic">Precision</span>
             </h1>
-            <p className="mt-8 text-[#5F5A55] text-[18px] leading-[1.7] max-w-md">
+            <p className="mt-8 text-[#4B5266] text-[18px] leading-[1.7] max-w-md">
               Supplying Europe's finest jewellery houses with 950 platinum. Crafted with the
               precision of the hand.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
               <Link
                 to="/collection"
-                className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#2A2521] border-b border-[#2A2521]/60 pb-1.5 hover:border-[#2A2521] transition-colors"
+                className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#141B33] border-b border-[#141B33]/60 pb-1.5 hover:border-[#141B33] transition-colors"
               >
                 View Collection
                 <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/manufacturing"
-                className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#2A2521]/70 hover:text-[#A08D84] transition-colors"
+                className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#141B33]/70 hover:text-[#B3904F] transition-colors"
               >
                 Our Atelier
               </Link>
@@ -64,7 +64,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="hidden md:block absolute right-8 bottom-16 text-[11px] tracking-[0.35em] uppercase text-[#2A2521]/40 [writing-mode:vertical-rl]">
+        <div className="hidden md:block absolute right-8 bottom-16 text-[11px] tracking-[0.35em] uppercase text-[#141B33]/40 [writing-mode:vertical-rl]">
           Scroll
         </div>
       </section>
