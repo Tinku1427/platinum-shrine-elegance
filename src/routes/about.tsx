@@ -6,8 +6,7 @@ import atelierMasters from "@/assets/atelier-masters.jpg";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
 import handsDetail from "@/assets/hands-detail.jpg";
-// Placeholder founder portrait — swap this asset for the real portrait when supplied.
-import founderPortrait from "@/assets/atelier-masters.jpg";
+import founderPortrait from "@/assets/founder-vijay-pokharna.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
