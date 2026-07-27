@@ -3,6 +3,7 @@ import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler, Play } fr
 import { useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/craftsmanship.jpg";
+import boutique from "@/assets/boutique.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
 import atelierFilm from "@/assets/atelier-film.mp4.asset.json";
 import productRing from "@/assets/product-ring-1.jpg";
@@ -10,10 +11,10 @@ import productRing from "@/assets/product-ring-1.jpg";
 export const Route = createFileRoute("/manufacturing")({
   head: () => ({
     meta: [
-      { title: "Manufacturing — Pure Platinum Atelier, Hyderabad" },
-      { name: "description", content: "Inside the Pure Platinum atelier. From wax carving to final polish — how we manufacture 95% pure platinum jewellery by hand in Hyderabad." },
+      { title: "Manufacturing — Pure Platinum Atelier, Mumbai" },
+      { name: "description", content: "Inside the Pure Platinum atelier. From wax carving to final polish — how we manufacture 95% pure platinum jewellery by hand in Mumbai." },
       { property: "og:title", content: "Manufacturing — Pure Platinum" },
-      { property: "og:description", content: "How we manufacture 95% pure platinum jewellery by hand in Hyderabad." },
+      { property: "og:description", content: "How we manufacture 95% pure platinum jewellery by hand in Mumbai." },
       { property: "og:image", content: hero },
     ],
   }),
@@ -42,7 +43,7 @@ function Manufacturing() {
     <SiteLayout>
       <PageHero
         eyebrow="Manufacturing"
-        title={<>200 hours.<br /><span className="italic text-platinum">One piece.</span></>}
+        title={<>Platinum is unforgiving.<br /><span className="italic text-platinum">That is why we chose it.</span></>}
         subtitle="Inside the Pure Platinum atelier — where the rarest metal is worked entirely by hand."
         image={hero}
       />
@@ -52,15 +53,16 @@ function Manufacturing() {
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
           <div className="eyebrow mb-6">The Atelier</div>
           <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-ivory">
-            Platinum is unforgiving.<br />
-            <span className="italic text-platinum-dark">That is why we chose it.</span>
+            Platinum demands precision,<br />
+            <span className="italic text-platinum-dark">patience, and mastery.</span>
           </h2>
           <div className="hairline w-24 mx-auto my-10" />
           <p className="text-base md:text-lg text-platinum/80 leading-relaxed font-light">
-            Denser and harder than gold, platinum resists the shortcuts other metals allow.
-            Every piece that leaves our Hyderabad atelier has passed through the workbenches
-            of master karigars — some of the last of their kind in India — and through six
-            precise stages of manufacture.
+            Every creation begins with a vision and is brought to life through exceptional
+            design, advanced technology, and the skilled hands of our artisans. From intricate
+            detailing to flawless finishing, every Pure Platinum creation reflects our
+            commitment to craftsmanship and perfection. Because with platinum, excellence is
+            not an aspiration — it is the standard.
           </p>
         </div>
       </section>
@@ -107,7 +109,47 @@ function Manufacturing() {
         </div>
       </section>
 
+      {/* WHERE ENGINEERING MEETS ELEGANCE — designer collections */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
+          <div className="eyebrow mb-6">Where Engineering Meets Elegance</div>
+          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-ivory">
+            Created for those who<br />
+            <span className="italic text-platinum-dark">seek the exceptional.</span>
+          </h2>
+          <div className="hairline w-24 mx-auto my-10" />
+          <p className="text-base md:text-lg text-platinum/80 leading-relaxed font-light">
+            Jewellery is an expression of identity. Our designer platinum collections combine
+            contemporary aesthetics with timeless elegance, creating pieces that are
+            distinctive, sophisticated, and unforgettable — from everyday luxury to statement
+            creations, every design reflects the beauty and brilliance of platinum.
+          </p>
+        </div>
+      </section>
 
+      {/* BESPOKE PLATINUM CREATIONS */}
+      <section className="py-24 md:py-32 bg-navy-mid border-y border-champagne/15">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+            <div className="md:col-span-5">
+              <div className="eyebrow mb-5">Bespoke Platinum Creations</div>
+              <h2 className="font-display font-light text-3xl md:text-5xl text-ivory leading-tight">
+                Your vision. Our expertise.<br />
+                <span className="italic text-platinum-dark">One extraordinary creation.</span>
+              </h2>
+            </div>
+            <div className="md:col-span-7 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
+              <p>Some moments deserve something truly unique.</p>
+              <p>
+                Through our bespoke design services, we collaborate with jewellery brands,
+                designers, and clients to bring exclusive platinum creations to life. From
+                concept development to final craftsmanship, every detail is carefully refined
+                to create jewellery that is truly one of a kind.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process */}
       <section className="py-16 md:py-24 bg-navy-radial border-y border-platinum/10">
@@ -128,6 +170,69 @@ function Manufacturing() {
                 <div className="font-display text-2xl text-ivory mb-3">{s.t}</div>
                 <p className="text-sm text-platinum/70 leading-relaxed font-light">{s.d}</p>
                 <div className="mt-6 h-[1px] w-8 bg-platinum-dark transition-all duration-500 group-hover:w-20" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EMPOWERING JEWELLERY STARTUPS */}
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+            <div className="md:col-span-5">
+              <div className="eyebrow mb-5">Empowering Jewellery Startups</div>
+              <h2 className="font-display font-light text-3xl md:text-5xl text-ivory leading-tight">
+                Helping new brands<br />
+                <span className="italic text-platinum-dark">enter the world of platinum.</span>
+              </h2>
+              <div className="hairline w-20 mt-8" />
+              <p className="mt-8 text-platinum/80 text-[15px] leading-[1.9] font-light">
+                Entering platinum jewellery requires knowledge, expertise, and the right
+                partner. We help jewellery entrepreneurs transform their vision into premium
+                platinum collections — because every great jewellery brand deserves the
+                opportunity to create something extraordinary.
+              </p>
+            </div>
+            <div className="md:col-span-7">
+              <ul className="grid sm:grid-cols-2 gap-5">
+                {[
+                  "Platinum sourcing solutions",
+                  "Design guidance",
+                  "Manufacturing expertise",
+                  "Technical understanding of platinum",
+                  "Production support",
+                  "Quality assurance",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 border-t border-platinum/15 pt-5">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-champagne flex-shrink-0" />
+                    <span className="text-platinum/85 text-[15px] font-light leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PLATINUM MATERIALS */}
+      <section className="py-24 md:py-32 bg-navy-radial border-y border-platinum/10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="eyebrow mb-4">Platinum Materials</div>
+            <h2 className="font-display text-3xl md:text-5xl text-ivory">
+              The foundation of <span className="italic text-platinum-dark">exceptional creations.</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {[
+              { t: "Platinum Bars", d: "Trusted platinum bars for businesses and individuals seeking the enduring value of one of the world's rarest precious metals." },
+              { t: "Platinum Granules", d: "High-quality platinum granules for jewellery manufacturers and artisans who demand purity and reliability." },
+            ].map((m) => (
+              <div key={m.t} className="group relative border border-platinum/15 p-10 lg:p-12 bg-navy-deep/50 hover:bg-navy-mid/60 transition-colors">
+                <div className="font-display text-2xl md:text-3xl text-ivory mb-4">{m.t}</div>
+                <p className="text-sm md:text-base text-platinum/70 leading-relaxed font-light">{m.d}</p>
+                <div className="mt-6 h-[1px] w-8 bg-champagne transition-all duration-500 group-hover:w-20" />
               </div>
             ))}
           </div>
@@ -172,9 +277,39 @@ function Manufacturing() {
         </div>
       </section>
 
+      {/* WHY PURE PLATINUM */}
+      <section className="pb-24 md:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="eyebrow mb-4">Why Pure Platinum</div>
+            <h2 className="font-display text-3xl md:text-5xl text-ivory">
+              Expertise that goes <span className="italic text-platinum-dark">beyond jewellery.</span>
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-6">
+            {[
+              { t: "Platinum Specialists", d: "Our dedicated focus on platinum allows us to understand its true potential." },
+              { t: "Decades Of Experience", d: "Years of jewellery expertise translated into every creation." },
+              { t: "Design Excellence", d: "Creating contemporary and timeless platinum designs." },
+              { t: "Manufacturing Precision", d: "Combining advanced technology with skilled craftsmanship." },
+              { t: "Trusted Partnerships", d: "Supporting retailers, designers, and emerging jewellery brands." },
+            ].map((w) => (
+              <div key={w.t} className="border-t border-platinum/15 pt-6">
+                <div className="font-display text-lg md:text-xl text-ivory mb-3">{w.t}</div>
+                <p className="text-sm text-platinum/70 leading-relaxed font-light">{w.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trade CTA banner */}
-      <section className="relative bg-navy-mid">
-        <div className="py-24 md:py-32">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={boutique} alt="" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-navy-deep/85" />
+        </div>
+        <div className="relative py-24 md:py-32">
           <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
             <div className="eyebrow mb-6">Manufacture with us</div>
             <h2 className="font-display text-3xl md:text-5xl text-ivory leading-tight">
