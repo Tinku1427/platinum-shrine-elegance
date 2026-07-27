@@ -9,91 +9,98 @@ import handsDetail from "@/assets/hands-detail.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Hyderabad" },
-      { name: "description", content: "Pure Platinum is a Hyderabad-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
-      { property: "og:title", content: "Pure Platinum — Manufacturers of Pure Platinum Jewellery" },
-      { property: "og:description", content: "Naturally rare. Exceptionally durable. Manufacturers of 95% pure platinum jewellery in Hyderabad." },
+      { title: "Pure Platinum — Platinum Jewellery Designer & Manufacturer" },
+      { name: "description", content: "Pure Platinum is a trusted platinum jewellery designer, manufacturer and platinum partner — working with retailers, designers, entrepreneurs and businesses across India." },
+      { property: "og:title", content: "Pure Platinum — Platinum Jewellery Designer & Manufacturer" },
+      { property: "og:description", content: "A trusted platinum jewellery designer, manufacturer and platinum partner, creating extraordinary possibilities in platinum." },
       { property: "og:type", content: "website" },
     ],
   }),
   component: Home,
 });
 
+const ECOSYSTEM = [
+  { t: "Platinum Jewellery", d: "Exclusive designs crafted for those who appreciate rarity, elegance, and timeless beauty." },
+  { t: "Designer Platinum Creations", d: "Unique, statement-making pieces created with imagination, precision, and exceptional craftsmanship." },
+  { t: "Platinum Manufacturing", d: "Advanced manufacturing expertise combined with skilled craftsmanship to bring extraordinary designs to life." },
+  { t: "Platinum For Jewellery Startups", d: "Helping emerging jewellery brands and designers enter the world of platinum with expert guidance, sourcing support, and manufacturing capabilities." },
+  { t: "Platinum Bars", d: "Providing trusted platinum bars for those who value the enduring worth of one of the world's rarest precious metals." },
+  { t: "Platinum Granules", d: "Supplying quality platinum granules for jewellery manufacturers and artisans who create exceptional pieces." },
+];
+
 function Home() {
   return (
     <SiteLayout>
-      {/* HERO — clean split: text left, photo right (Forevermark editorial layout) */}
-      <section className="relative w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[640px] md:h-screen">
-          {/* LEFT — text on white */}
-          <div className="relative z-10 flex items-center bg-white px-6 sm:px-10 lg:px-16 py-20 md:py-0 order-2 md:order-1">
-            <div className="animate-fade-up max-w-xl">
-              <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#16234A] pl-[0.2em] mb-8">
-                European Platinum Manufacture — Est. 1987
-              </div>
-              <h1 className="font-display text-[#10193A] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-7xl">
-                Form Follows
-                <br />
-                <span className="italic">Precision</span>
-              </h1>
-              <p className="mt-8 text-[#4B5568] text-[18px] leading-[1.7] max-w-md">
-                Supplying Europe's finest jewellery houses with 950 platinum. Crafted with the
-                precision of the hand.
-              </p>
-              <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
-                <Link
-                  to="/collection"
-                  className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#10193A] border-b border-[#10193A]/60 pb-1.5 hover:border-[#10193A] transition-colors"
-                >
-                  View Collection
-                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  to="/manufacturing"
-                  className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#10193A]/70 hover:text-[#16234A] transition-colors"
-                >
-                  Our Atelier
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* HERO — full-bleed image with editorial overlay */}
+      <section className="relative w-full h-screen min-h-[640px] overflow-hidden">
+        <img
+          src={heroImage}
+          alt="A platinum diamond ring"
+          className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+        />
+        {/* Bright image — soft light wash on the left keeps the dark text legible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FBF8F2]/80 via-[#FBF8F2]/25 to-transparent" />
 
-          {/* RIGHT — full-bleed photo */}
-          <div className="relative order-1 md:order-2 h-[42vh] md:h-auto overflow-hidden">
-            <img
-              src={heroImage}
-              alt="A platinum diamond ring"
-              className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
-            />
+        <div className="relative z-10 h-full mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 flex items-center">
+          <div className="animate-fade-up max-w-2xl pt-24">
+            <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#7A8699] pl-[0.2em] mb-8">
+              Platinum Jewellery Designer &amp; Manufacturer
+            </div>
+            <h1 className="font-display text-[#0F1F3D] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-8xl">
+              The World
+              <br />
+              <span className="italic">of Platinum</span>
+            </h1>
+            <p className="mt-8 text-[#3B4759] text-[18px] leading-[1.7] max-w-md">
+              Platinum is not just a precious metal. It is a symbol of rarity, purity, and
+              timeless elegance. As a trusted platinum jewellery designer, manufacturer, and
+              platinum solutions partner, we help transform visions into creations designed
+              to last forever.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
+              <Link
+                to="/collection"
+                className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0F1F3D] border-b border-[#0F1F3D]/60 pb-1.5 hover:border-[#0F1F3D] transition-colors"
+              >
+                View Collection
+                <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/manufacturing"
+                className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#0F1F3D]/70 hover:text-[#B08D57] transition-colors"
+              >
+                Our Atelier
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="hidden md:block absolute right-8 bottom-8 text-[11px] tracking-[0.35em] uppercase text-[#10193A]/40 [writing-mode:vertical-rl]">
+        <div className="hidden md:block absolute right-8 bottom-16 text-[11px] tracking-[0.35em] uppercase text-[#0F1F3D]/40 [writing-mode:vertical-rl]">
           Scroll
         </div>
       </section>
 
-      {/* WHERE ENGINEERING MEETS ELEGANCE — navy band */}
+      {/* CRAFTING THE EXTRAORDINARY — navy band */}
       <section className="bg-navy-mid py-24 md:py-36 border-y border-champagne/15">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
           <div className="text-[0.7rem] uppercase tracking-[0.5em] text-champagne pl-[0.5em] mb-6">
-            The House
+            Pure Platinum
           </div>
           <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.18em] pl-[0.18em] leading-tight">
-            WHERE ENGINEERING<br />MEETS ELEGANCE
+            CRAFTING THE EXTRAORDINARY<br />IN PLATINUM
           </h2>
           <div className="mx-auto mt-7 h-px w-16 bg-champagne/60" />
           <div className="mt-10 space-y-5 text-platinum/85 text-[15px] md:text-[17px] leading-[1.9] font-light">
             <p>
-              Pure Platinum is a manufacturing house devoted to the world's rarest precious metal.
-              Rooted in the belief that a metal thirty times scarcer than gold deserves an equally
-              rare standard of craftsmanship, we manufacture authentic 95% pure platinum jewellery
-              for premium jewellery houses worldwide.
+              Every platinum creation begins with a vision. A vision that requires precision.
+              A vision that demands expertise. A vision that deserves perfection.
             </p>
             <p>
-              Naturally white, hypoallergenic and endlessly durable — every piece is cast, filed
-              and finished by hand, then struck with our quiet PT950 hallmark: a promise of rarity,
-              purity, and precision built to outlive its wearer.
+              With years of experience in understanding platinum's unique character, Pure
+              Platinum creates jewellery that reflects exceptional craftsmanship, contemporary
+              design, and timeless sophistication — from intricate designer collections to
+              bespoke creations, every piece crafted with an uncompromising commitment to
+              excellence.
             </p>
           </div>
           <div className="pt-11">
@@ -103,6 +110,35 @@ function Home() {
             >
               Read More <ArrowRight size={13} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* MORE THAN JEWELLERY — complete platinum ecosystem */}
+      <section className="py-20 md:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-14 md:mb-20 max-w-3xl mx-auto">
+            <div className="eyebrow mb-5">A Complete Platinum Ecosystem</div>
+            <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.1em] leading-tight">
+              More Than Jewellery.
+            </h2>
+            <div className="hairline w-20 mt-6 mx-auto" />
+            <p className="mt-8 text-platinum/80 font-light leading-relaxed">
+              Pure Platinum represents the complete world of platinum.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {ECOSYSTEM.map((item) => (
+              <div
+                key={item.t}
+                className="group border border-platinum/15 p-8 lg:p-10 bg-navy-deep/50 hover:bg-navy-mid/60 transition-colors"
+              >
+                <div className="font-display text-2xl text-ivory mb-3">{item.t}</div>
+                <p className="text-sm text-platinum/70 leading-relaxed font-light">{item.d}</p>
+                <div className="mt-6 h-[1px] w-8 bg-champagne transition-all duration-500 group-hover:w-20" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -172,8 +208,8 @@ function Home() {
             </li>
             <li className="flex flex-col items-center gap-3">
               <Mail size={20} className="text-platinum-dark" />
-              <a href="mailto:sales@pureplatinum.co.in" className="hover:text-ivory transition-colors">
-                sales@pureplatinum.co.in
+              <a href="mailto:info@pureplatinum.in" className="hover:text-ivory transition-colors">
+                info@pureplatinum.in
               </a>
             </li>
             <li className="flex flex-col items-center gap-3">
