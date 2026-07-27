@@ -238,25 +238,27 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative h-[55vh] min-h-[380px] md:h-[70vh] md:min-h-[520px] w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={image} alt="" className="h-full w-full object-cover animate-ken-burns" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-navy-deep/40 to-navy-deep" />
-      </div>
-      <div className="relative z-10 flex h-full items-end pb-14 md:pb-24">
-        <div className="mx-auto max-w-7xl w-full px-6 lg:px-10">
-          <div className="max-w-3xl animate-fade-up">
-            {eyebrow && <div className="eyebrow text-platinum mb-4 md:mb-6">{eyebrow}</div>}
-            <h1 className="font-display text-4xl md:text-7xl leading-[1.05] text-ivory font-light">
+    <section className="w-full">
+      <div className="grid md:grid-cols-2 md:min-h-[640px]">
+        {/* Text column — left on desktop, below the image on mobile */}
+        <div className="order-2 md:order-1 flex items-center bg-navy-deep px-6 lg:px-16 py-14 md:py-0">
+          <div className="max-w-xl animate-fade-up mx-auto md:mx-0">
+            {eyebrow && <div className="eyebrow text-champagne mb-4 md:mb-6">{eyebrow}</div>}
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-ivory font-light">
               {title}
             </h1>
             {subtitle && (
               <>
-                <div className="hairline w-20 md:w-24 my-6 md:my-8" />
-                <p className="text-sm md:text-lg text-platinum/80 max-w-xl font-light">{subtitle}</p>
+                <div className="hairline-solid w-20 md:w-24 my-6 md:my-8" />
+                <p className="text-sm md:text-lg text-platinum/85 max-w-xl font-light">{subtitle}</p>
               </>
             )}
           </div>
+        </div>
+
+        {/* Image column — right on desktop, on top on mobile */}
+        <div className="order-1 md:order-2 relative min-h-[45vh] md:min-h-0 overflow-hidden">
+          <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover animate-ken-burns" />
         </div>
       </div>
     </section>
