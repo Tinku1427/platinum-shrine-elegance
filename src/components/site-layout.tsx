@@ -140,15 +140,15 @@ const IG_TILES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#0B1930]">
+    <footer className="bg-navy-deep border-t border-platinum/15">
       {/* Instagram gallery — each tile links to the profile */}
-      <div className="bg-[#10233F] py-14 border-t border-white/10">
+      <div className="bg-navy-mid py-14 border-t border-platinum/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <a
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-3 mb-8 text-white/80 hover:text-white transition-colors"
+            className="flex items-center justify-center gap-3 mb-8 text-ivory/80 hover:text-ivory transition-colors"
             aria-label="Follow Pure Platinum on Instagram"
           >
             <Instagram size={18} strokeWidth={1.25} />
@@ -177,11 +177,11 @@ export function SiteFooter() {
       </div>
 
       {/* Bottom */}
-      <div className="py-14 border-t border-white/10">
+      <div className="py-14 border-t border-platinum/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
-          <BrandLogo variant="white" className="h-16 w-16 md:h-20 md:w-20" />
+          <BrandLogo variant="dark" className="h-16 w-16 md:h-20 md:w-20" />
 
-          <div className="text-[0.62rem] uppercase tracking-[0.4em] text-white/55 text-center px-4">
+          <div className="text-[0.62rem] uppercase tracking-[0.4em] text-platinum-dark text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
           </div>
 
@@ -191,21 +191,21 @@ export function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
+              className="h-9 w-9 border border-platinum/30 flex items-center justify-center text-platinum hover:text-ivory hover:border-platinum transition-colors"
             >
               <Instagram size={14} strokeWidth={1.5} />
             </a>
             <a
               href="#"
               aria-label="Facebook"
-              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
+              className="h-9 w-9 border border-platinum/30 flex items-center justify-center text-platinum hover:text-ivory hover:border-platinum transition-colors"
             >
               <Facebook size={14} strokeWidth={1.5} />
             </a>
             <a
               href="#"
               aria-label="LinkedIn"
-              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
+              className="h-9 w-9 border border-platinum/30 flex items-center justify-center text-platinum hover:text-ivory hover:border-platinum transition-colors"
             >
               <Linkedin size={14} strokeWidth={1.5} />
             </a>
