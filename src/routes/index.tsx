@@ -31,52 +31,52 @@ const ECOSYSTEM = [
 function Home() {
   return (
     <SiteLayout>
-      {/* HERO — full-bleed image with editorial overlay */}
-      <section className="relative w-full h-screen min-h-[640px] overflow-hidden">
-        <img
-          src={heroImage}
-          alt="A platinum diamond ring"
-          className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
-        />
-        {/* Bright image — soft light wash on the left keeps the dark text legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FBF8F2]/80 via-[#FBF8F2]/25 to-transparent" />
-
-        <div className="relative z-10 h-full mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 flex items-center">
-          <div className="animate-fade-up max-w-2xl pt-24">
-            <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#7A8699] pl-[0.2em] mb-8">
-              Platinum Jewellery Designer &amp; Manufacturer
-            </div>
-            <h1 className="font-display text-[#0F1F3D] leading-[1.0] tracking-[-0.02em] text-6xl sm:text-7xl lg:text-8xl">
-              The World
-              <br />
-              <span className="italic">of Platinum</span>
-            </h1>
-            <p className="mt-8 text-[#3B4759] text-[18px] leading-[1.7] max-w-md">
-              Platinum is not just a precious metal. It is a symbol of rarity, purity, and
-              timeless elegance. As a trusted platinum jewellery designer, manufacturer, and
-              platinum solutions partner, we help transform visions into creations designed
-              to last forever.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
-              <Link
-                to="/collection"
-                className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0F1F3D] border-b border-[#0F1F3D]/60 pb-1.5 hover:border-[#0F1F3D] transition-colors"
-              >
-                View Collection
-                <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                to="/manufacturing"
-                className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#0F1F3D]/70 hover:text-[#B08D57] transition-colors"
-              >
-                Our Atelier
-              </Link>
+      {/* HERO — split layout: text left, image right */}
+      <section className="w-full">
+        <div className="grid md:grid-cols-2 md:min-h-[calc(100vh-6rem)]">
+          {/* Text column */}
+          <div className="order-2 md:order-1 flex items-center bg-navy-deep px-6 sm:px-10 lg:px-16 py-16 md:py-0">
+            <div className="animate-fade-up max-w-xl mx-auto md:mx-0">
+              <div className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#7A8699] pl-[0.2em] mb-8">
+                Platinum Jewellery Designer &amp; Manufacturer
+              </div>
+              <h1 className="font-display text-[#0F1F3D] leading-[1.0] tracking-[-0.02em] text-5xl sm:text-6xl lg:text-7xl">
+                The World
+                <br />
+                <span className="italic">of Platinum</span>
+              </h1>
+              <p className="mt-8 text-[#3B4759] text-[18px] leading-[1.7] max-w-md">
+                Platinum is not just a precious metal. It is a symbol of rarity, purity, and
+                timeless elegance. As a trusted platinum jewellery designer, manufacturer, and
+                platinum solutions partner, we help transform visions into creations designed
+                to last forever.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-8 md:gap-12">
+                <Link
+                  to="/collection"
+                  className="group inline-flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0F1F3D] border-b border-[#0F1F3D]/60 pb-1.5 hover:border-[#0F1F3D] transition-colors"
+                >
+                  View Collection
+                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  to="/manufacturing"
+                  className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#0F1F3D]/70 hover:text-[#B08D57] transition-colors"
+                >
+                  Our Atelier
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="hidden md:block absolute right-8 bottom-16 text-[11px] tracking-[0.35em] uppercase text-[#0F1F3D]/40 [writing-mode:vertical-rl]">
-          Scroll
+          {/* Image column */}
+          <div className="order-1 md:order-2 relative min-h-[50vh] md:min-h-0 overflow-hidden">
+            <img
+              src={heroImage}
+              alt="A platinum diamond ring"
+              className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+            />
+          </div>
         </div>
       </section>
 
