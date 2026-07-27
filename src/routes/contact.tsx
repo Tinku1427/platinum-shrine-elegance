@@ -7,7 +7,7 @@ import hero from "@/assets/boutique.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Pure Platinum, Hyderabad" },
+      { title: "Contact — Pure Platinum, Mumbai" },
       { name: "description", content: "Reach the Pure Platinum atelier. MG Road, Secunderabad. Trade enquiries, custom manufacturing and private appointments." },
       { property: "og:title", content: "Contact — Pure Platinum" },
       { property: "og:description", content: "Trade enquiries, custom manufacturing and private appointments." },
@@ -57,8 +57,8 @@ function Contact() {
               {[
                 { icon: MapPin, label: "Visit", value: <>Unit E-1, Plot F11 &amp; F12<br />WICEL Compound, Marol Central Road<br />MIDC, Opp. SEEPZ Gate 1<br />Andheri (E), Mumbai · 400 093</> },
                 { icon: Phone, label: "Call", value: <><a href="tel:+919122663797" className="hover:text-ivory">+91 91226 63797</a><br /><a href="tel:+912228255050" className="hover:text-ivory">+91 22 2825 5050</a><br /><span className="text-platinum-dark text-xs">Trade &amp; bridal enquiries</span></> },
-                { icon: Mail, label: "Email", value: <><a href="mailto:sales@pureplatinum.co.in" className="hover:text-ivory">sales@pureplatinum.co.in</a></> },
-                { icon: Clock, label: "Hours", value: <>Monday — Saturday<br />10:30 – 20:00</> },
+                { icon: Mail, label: "Email", value: <><a href="mailto:info@pureplatinum.in" className="hover:text-ivory">info@pureplatinum.in</a></> },
+                { icon: Clock, label: "Hours", value: <>Monday — Saturday<br />10:00 AM – 7:00 PM</> },
               ].map((b) => (
                 <div key={b.label} className="flex gap-5 items-start border-t border-platinum/10 pt-6">
                   <b.icon size={18} className="text-platinum-dark mt-1 flex-shrink-0" />
