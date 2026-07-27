@@ -58,35 +58,35 @@ export function SiteHeader() {
 
   return (
     <>
-      {/* Logo bar — navy, white logo (matches Forevermark's top bar before scrolling) */}
-      <div className="relative z-40 bg-[#10193A] border-b border-[#0A1229]">
+      {/* Logo bar — centred mark only (no wordmark text) */}
+      <div className="relative z-40 bg-[#FBF8F2] border-b border-[#DCD3C0]">
         <div className="relative flex items-center justify-center px-14 py-6 md:py-7">
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
+            className="md:hidden absolute left-5 top-1/2 -translate-y-1/2 text-[#0F1F3D]/80 hover:text-[#0F1F3D] transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} strokeWidth={1.25} />
           </button>
-          <BrandLogo variant="white" className="h-12 w-12 md:h-14 md:w-14" />
+          <BrandLogo variant="dark" className="h-12 w-12 md:h-14 md:w-14" />
         </div>
       </div>
 
-      {/* Sticky nav — white, navy text (matches Forevermark's compact bar once scrolled) */}
-      <div className="sticky top-0 z-50 hidden md:block bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#E3DDD0]">
+      {/* Sticky nav — one centred row, all items */}
+      <div className="sticky top-0 z-50 hidden md:block bg-[#FBF8F2]/90 backdrop-blur-md border-b border-[#DCD3C0]">
         <nav className="flex items-center justify-center py-4">
           {NAV.map((l, idx) => (
             <span key={l.to} className="flex items-center">
               <Link
                 to={l.to}
-                className="px-5 lg:px-7 text-[13px] font-medium uppercase tracking-[0.2em] text-[#10193A]/75 hover:text-[#16234A] transition-colors"
-                activeProps={{ className: "text-[#10193A]" }}
+                className="px-5 lg:px-7 text-[13px] font-medium uppercase tracking-[0.2em] text-[#0F1F3D]/75 hover:text-[#B08D57] transition-colors"
+                activeProps={{ className: "text-[#0F1F3D]" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
               </Link>
               {idx < NAV.length - 1 && (
-                <span className="text-[#10193A]/25 select-none" aria-hidden="true">
+                <span className="text-[#0F1F3D]/25 select-none" aria-hidden="true">
                   ·
                 </span>
               )}
@@ -95,14 +95,14 @@ export function SiteHeader() {
         </nav>
       </div>
 
-      {/* Mobile drawer — white, navy text */}
+      {/* Mobile drawer — charcoal; mark only */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-[60] bg-[#FFFFFF]">
-          <div className="flex items-center justify-between px-5 py-5 border-b border-[#E3DDD0]">
-            <img src={logoDark} alt="Pure Platinum" className="h-9 w-auto object-contain" />
+        <div className="md:hidden fixed inset-0 z-[60] bg-[#10233F]">
+          <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
+            <img src={logoWhite} alt="Pure Platinum" className="h-9 w-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
-              className="text-[#10193A]/80 hover:text-[#10193A] transition-colors"
+              className="text-white/90 hover:text-white transition-colors"
               aria-label="Close menu"
             >
               <X size={24} strokeWidth={1.25} />
@@ -113,8 +113,8 @@ export function SiteHeader() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-4 text-[14px] font-medium uppercase tracking-[0.2em] text-[#10193A]/80 hover:text-[#16234A] border-b border-[#E3DDD0] last:border-0 text-center transition-colors"
-                activeProps={{ className: "text-[#16234A]" }}
+                className="py-4 text-[14px] font-medium uppercase tracking-[0.2em] text-white/85 hover:text-[#D9C08F] border-b border-white/10 last:border-0 text-center transition-colors"
+                activeProps={{ className: "text-[#D9C08F]" }}
                 activeOptions={{ exact: true }}
               >
                 {l.label}
@@ -140,15 +140,15 @@ const IG_TILES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#FFFFFF]">
+    <footer className="bg-[#0B1930]">
       {/* Instagram gallery — each tile links to the profile */}
-      <div className="bg-[#F1E7D8] py-14 border-t border-[#E3DDD0]">
+      <div className="bg-[#10233F] py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <a
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-3 mb-8 text-[#10193A]/80 hover:text-[#10193A] transition-colors"
+            className="flex items-center justify-center gap-3 mb-8 text-white/80 hover:text-white transition-colors"
             aria-label="Follow Pure Platinum on Instagram"
           >
             <Instagram size={18} strokeWidth={1.25} />
@@ -177,11 +177,11 @@ export function SiteFooter() {
       </div>
 
       {/* Bottom */}
-      <div className="py-14 border-t border-[#E3DDD0]">
+      <div className="py-14 border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
-          <BrandLogo variant="dark" className="h-16 w-16 md:h-20 md:w-20" />
+          <BrandLogo variant="white" className="h-16 w-16 md:h-20 md:w-20" />
 
-          <div className="text-[0.62rem] uppercase tracking-[0.4em] text-[#10193A]/55 text-center px-4">
+          <div className="text-[0.62rem] uppercase tracking-[0.4em] text-white/55 text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
           </div>
 
@@ -191,21 +191,21 @@ export function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="h-9 w-9 border border-[#10193A]/20 flex items-center justify-center text-[#10193A]/80 hover:text-[#10193A] hover:border-[#10193A]/50 transition-colors"
+              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Instagram size={14} strokeWidth={1.5} />
             </a>
             <a
               href="#"
               aria-label="Facebook"
-              className="h-9 w-9 border border-[#10193A]/20 flex items-center justify-center text-[#10193A]/80 hover:text-[#10193A] hover:border-[#10193A]/50 transition-colors"
+              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Facebook size={14} strokeWidth={1.5} />
             </a>
             <a
               href="#"
               aria-label="LinkedIn"
-              className="h-9 w-9 border border-[#10193A]/20 flex items-center justify-center text-[#10193A]/80 hover:text-[#10193A] hover:border-[#10193A]/50 transition-colors"
+              className="h-9 w-9 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
             >
               <Linkedin size={14} strokeWidth={1.5} />
             </a>
@@ -238,27 +238,25 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] md:min-h-[560px]">
-        {/* LEFT — text on solid white, no overlay, always crisp */}
-        <div className="relative z-10 flex items-center bg-white px-6 sm:px-10 lg:px-16 py-16 md:py-0 order-2 md:order-1">
-          <div className="max-w-xl animate-fade-up">
-            {eyebrow && <div className="eyebrow text-[#16234A] mb-4 md:mb-6">{eyebrow}</div>}
-            <h1 className="font-display text-4xl md:text-6xl leading-[1.08] text-[#10193A] font-light">
+    <section className="relative h-[55vh] min-h-[380px] md:h-[70vh] md:min-h-[520px] w-full overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={image} alt="" className="h-full w-full object-cover animate-ken-burns" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-navy-deep/40 to-navy-deep" />
+      </div>
+      <div className="relative z-10 flex h-full items-end pb-14 md:pb-24">
+        <div className="mx-auto max-w-7xl w-full px-6 lg:px-10">
+          <div className="max-w-3xl animate-fade-up">
+            {eyebrow && <div className="eyebrow text-platinum mb-4 md:mb-6">{eyebrow}</div>}
+            <h1 className="font-display text-4xl md:text-7xl leading-[1.05] text-ivory font-light">
               {title}
             </h1>
             {subtitle && (
               <>
                 <div className="hairline w-20 md:w-24 my-6 md:my-8" />
-                <p className="text-sm md:text-lg text-[#4B5568] max-w-xl font-light">{subtitle}</p>
+                <p className="text-sm md:text-lg text-platinum/80 max-w-xl font-light">{subtitle}</p>
               </>
             )}
           </div>
-        </div>
-
-        {/* RIGHT — full-bleed photo, sharp, no wash */}
-        <div className="relative order-1 md:order-2 h-[38vh] md:h-auto overflow-hidden">
-          <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover animate-ken-burns" />
         </div>
       </div>
     </section>
