@@ -6,10 +6,6 @@ import collectionRings from "@/assets/collection-rings.jpg";
 import collectionEarrings from "@/assets/collection-earrings.jpg";
 import collectionChains from "@/assets/collection-chains.jpg";
 import collectionBracelets from "@/assets/collection-bracelets.jpg";
-import productRing from "@/assets/product-ring-1.jpg";
-import productEarring from "@/assets/product-earring-1.jpg";
-import productChain from "@/assets/product-chain-1.jpg";
-import productBracelet from "@/assets/product-bracelet-1.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/collection")({
@@ -33,7 +29,6 @@ const categories = [
     name: "Rings",
     tagline: "Solitaires, eternity bands & bridal.",
     hero: collectionRings,
-    detail: productRing,
     description: "From the four-prong solitaire to full eternity bands — every ring is cast in solid PT950 platinum and hand-set with certified diamonds.",
     pieces: ["The Eternal Solitaire", "Bridal Eternity Band", "Signature Halo", "Twin-Stone Toi et Moi"],
   },
@@ -42,7 +37,6 @@ const categories = [
     name: "Earrings",
     tagline: "Studs, drops & chandeliers.",
     hero: collectionEarrings,
-    detail: productEarring,
     description: "Pear-cut drops on platinum wire, hand-set halos and everyday diamond studs — engineered to catch light with the smallest movement.",
     pieces: ["Aurora Drop", "Solitaire Studs", "Cascade Chandelier", "Pavé Hoops"],
   },
@@ -51,7 +45,6 @@ const categories = [
     name: "Chains",
     tagline: "Cable, box & pendant chains.",
     hero: collectionChains,
-    detail: productChain,
     description: "Whisper-thin platinum cables and box chains — some finished with a single solitaire, others left pure to live on the skin every day.",
     pieces: ["Silhouette Solitaire", "Box Chain 1.2mm", "Rope Chain", "Curb Chain"],
   },
@@ -60,7 +53,6 @@ const categories = [
     name: "Bracelets",
     tagline: "Tennis, bangles & cuffs.",
     hero: collectionBracelets,
-    detail: productBracelet,
     description: "Articulated tennis bracelets set with matched brilliants, quiet cuffs and heirloom bangles — each secured with our invisible double-lock clasp.",
     pieces: ["Rivière Tennis", "Diamond Bangle", "Signature Cuff", "Link Bracelet"],
   },
@@ -105,7 +97,7 @@ function Collection() {
                 </div>
                 <div className="hidden md:block absolute -bottom-8 -right-8 w-40 h-40 border border-platinum/40" />
                 <div className="hidden md:block absolute -top-6 -left-6 w-32 h-32 bg-navy-mid p-4 shadow-[var(--shadow-soft)]">
-                  <img src={c.detail} alt="" className="h-full w-full object-contain" />
+                  <img src={c.hero} alt="" className="h-full w-full object-contain" />
                 </div>
               </div>
 
