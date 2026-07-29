@@ -5,15 +5,10 @@ import collectionChains from "@/assets/collection-chains.jpg";
 import collectionBracelets from "@/assets/collection-bracelets.jpg";
 
 // Real product photography supplied by the client.
-import ringChannelBar from "@/assets/ring-channel-bar.jpg";
 import earringAurora1 from "@/assets/earring-aurora-1.jpg";
 import earringAurora2 from "@/assets/earring-aurora-2.jpg";
 import earringKite1 from "@/assets/earring-kite-1.jpg";
 import earringKite2 from "@/assets/earring-kite-2.jpg";
-import pendantAurora1 from "@/assets/pendant-aurora-1.jpg";
-import pendantAurora2 from "@/assets/pendant-aurora-2.jpg";
-import pendantKite1 from "@/assets/pendant-kite-1.jpg";
-import pendantKite2 from "@/assets/pendant-kite-2.jpg";
 import bandsCompanion1 from "@/assets/bands-companion-1.jpg";
 import bandsCompanion2 from "@/assets/bands-companion-2.jpg";
 import bandsCompanion3 from "@/assets/bands-companion-3.jpg";
@@ -46,29 +41,6 @@ export type Product = {
 };
 
 export const products: Record<string, Product> = {
-  "channel-bar-ring": {
-    id: "channel-bar-ring",
-    name: "The Channel Bar Ring",
-    category: "Ring",
-    tagline: "Four stones, one continuous line of light.",
-    price: "On Request",
-    images: [ringChannelBar, collectionRings],
-    description:
-      "A horizontal bar of four channel-set round brilliants, framed in platinum with a rose gold inner border, set into a mirror-polished platinum band. A quiet, architectural take on the classic diamond ring.",
-    specs: {
-      metal: "Platinum & Rose Gold",
-      purity: "PT950 · 95% Pure",
-      weight: "4.2 grams",
-      stone: "Round Brilliant Diamonds",
-      stoneWeight: "0.60 ct (Total)",
-      clarity: "VS1 – VS2",
-      color: "F — Colourless",
-      setting: "Channel Set",
-      finish: "High Polish Mirror",
-    },
-    story:
-      "Built on a bar setting rather than a single stone — four brilliants standing in for four moments worth marking.",
-  },
   "companion-wedding-bands": {
     id: "companion-wedding-bands",
     name: "Companion Wedding Bands",
@@ -146,52 +118,6 @@ export const products: Record<string, Product> = {
     },
     story:
       "The kite silhouette is a departure from the round stud — a faceted, sculptural frame built to stand on its own.",
-  },
-  "aurora-cluster-pendant": {
-    id: "aurora-cluster-pendant",
-    name: "Aurora Cluster Pendant",
-    category: "Chain",
-    tagline: "Understated. Unmistakably rare.",
-    price: "On Request",
-    images: [pendantAurora1, pendantAurora2, collectionChains],
-    description:
-      "The pendant companion to the Aurora Cluster Studs — the same cascading cluster of round brilliants suspended from a fine platinum cable chain. Designed to be worn together or on its own.",
-    specs: {
-      metal: "Platinum",
-      purity: "PT950 · 95% Pure",
-      weight: "3.6 grams (With Chain)",
-      stone: "Round Brilliant Diamonds",
-      stoneWeight: "0.45 ct (Total)",
-      clarity: "VVS2 – VS1",
-      color: "E–F — Colourless",
-      setting: "Cluster · Bezel",
-      finish: "High Polish",
-    },
-    story:
-      "The everyday companion piece — quiet on the chain, unmistakable up close.",
-  },
-  "kite-halo-pendant": {
-    id: "kite-halo-pendant",
-    name: "Kite Halo Pendant",
-    category: "Chain",
-    tagline: "A geometric frame, worn close.",
-    price: "On Request",
-    images: [pendantKite1, pendantKite2, collectionChains],
-    description:
-      "A faceted platinum kite pendant with a pavé diamond centre, finished to match the Kite Halo Studs. Suspended from a fine cable chain for a piece that reads as sculptural rather than sparkly.",
-    specs: {
-      metal: "Platinum",
-      purity: "PT950 · 95% Pure",
-      weight: "3.2 grams (With Chain)",
-      stone: "Round Brilliant Diamonds",
-      stoneWeight: "0.20 ct (Total)",
-      clarity: "VS1",
-      color: "F — Colourless",
-      setting: "Pavé Cluster",
-      finish: "Brushed & High Polish",
-    },
-    story:
-      "A pendant built around geometry first, brilliance second — designed to pair with the Kite Halo Studs.",
   },
   "riviera-tennis": {
     id: "riviera-tennis",
