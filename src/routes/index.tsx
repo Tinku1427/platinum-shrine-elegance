@@ -3,8 +3,8 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site-layout";
 import heroImage from "@/assets/product-ring-1.jpg";
-import craftsmanship from "@/assets/craftsmanship.jpg";
-import handsDetail from "@/assets/hands-detail.jpg";
+import bandsCompanion4 from "@/assets/bands-companion-4.jpg";
+import bandsCompanion5 from "@/assets/bands-companion-5.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -156,7 +156,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <Link to="/collection" className="group relative block overflow-hidden aspect-square">
               <img
-                src={handsDetail}
+                src={bandsCompanion4}
                 alt="Explore the Pure Platinum collection"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
@@ -174,7 +174,7 @@ function Home() {
 
             <Link to="/manufacturing" className="group relative block overflow-hidden aspect-square">
               <img
-                src={craftsmanship}
+                src={bandsCompanion5}
                 alt="Inside the Pure Platinum atelier"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
