@@ -10,16 +10,19 @@ import productRing from "@/assets/product-ring-1.jpg";
 import productEarring from "@/assets/product-earring-1.jpg";
 import productChain from "@/assets/product-chain-1.jpg";
 import productBracelet from "@/assets/product-bracelet-1.jpg";
+import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/collection")({
   head: () => ({
     meta: [
       { title: "Collection — Pure Platinum Jewellery" },
-      { name: "description", content: "Explore the Pure Platinum collection — rings, earrings, chains and bracelets, all crafted in 95% pure platinum by our Hyderabad atelier." },
+      { name: "description", content: "Explore the Pure Platinum collection — rings, earrings, chains and bracelets, all crafted in 95% pure platinum by our Mumbai atelier." },
       { property: "og:title", content: "Collection — Pure Platinum" },
       { property: "og:description", content: "Rings, earrings, chains and bracelets — all in 95% pure platinum." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: abs(hero) },
+      { property: "og:url", content: `${SITE_URL}/collection` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/collection` }],
   }),
   component: Collection,
 });
@@ -69,7 +72,7 @@ function Collection() {
       <PageHero
         eyebrow="The Collection"
         title={<>Four categories.<br /><span className="italic text-platinum">One rare metal.</span></>}
-        subtitle="Every piece cast in 95% pure platinum, hand-finished in our Hyderabad atelier."
+        subtitle="Every piece cast in 95% pure platinum, hand-finished in our Mumbai atelier."
         image={hero}
       />
 
@@ -77,7 +80,7 @@ function Collection() {
       <section className="sticky top-[76px] z-30 bg-navy-deep/95 backdrop-blur-md border-b border-platinum/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex overflow-x-auto gap-8 py-4 no-scrollbar">
           {categories.map((c) => (
-            <a
+            
               key={c.id}
               href={`#${c.id}`}
               className="text-[0.65rem] uppercase tracking-[0.35em] text-platinum/70 hover:text-ivory whitespace-nowrap"
