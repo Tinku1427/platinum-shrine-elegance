@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/hero-2.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
-import craftsmanship from "@/assets/craftsmanship.jpg";
-import boutique from "@/assets/boutique.jpg";
-import handsDetail from "@/assets/hands-detail.jpg";
+import galleryRing from "@/assets/product-ring-1.jpg";
+import galleryEarring from "@/assets/product-earring-1.jpg";
+import galleryChain from "@/assets/product-chain-1.jpg";
 import founderPortrait from "@/assets/founder-vijay-pokharna.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
@@ -221,13 +221,13 @@ function About() {
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <div className="aspect-[4/5] overflow-hidden">
-              <img src={boutique} alt="" loading="lazy" className="h-full w-full object-cover" />
+              <img src={galleryRing} alt="Platinum solitaire ring" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="aspect-[4/5] overflow-hidden">
-              <img src={craftsmanship} alt="" loading="lazy" className="h-full w-full object-cover" />
+              <img src={galleryEarring} alt="Platinum diamond earrings" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="aspect-[4/5] overflow-hidden">
-              <img src={handsDetail} alt="" loading="lazy" className="h-full w-full object-cover" />
+              <img src={galleryChain} alt="Platinum chain with solitaire pendant" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
