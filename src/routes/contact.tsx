@@ -3,16 +3,19 @@ import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/boutique.jpg";
+import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Pure Platinum, Mumbai" },
-      { name: "description", content: "Reach the Pure Platinum atelier. MG Road, Secunderabad. Trade enquiries, custom manufacturing and private appointments." },
+      { name: "description", content: "Reach the Pure Platinum atelier. MIDC, Andheri (E), Mumbai. Trade enquiries, custom manufacturing and private appointments." },
       { property: "og:title", content: "Contact — Pure Platinum" },
       { property: "og:description", content: "Trade enquiries, custom manufacturing and private appointments." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: abs(hero) },
+      { property: "og:url", content: `${SITE_URL}/contact` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: Contact,
 });
@@ -69,7 +72,7 @@ function Contact() {
                 </div>
               ))}
 
-              <a
+              
                 href={`https://wa.me/${WHATSAPP}`}
                 target="_blank"
                 rel="noopener noreferrer"
