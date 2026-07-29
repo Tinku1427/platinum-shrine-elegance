@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site-layout";
 import heroImage from "@/assets/product-ring-1.jpg";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 import handsDetail from "@/assets/hands-detail.jpg";
+import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,7 +15,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Pure Platinum — Platinum Jewellery Designer & Manufacturer" },
       { property: "og:description", content: "A trusted platinum jewellery designer, manufacturer and platinum partner, creating extraordinary possibilities in platinum." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: abs(heroImage) },
+      { property: "og:url", content: SITE_URL },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Home,
 });
@@ -188,8 +192,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-
 
       {/* CONTACT / REACH US strip — SRJ style */}
       <section className="py-16 md:py-24 bg-navy-mid border-y border-platinum/10">
