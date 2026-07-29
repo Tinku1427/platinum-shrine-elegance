@@ -184,7 +184,7 @@ function ProductPage() {
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                
+<a
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -193,7 +193,7 @@ function ProductPage() {
                   <MessageCircle size={15} />
                   Trade Enquiry
                 </a>
-                
+<a
                   href="#specifications"
                   className="inline-flex items-center justify-center border border-platinum/50 px-8 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-ivory hover:bg-platinum hover:text-navy-deep transition-all"
                 >
@@ -291,7 +291,7 @@ function ProductPage() {
       </section>
 
       {/* Floating WhatsApp */}
-      
+<a
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
