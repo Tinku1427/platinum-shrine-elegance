@@ -80,7 +80,7 @@ function Collection() {
       <section className="sticky top-[76px] z-30 bg-navy-deep/95 backdrop-blur-md border-b border-platinum/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex overflow-x-auto gap-8 py-4 no-scrollbar">
           {categories.map((c) => (
-            
+<a
               key={c.id}
               href={`#${c.id}`}
               className="text-[0.65rem] uppercase tracking-[0.35em] text-platinum/70 hover:text-ivory whitespace-nowrap"
