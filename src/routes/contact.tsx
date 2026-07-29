@@ -72,7 +72,7 @@ function Contact() {
                 </div>
               ))}
 
-              
+<a
                 href={`https://wa.me/${WHATSAPP}`}
                 target="_blank"
                 rel="noopener noreferrer"
