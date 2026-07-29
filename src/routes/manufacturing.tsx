@@ -7,6 +7,7 @@ import boutique from "@/assets/boutique.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
 import atelierFilm from "@/assets/atelier-film.mp4.asset.json";
 import productRing from "@/assets/product-ring-1.jpg";
+import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/manufacturing")({
   head: () => ({
@@ -15,8 +16,10 @@ export const Route = createFileRoute("/manufacturing")({
       { name: "description", content: "Inside the Pure Platinum atelier. From wax carving to final polish — how we manufacture 95% pure platinum jewellery by hand in Mumbai." },
       { property: "og:title", content: "Manufacturing — Pure Platinum" },
       { property: "og:description", content: "How we manufacture 95% pure platinum jewellery by hand in Mumbai." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: abs(hero) },
+      { property: "og:url", content: `${SITE_URL}/manufacturing` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/manufacturing` }],
   }),
   component: Manufacturing,
 });
@@ -88,7 +91,6 @@ function Manufacturing() {
               src={atelierFilm.url}
             />
 
-
             {!playing && (
               <button
                 onClick={handlePlay}
@@ -101,7 +103,6 @@ function Manufacturing() {
                 </span>
                 <span className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[0.65rem] uppercase tracking-[0.4em] text-ivory/80">
                   Play film
-
                 </span>
               </button>
             )}
