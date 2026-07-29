@@ -5,6 +5,7 @@ import { ArrowLeft, MessageCircle, Sparkles, ShieldCheck, Gem, ChevronRight } fr
 import logoWhite from "@/assets/pure-platinum-logo-white.asset.json";
 import { products, productList } from "@/data/products";
 import { SiteLayout } from "@/components/site-layout";
+import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/product/$id")({
   loader: ({ params }) => {
@@ -23,9 +24,11 @@ export const Route = createFileRoute("/product/$id")({
         { name: "description", content: `${p.name}. ${p.description.slice(0, 140)}` },
         { property: "og:title", content: `${p.name} — Pure Platinum` },
         { property: "og:description", content: p.tagline },
-        { property: "og:image", content: p.images[0] },
+        { property: "og:image", content: abs(p.images[0]) },
         { property: "og:type", content: "product" },
+        { property: "og:url", content: `${SITE_URL}/product/${p.id}` },
       ],
+      links: [{ rel: "canonical", href: `${SITE_URL}/product/${p.id}` }],
     };
   },
   component: ProductPage,
@@ -181,7 +184,7 @@ function ProductPage() {
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <a
+                
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -190,7 +193,7 @@ function ProductPage() {
                   <MessageCircle size={15} />
                   Trade Enquiry
                 </a>
-                <a
+                
                   href="#specifications"
                   className="inline-flex items-center justify-center border border-platinum/50 px-8 py-4 text-[0.7rem] uppercase tracking-[0.35em] text-ivory hover:bg-platinum hover:text-navy-deep transition-all"
                 >
@@ -288,7 +291,7 @@ function ProductPage() {
       </section>
 
       {/* Floating WhatsApp */}
-      <a
+      
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
