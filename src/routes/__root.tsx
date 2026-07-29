@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_URL, abs } from "../lib/site";
+import ogCover from "../assets/hero-2.jpg";
 
 function NotFoundComponent() {
   return (
@@ -60,7 +62,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a
+          
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
@@ -77,21 +79,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Hyderabad" },
-      { name: "description", content: "Pure Platinum is a Hyderabad-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
+      { title: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Mumbai" },
+      { name: "description", content: "Pure Platinum is a Mumbai-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
       { name: "author", content: "Pure Platinum" },
-      { property: "og:title", content: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Hyderabad" },
-      { property: "og:description", content: "Pure Platinum is a Hyderabad-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
+      { property: "og:site_name", content: "Pure Platinum" },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:title", content: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Mumbai" },
+      { property: "og:description", content: "Pure Platinum is a Mumbai-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: abs(ogCover) },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Hyderabad" },
-      { name: "twitter:description", content: "Pure Platinum is a Hyderabad-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3c27d0f5-ed5c-4eaf-aa9c-f2ae889c7ec0/id-preview-f336d8d0--1846a609-0ee1-4ed7-8130-5a54b4dd8d99.lovable.app-1783249418627.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3c27d0f5-ed5c-4eaf-aa9c-f2ae889c7ec0/id-preview-f336d8d0--1846a609-0ee1-4ed7-8130-5a54b4dd8d99.lovable.app-1783249418627.png" },
+      { name: "twitter:title", content: "Pure Platinum — Manufacturers of Pure Platinum Jewellery | Mumbai" },
+      { name: "twitter:description", content: "Pure Platinum is a Mumbai-based manufacturer of authentic 95% pure platinum jewellery. Naturally rare. Exceptionally durable. Trusted by retailers and ateliers across India." },
+      { name: "twitter:image", content: abs(ogCover) },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" },
