@@ -7,6 +7,7 @@ import craftsmanship from "@/assets/craftsmanship.jpg";
 import boutique from "@/assets/boutique.jpg";
 import handsDetail from "@/assets/hands-detail.jpg";
 import founderPortrait from "@/assets/founder-vijay-pokharna.jpg";
+import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -15,9 +16,11 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "The story of Pure Platinum — founded by Vijay Pokharna on the belief that platinum deserves specialists. A Mumbai manufacturing house dedicated to authentic platinum jewellery, design, and manufacturing partnerships." },
       { property: "og:title", content: "Our Story — Pure Platinum" },
       { property: "og:description", content: "Founded by Vijay Pokharna on the belief that platinum deserves specialists." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: abs(hero) },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: `${SITE_URL}/about` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: About,
 });
@@ -78,7 +81,7 @@ function About() {
           </div>
 
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
-            {/* Portrait — placeholder until client provides the final portrait photo */}
+            {/* Founder portrait — real photo supplied by client */}
             <div className="md:col-span-5">
               <div className="relative overflow-hidden aspect-[4/5] border border-platinum/15 shadow-[var(--shadow-luxe)]">
                 <img
@@ -235,7 +238,9 @@ function About() {
 
 /* ---------- Founder heritage timeline (scroll-reveal) ---------- */
 
-const TIMELINE = [
+type TimelineItem = { year?: string; title: string; body: string };
+
+const TIMELINE: TimelineItem[] = [
   { year: "1994", title: "The Beginning", body: "Started the journey in the jewellery industry by working in a retail jewellery store, building a strong foundation in craftsmanship, customer service, and industry expertise." },
   { year: "1999–2006", title: "Sales & Marketing", body: "Built extensive experience in jewellery sales and marketing, gaining deep market knowledge, industry insights, and strong relationships across the trade." },
   { year: "2006", title: "Founding Disha Gold", body: "Established Disha Gold in Zaveri Bazaar, Mumbai, marking the beginning of an independent entrepreneurial journey driven by trust, quality, and excellence." },
@@ -246,22 +251,22 @@ const TIMELINE = [
   { year: "2019", title: "PGI Certified Manufacturer", body: "Became a PGI Certified Manufacturer, reinforcing Pure Platinum's commitment to international standards of quality, authenticity, and manufacturing excellence." },
 ];
 
-const AWARDS = [
+const AWARDS: TimelineItem[] = [
   { year: "2015", title: "First in India with Swarovski", body: "Became the first Indian company to manufacture platinum jewellery with Swarovski, setting a new benchmark for innovation in the Indian jewellery industry." },
   { year: "2015", title: "Swarovski Award", body: "Received the Swarovski Award in recognition of excellence in platinum jewellery craftsmanship and innovation." },
-  { year: "To be verified", title: "IJ Jewellers' Choice Award", body: "Honoured for outstanding jewellery design and manufacturing excellence." },
-  { year: "To be verified", title: "National Jewellery Award", body: "Received for excellence in jewellery craftsmanship and manufacturing." },
-  { year: "To be verified", title: "Artisan Award", body: "Honoured for exceptional creativity, innovation, and excellence in jewellery design." },
+  { title: "IJ Jewellers' Choice Award", body: "Honoured for outstanding jewellery design and manufacturing excellence." },
+  { title: "National Jewellery Award", body: "Received for excellence in jewellery craftsmanship and manufacturing." },
+  { title: "Artisan Award", body: "Honoured for exceptional creativity, innovation, and excellence in jewellery design." },
 ];
 
-function FounderTimeline({ items }: { items: typeof TIMELINE }) {
+function FounderTimeline({ items }: { items: TimelineItem[] }) {
   return (
     <div className="relative mx-auto max-w-3xl">
       {/* vertical spine */}
       <div className="absolute left-[19px] md:left-1/2 top-2 bottom-2 w-px bg-platinum/20 md:-translate-x-1/2" aria-hidden="true" />
       <ol className="space-y-14 md:space-y-20">
         {items.map((item, idx) => (
-          <TimelineNode key={`${item.year}-${item.title}`} item={item} idx={idx} />
+          <TimelineNode key={`${item.year ?? "n"}-${item.title}`} item={item} idx={idx} />
         ))}
       </ol>
     </div>
@@ -272,7 +277,7 @@ function TimelineNode({
   item,
   idx,
 }: {
-  item: { year: string; title: string; body: string };
+  item: TimelineItem;
   idx: number;
 }) {
   const ref = useRef<HTMLLIElement>(null);
@@ -301,8 +306,10 @@ function TimelineNode({
       <span className="absolute left-[13px] md:left-1/2 top-1.5 h-3 w-3 rounded-full bg-champagne ring-4 ring-navy-deep md:-translate-x-1/2" aria-hidden="true" />
       <div className={`md:grid md:grid-cols-2 md:gap-12 ${left ? "" : "md:[direction:rtl]"}`}>
         <div className={`md:[direction:ltr] ${left ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-          <div className={`font-display leading-none text-champagne ${item.year.length > 6 ? "text-xl md:text-2xl" : "text-4xl md:text-5xl"}`}>{item.year}</div>
-          <h4 className="mt-3 text-[0.7rem] uppercase tracking-[0.4em] text-platinum pl-[0.4em] md:pl-0">
+          {item.year && (
+            <div className={`font-display leading-none text-champagne ${item.year.length > 6 ? "text-xl md:text-2xl" : "text-4xl md:text-5xl"}`}>{item.year}</div>
+          )}
+          <h4 className={`text-[0.7rem] uppercase tracking-[0.4em] text-platinum pl-[0.4em] md:pl-0 ${item.year ? "mt-3" : ""}`}>
             {item.title}
           </h4>
         </div>
