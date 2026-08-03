@@ -7,7 +7,7 @@ import lifestyleRing from "@/assets/lifestyle-ring.jpg";
 import lifestyleEarrings from "@/assets/lifestyle-earrings.jpg";
 import lifestylePendant from "@/assets/lifestyle-pendant-1.jpg";
 import lifestyleBracelet from "@/assets/lifestyle-bracelet.jpg";
-import craftsmanship from "@/assets/craftsmanship.jpg";
+import lifestylePendant2 from "@/assets/lifestyle-pendant-2.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -201,26 +201,39 @@ function Home() {
         </div>
       </section>
 
-      {/* ATELIER BAND — full-width entry point to Manufacturing */}
+      {/* ATELIER BAND — split layout so the portrait photograph keeps its
+          natural proportions instead of being cropped to a thin strip. */}
       <section className="pb-20 md:pb-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
           <Link
             to="/manufacturing"
-            className="group relative block overflow-hidden aspect-[16/9] md:aspect-[21/7]"
+            className="group grid md:grid-cols-2 overflow-hidden border border-platinum/15"
           >
-            <img
-              src={craftsmanship}
-              alt="Inside the Pure Platinum atelier"
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-ivory/45 group-hover:bg-ivory/55 transition-colors duration-500" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-              <span className="font-display text-3xl md:text-5xl text-navy-deep leading-tight max-w-lg drop-shadow-lg">
-                Inside the Pure Platinum atelier
-              </span>
-              <span className="mt-7 inline-flex items-center justify-center border border-navy-deep/85 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-navy-deep transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
-                <span className="pl-[0.35em]">Discover</span>
+            {/* Image — right on desktop, top on mobile */}
+            <div className="order-1 md:order-2 relative aspect-[4/3] md:aspect-auto md:min-h-[30rem] overflow-hidden">
+              <img
+                src={lifestylePendant2}
+                alt="A Pure Platinum pendant, hand-finished in Mumbai"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover object-[50%_38%] transition-transform duration-[1600ms] group-hover:scale-105"
+              />
+            </div>
+
+            {/* Copy */}
+            <div className="order-2 md:order-1 bg-navy-mid flex flex-col items-center justify-center text-center px-8 py-14 md:px-14 md:py-20">
+              <div className="eyebrow mb-6">The Atelier</div>
+              <h2 className="font-display text-3xl md:text-[2.75rem] text-ivory leading-[1.15] max-w-sm">
+                Crafted by hand.<br />
+                <span className="italic text-platinum">Worn for a lifetime.</span>
+              </h2>
+              <div className="hairline w-16 my-7" />
+              <p className="text-[15px] text-platinum/85 font-light leading-relaxed max-w-sm">
+                Every Pure Platinum piece is cast, forged and finished by our own
+                karigars in Mumbai — because platinum rewards patience, and nothing
+                here is rushed.
+              </p>
+              <span className="mt-9 inline-flex items-center justify-center border border-ivory/70 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-ivory transition-colors duration-500 group-hover:bg-ivory group-hover:text-navy-deep">
+                <span className="pl-[0.35em]">Inside the atelier</span>
               </span>
             </div>
           </Link>
