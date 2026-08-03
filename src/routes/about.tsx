@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/hero-2.jpg";
-import atelierMasters from "@/assets/atelier-masters.jpg";
+import founderStudio from "@/assets/founder-vijay-portrait.jpg";
 import galleryRing from "@/assets/product-ring-1.jpg";
 import galleryEarring from "@/assets/product-earring-1.jpg";
 import galleryChain from "@/assets/product-chain-1.jpg";
@@ -176,16 +176,16 @@ function About() {
             <div className="md:col-span-5">
               <div className="relative overflow-hidden aspect-[4/5] border border-platinum/15 shadow-[var(--shadow-luxe)]">
                 <img
-                  src={atelierMasters}
-                  alt="Master jewellers at the Pure Platinum atelier"
+                  src={founderStudio}
+                  alt="Vijay Pokharna, Founder & CEO of Pure Platinum"
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
               </div>
               <div className="mt-5 text-center">
-                <div className="font-display text-lg text-ivory tracking-wide">THE PURE PLATINUM ATELIER</div>
+                <div className="font-display text-lg text-ivory tracking-wide">VIJAY POKHARNA</div>
                 <div className="text-[0.65rem] uppercase tracking-[0.4em] text-platinum-dark mt-2">
-                  Masters of the rarest metal
+                  Founder &amp; CEO
                 </div>
               </div>
             </div>
