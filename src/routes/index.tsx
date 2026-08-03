@@ -3,8 +3,8 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site-layout";
 import heroImage from "@/assets/product-ring-1.jpg";
-import bandsCompanion4 from "@/assets/bands-companion-4.jpg";
-import bandsCompanion5 from "@/assets/bands-companion-5.jpg";
+import lifestyleEarrings from "@/assets/lifestyle-earrings.jpg";
+import lifestyleRing from "@/assets/lifestyle-ring.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -156,17 +156,18 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <Link to="/collection" className="group relative block overflow-hidden aspect-square">
               <img
-                src={bandsCompanion4}
+                src={lifestyleEarrings}
                 alt="Explore the Pure Platinum collection"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-navy-deep/45 group-hover:bg-navy-deep/55 transition-colors" />
+              {/* Dark scrim so the cream type stays legible over the navy photography */}
+              <div className="absolute inset-0 bg-ivory/35 group-hover:bg-ivory/45 transition-colors duration-500" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                <span className="font-display text-3xl md:text-4xl text-ivory leading-tight max-w-xs drop-shadow-lg">
+                <span className="font-display text-3xl md:text-4xl text-navy-deep leading-tight max-w-xs drop-shadow-lg">
                   Explore the Pure Platinum collection
                 </span>
-                <span className="mt-6 text-champagne uppercase tracking-[0.4em] text-[0.6rem] pl-[0.4em] opacity-90">
+                <span className="mt-7 inline-flex items-center justify-center border border-navy-deep/80 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-navy-deep pl-[0.35em] transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
                   View
                 </span>
               </div>
@@ -174,17 +175,17 @@ function Home() {
 
             <Link to="/manufacturing" className="group relative block overflow-hidden aspect-square">
               <img
-                src={bandsCompanion5}
+                src={lifestyleRing}
                 alt="Inside the Pure Platinum atelier"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-navy-deep/50 group-hover:bg-navy-deep/60 transition-colors" />
+              <div className="absolute inset-0 bg-ivory/35 group-hover:bg-ivory/45 transition-colors duration-500" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                <span className="font-display text-3xl md:text-4xl text-ivory leading-tight max-w-xs drop-shadow-lg">
+                <span className="font-display text-3xl md:text-4xl text-navy-deep leading-tight max-w-xs drop-shadow-lg">
                   Inside the Pure Platinum atelier
                 </span>
-                <span className="mt-6 text-champagne uppercase tracking-[0.4em] text-[0.6rem] pl-[0.4em] opacity-90">
+                <span className="mt-7 inline-flex items-center justify-center border border-navy-deep/80 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-navy-deep pl-[0.35em] transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
                   Discover
                 </span>
               </div>
