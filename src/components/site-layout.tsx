@@ -134,11 +134,11 @@ export function SiteFooter() {
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 border border-platinum px-9 py-3.5 text-[0.65rem] uppercase tracking-[0.35em] text-ivory pl-[0.35em] hover:bg-platinum hover:text-navy-deep transition-colors duration-500"
+            className="group inline-flex items-center justify-center gap-3 border border-platinum px-9 py-3.5 text-[0.65rem] uppercase tracking-[0.35em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors duration-500"
             aria-label="Follow Pure Platinum on Instagram"
           >
-            <Instagram size={15} strokeWidth={1.4} />
-            <span>@pureplatinum_</span>
+            <Instagram size={15} strokeWidth={1.4} className="shrink-0" />
+            <span className="pl-[0.35em]">@pureplatinum_</span>
           </a>
         </div>
       </div>
