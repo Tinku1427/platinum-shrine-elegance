@@ -21,7 +21,7 @@ const NAV = [
 ];
 
 // Instagram profile — update handle to the brand's live account.
-const IG_URL = "https://www.instagram.com/pureplatinum";
+const IG_URL = "https://www.instagram.com/pureplatinum_";
 
 /**
  * Brand logo — the Pure Platinum monogram mark only (no wordmark, no tagline).
