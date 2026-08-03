@@ -3,14 +3,6 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Instagram, Facebook, Linkedin } from "lucide-react";
 import logoDark from "@/assets/pure-platinum-mark-dark.png";
 import logoWhite from "@/assets/pure-platinum-mark-white.png";
-import collectionRings from "@/assets/collection-rings.jpg";
-import collectionEarrings from "@/assets/collection-earrings.jpg";
-import collectionChains from "@/assets/collection-chains.jpg";
-import collectionBracelets from "@/assets/collection-bracelets.jpg";
-import productRing from "@/assets/product-ring-1.jpg";
-import productEarring from "@/assets/product-earring-1.jpg";
-import productChain from "@/assets/product-chain-1.jpg";
-import productBracelet from "@/assets/product-bracelet-1.jpg";
 
 const NAV = [
   { label: "Home", to: "/" as const },
@@ -127,52 +119,27 @@ export function SiteHeader() {
   );
 }
 
-const IG_TILES = [
-  collectionRings,
-  collectionEarrings,
-  collectionChains,
-  collectionBracelets,
-  productRing,
-  productEarring,
-  productChain,
-  productBracelet,
-];
-
 export function SiteFooter() {
   return (
     <footer className="bg-navy-deep border-t border-platinum/15">
-      {/* Instagram gallery — each tile links to the profile */}
-      <div className="bg-navy-mid py-14 border-t border-platinum/10">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      {/* Instagram — link to the live profile. A real auto-updating feed can be
+          dropped in here later; a static grid of product shots was removed because
+          it never reflected new posts. */}
+      <div className="bg-navy-mid py-12 border-t border-platinum/10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-5 text-center">
+          <div className="text-[0.6rem] uppercase tracking-[0.4em] text-platinum-dark pl-[0.4em]">
+            Follow our latest work
+          </div>
           <a
             href={IG_URL}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-3 mb-8 text-ivory/80 hover:text-ivory transition-colors"
+            className="group inline-flex items-center gap-3 border border-platinum px-9 py-3.5 text-[0.65rem] uppercase tracking-[0.35em] text-ivory pl-[0.35em] hover:bg-platinum hover:text-navy-deep transition-colors duration-500"
             aria-label="Follow Pure Platinum on Instagram"
           >
-            <Instagram size={18} strokeWidth={1.25} />
-            <span className="uppercase tracking-[0.4em] text-[0.6rem] pl-[0.4em]">Follow us</span>
+            <Instagram size={15} strokeWidth={1.4} />
+            <span>@pureplatinum_</span>
           </a>
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-2 md:gap-3">
-            {IG_TILES.map((src, i) => (
-              <a
-                key={i}
-                href={IG_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="block aspect-square overflow-hidden group"
-                aria-label="View on Instagram"
-              >
-                <img
-                  src={src}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 
