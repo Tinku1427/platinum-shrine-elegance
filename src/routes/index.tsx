@@ -3,8 +3,11 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site-layout";
 import heroImage from "@/assets/product-ring-1.jpg";
-import lifestyleEarrings from "@/assets/lifestyle-earrings.jpg";
 import lifestyleRing from "@/assets/lifestyle-ring.jpg";
+import lifestyleEarrings from "@/assets/lifestyle-earrings.jpg";
+import lifestylePendant from "@/assets/lifestyle-pendant-1.jpg";
+import lifestyleBracelet from "@/assets/lifestyle-bracelet.jpg";
+import craftsmanship from "@/assets/craftsmanship.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -22,6 +25,13 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
+
+const COLLECTIONS = [
+  { id: "rings" as const, name: "Rings", image: lifestyleRing },
+  { id: "earrings" as const, name: "Earrings", image: lifestyleEarrings },
+  { id: "chains" as const, name: "Chains & Pendants", image: lifestylePendant },
+  { id: "bracelets" as const, name: "Bracelets", image: lifestyleBracelet },
+];
 
 const ECOSYSTEM = [
   { t: "Platinum Jewellery", d: "Exclusive designs crafted for those who appreciate rarity, elegance, and timeless beauty." },
@@ -150,47 +160,70 @@ function Home() {
         </div>
       </section>
 
-      {/* DUAL TILES — Collection & Manufacturing (SRJ style) */}
+      {/* COLLECTIONS STRIP — four categories, each a lifestyle tile */}
+      <section className="pb-16 md:pb-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
+          <div className="text-center mb-12 md:mb-16">
+            <div className="eyebrow mb-5">Pure Platinum Collections</div>
+            <h2 className="font-display font-light text-3xl md:text-5xl text-ivory tracking-[0.1em] leading-tight">
+              Explore the collection.
+            </h2>
+            <div className="hairline w-20 mt-6 mx-auto" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+            {COLLECTIONS.map((c) => (
+              <Link
+                key={c.id}
+                to="/collection"
+                hash={c.id}
+                className="group relative block overflow-hidden aspect-[3/4]"
+              >
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
+                />
+                {/* Dark scrim keeps the cream type legible over the navy photography */}
+                <div className="absolute inset-0 bg-ivory/30 group-hover:bg-ivory/45 transition-colors duration-500" />
+                <div className="absolute inset-x-0 bottom-0 flex flex-col items-center px-4 pb-9 text-center">
+                  <span className="font-display text-2xl md:text-[1.65rem] text-navy-deep leading-tight drop-shadow-lg">
+                    {c.name}
+                  </span>
+                  <span className="mt-5 inline-flex items-center justify-center border border-navy-deep/85 px-7 py-3 text-[0.58rem] uppercase tracking-[0.32em] text-navy-deep transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
+                    <span className="pl-[0.32em]">View</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ATELIER BAND — full-width entry point to Manufacturing */}
       <section className="pb-20 md:pb-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <Link to="/collection" className="group relative block overflow-hidden aspect-square">
-              <img
-                src={lifestyleEarrings}
-                alt="Explore the Pure Platinum collection"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
-              />
-              {/* Dark scrim so the cream type stays legible over the navy photography */}
-              <div className="absolute inset-0 bg-ivory/35 group-hover:bg-ivory/45 transition-colors duration-500" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                <span className="font-display text-3xl md:text-4xl text-navy-deep leading-tight max-w-xs drop-shadow-lg">
-                  Explore the Pure Platinum collection
-                </span>
-                <span className="mt-7 inline-flex items-center justify-center border border-navy-deep/80 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-navy-deep pl-[0.35em] transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
-                  View
-                </span>
-              </div>
-            </Link>
-
-            <Link to="/manufacturing" className="group relative block overflow-hidden aspect-square">
-              <img
-                src={lifestyleRing}
-                alt="Inside the Pure Platinum atelier"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-ivory/35 group-hover:bg-ivory/45 transition-colors duration-500" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                <span className="font-display text-3xl md:text-4xl text-navy-deep leading-tight max-w-xs drop-shadow-lg">
-                  Inside the Pure Platinum atelier
-                </span>
-                <span className="mt-7 inline-flex items-center justify-center border border-navy-deep/80 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-navy-deep pl-[0.35em] transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
-                  Discover
-                </span>
-              </div>
-            </Link>
-          </div>
+          <Link
+            to="/manufacturing"
+            className="group relative block overflow-hidden aspect-[16/9] md:aspect-[21/7]"
+          >
+            <img
+              src={craftsmanship}
+              alt="Inside the Pure Platinum atelier"
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-ivory/45 group-hover:bg-ivory/55 transition-colors duration-500" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+              <span className="font-display text-3xl md:text-5xl text-navy-deep leading-tight max-w-lg drop-shadow-lg">
+                Inside the Pure Platinum atelier
+              </span>
+              <span className="mt-7 inline-flex items-center justify-center border border-navy-deep/85 px-9 py-3.5 text-[0.62rem] uppercase tracking-[0.35em] text-navy-deep transition-colors duration-500 group-hover:bg-navy-deep group-hover:text-ivory">
+                <span className="pl-[0.35em]">Discover</span>
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
