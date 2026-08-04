@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
-import hero from "@/assets/hero-3.jpg";
+import hero from "@/assets/lifestyle-studs.jpg";
 import collectionRings from "@/assets/collection-rings.jpg";
 import collectionEarrings from "@/assets/collection-earrings.jpg";
 import collectionChains from "@/assets/collection-chains.jpg";
