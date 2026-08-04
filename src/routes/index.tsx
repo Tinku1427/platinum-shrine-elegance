@@ -87,7 +87,7 @@ function Home() {
             <img
               src={heroImage}
               alt="A platinum diamond ring"
-              className="absolute inset-0 h-full w-full object-cover object-[50%_32%] animate-ken-burns"
+              className="absolute inset-0 h-full w-full object-cover object-center animate-ken-burns"
             />
             {/* Blend fade — softens the seam so the image reads as part of the same section as the text */}
             <div className="hidden md:block absolute inset-y-0 left-0 w-24 lg:w-32 bg-gradient-to-r from-navy-deep to-transparent pointer-events-none" />
