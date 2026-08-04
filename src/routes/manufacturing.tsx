@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Hammer, Flame, Gem, ShieldCheck, Sparkles, Ruler, Play } from "lucide-react";
 import { useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
-import hero from "@/assets/hands-detail.jpg";
+import hero from "@/assets/lifestyle-teardrop.jpg";
 import boutique from "@/assets/boutique.jpg";
 import atelierMasters from "@/assets/atelier-masters.jpg";
 import atelierFilm from "@/assets/atelier-film.mp4.asset.json";
