@@ -46,7 +46,7 @@ function Home() {
     <SiteLayout>
       {/* HERO — split layout: text left, image right */}
       <section className="w-full">
-        <div className="grid md:grid-cols-2 md:min-h-[calc(100vh-6rem)]">
+        <div className="grid md:grid-cols-[1.5fr_1fr] md:items-stretch">
           {/* Text column */}
           <div className="order-2 md:order-1 flex items-center bg-navy-deep px-6 sm:px-10 lg:px-16 py-16 md:py-0">
             <div className="animate-fade-up max-w-xl mx-auto md:mx-0">
@@ -83,11 +83,11 @@ function Home() {
           </div>
 
           {/* Image column */}
-          <div className="order-1 md:order-2 relative aspect-[3/4] md:aspect-auto md:min-h-0 overflow-hidden">
+          <div className="order-1 md:order-2 relative aspect-[3/4] overflow-hidden">
             <img
               src={heroImage}
               alt="A platinum diamond ring"
-              className="absolute inset-0 h-full w-full object-cover object-center animate-ken-burns"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
             {/* Blend fade — softens the seam so the image reads as part of the same section as the text */}
             <div className="hidden md:block absolute inset-y-0 left-0 w-24 lg:w-32 bg-gradient-to-r from-navy-deep to-transparent pointer-events-none" />
