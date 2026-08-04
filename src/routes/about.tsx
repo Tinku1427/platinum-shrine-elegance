@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
-import hero from "@/assets/hero-2.jpg";
+import hero from "@/assets/lifestyle-kite-pendant.jpg";
 import founderStudio from "@/assets/founder-vijay-portrait.jpg";
 import founderPortrait from "@/assets/founder-vijay-pokharna.jpg";
 import { SITE_URL, abs } from "@/lib/site";
