@@ -206,7 +206,7 @@ export function PageHero({
 }) {
   return (
     <section className="w-full">
-      <div className="grid md:grid-cols-2 md:min-h-[calc(100vh-6rem)]">
+      <div className="grid md:grid-cols-[1.5fr_1fr] md:items-stretch">
         {/* Text column — left on desktop, below the image on mobile */}
         <div className="order-2 md:order-1 flex items-center bg-navy-deep px-6 lg:px-16 py-14 md:py-0">
           <div className="max-w-xl animate-fade-up mx-auto md:mx-0">
@@ -224,11 +224,13 @@ export function PageHero({
         </div>
 
         {/* Image column — right on desktop, on top on mobile */}
-        <div className="order-1 md:order-2 relative aspect-[3/4] md:aspect-auto md:min-h-0 overflow-hidden">
+        <div className="order-1 md:order-2 relative aspect-[3/4] overflow-hidden">
+          {/* Container is locked to the photographs' own 3:4 ratio and the zoom is
+              removed, so the full frame shows on every screen — nothing is cropped. */}
           <img
             src={image}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-center animate-ken-burns"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
           {/* Blend fade — desktop only. On mobile a bottom fade sat directly over
               the necklace line, so it is deliberately omitted. */}
