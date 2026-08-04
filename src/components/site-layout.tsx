@@ -3,6 +3,8 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Instagram, Facebook, Linkedin } from "lucide-react";
 import logoDark from "@/assets/pure-platinum-mark-dark.png";
 import logoWhite from "@/assets/pure-platinum-mark-white.png";
+import lockupDark from "@/assets/pure-platinum-logo-dark.png";
+import lockupWhite from "@/assets/pure-platinum-logo-white.png";
 
 const NAV = [
   { label: "Home", to: "/" as const },
@@ -16,15 +18,17 @@ const NAV = [
 const IG_URL = "https://www.instagram.com/pureplatinum_";
 
 /**
- * Brand logo — the Pure Platinum monogram mark only (no wordmark, no tagline).
- * One consistent scale across desktop and mobile.
+ * Brand logo. `lockup` renders the full mark + PURE PLATINUM wordmark;
+ * without it you get the monogram mark on its own.
  */
 function BrandLogo({
   className = "h-14 w-14 md:h-16 md:w-16",
   variant = "dark",
+  lockup = false,
 }: {
   className?: string;
   variant?: "dark" | "white";
+  lockup?: boolean;
 }) {
   return (
     <Link
@@ -33,7 +37,11 @@ function BrandLogo({
       className="group inline-flex items-center justify-center"
     >
       <img
-        src={variant === "white" ? logoWhite : logoDark}
+        src={
+          lockup
+            ? variant === "white" ? lockupWhite : lockupDark
+            : variant === "white" ? logoWhite : logoDark
+        }
         alt="Pure Platinum"
         className={`${className} w-auto object-contain transition-transform duration-500 group-hover:scale-105`}
       />
@@ -50,7 +58,7 @@ export function SiteHeader() {
 
   return (
     <>
-      {/* Logo bar — centred mark only (no wordmark text) */}
+      {/* Logo bar — full brand lockup (mark + wordmark) */}
       <div className="relative z-40 bg-[#FBF8F2] border-b border-[#DCD3C0]">
         <div className="relative flex items-center justify-center px-14 py-6 md:py-7">
           <button
@@ -60,7 +68,7 @@ export function SiteHeader() {
           >
             <Menu size={24} strokeWidth={1.25} />
           </button>
-          <BrandLogo variant="dark" className="h-12 w-12 md:h-14 md:w-14" />
+          <BrandLogo variant="dark" lockup className="h-12 md:h-16" />
         </div>
       </div>
 
@@ -91,7 +99,7 @@ export function SiteHeader() {
       {open && (
         <div className="md:hidden fixed inset-0 z-[60] bg-[#10233F]">
           <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
-            <img src={logoWhite} alt="Pure Platinum" className="h-9 w-auto object-contain" />
+            <img src={lockupWhite} alt="Pure Platinum" className="h-10 w-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
               className="text-white/90 hover:text-white transition-colors"
