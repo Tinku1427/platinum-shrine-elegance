@@ -167,8 +167,10 @@
   50% { opacity: 1; }
 }
 @keyframes ken-burns {
-  0% { transform: scale(1.02); }
-  100% { transform: scale(1.14); }
+  /* Kept gentle: a large zoom crops the edges of a portrait photograph and
+     pushed the necklace line out of frame on smaller screens. */
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
 }
 @keyframes platinum-sheen {
   0% { background-position: -200% 0; }
