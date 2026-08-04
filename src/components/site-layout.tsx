@@ -154,7 +154,7 @@ export function SiteFooter() {
       {/* Bottom */}
       <div className="py-14 border-t border-platinum/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
-          <BrandLogo variant="dark" className="h-16 w-16 md:h-20 md:w-20" />
+          <BrandLogo variant="dark" lockup className="w-40 md:w-48" />
 
           <div className="text-[0.62rem] uppercase tracking-[0.4em] text-platinum-dark text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
