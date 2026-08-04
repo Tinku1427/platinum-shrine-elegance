@@ -43,7 +43,7 @@ function BrandLogo({
             : variant === "white" ? logoWhite : logoDark
         }
         alt="Pure Platinum"
-        className={`${className} w-auto object-contain transition-transform duration-500 group-hover:scale-105`}
+        className={`${className} ${lockup ? "h-auto" : "w-auto"} object-contain transition-transform duration-500 group-hover:scale-105`}
       />
     </Link>
   );
@@ -68,7 +68,7 @@ export function SiteHeader() {
           >
             <Menu size={24} strokeWidth={1.25} />
           </button>
-          <BrandLogo variant="dark" lockup className="h-12 md:h-16" />
+          <BrandLogo variant="dark" lockup className="w-44 md:w-56" />
         </div>
       </div>
 
@@ -99,7 +99,7 @@ export function SiteHeader() {
       {open && (
         <div className="md:hidden fixed inset-0 z-[60] bg-[#10233F]">
           <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
-            <img src={lockupWhite} alt="Pure Platinum" className="h-10 w-auto object-contain" />
+            <img src={lockupWhite} alt="Pure Platinum" className="w-36 h-auto object-contain" />
             <button
               onClick={() => setOpen(false)}
               className="text-white/90 hover:text-white transition-colors"
