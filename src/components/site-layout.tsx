@@ -206,7 +206,7 @@ export function PageHero({
 }) {
   return (
     <section className="w-full">
-      <div className="grid md:grid-cols-2 md:min-h-[640px]">
+      <div className="grid md:grid-cols-2 md:min-h-[calc(100vh-6rem)]">
         {/* Text column — left on desktop, below the image on mobile */}
         <div className="order-2 md:order-1 flex items-center bg-navy-deep px-6 lg:px-16 py-14 md:py-0">
           <div className="max-w-xl animate-fade-up mx-auto md:mx-0">
@@ -228,7 +228,7 @@ export function PageHero({
           <img
             src={image}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-[50%_32%] animate-ken-burns"
+            className="absolute inset-0 h-full w-full object-cover object-center animate-ken-burns"
           />
           {/* Blend fade — desktop only. On mobile a bottom fade sat directly over
               the necklace line, so it is deliberately omitted. */}
