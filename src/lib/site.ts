@@ -1,4 +1,4 @@
-export const SITE_URL = "https://platinum-shrine-elegance.vercel.app";
+export const SITE_URL = "https://www.pureplatinum.co.in";
 
 /** Vite asset imports resolve to relative paths; OG/Twitter tags need absolute URLs. */
 export function abs(path: string): string {
