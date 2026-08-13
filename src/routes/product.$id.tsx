@@ -47,7 +47,7 @@ export const Route = createFileRoute("/product/$id")({
   ),
 });
 
-const WHATSAPP_NUMBER = "917380009000";
+const WHATSAPP_NUMBER = "919320556743";
 
 function ProductPage() {
   const { product } = Route.useLoaderData();
