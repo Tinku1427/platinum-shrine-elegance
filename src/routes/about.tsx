@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/lifestyle-kite-pendant.jpg";
 import founderPortrait from "@/assets/founder-vijay-portrait.jpg";
-import founderStudio from "@/assets/founder-vijay-pokharna.jpg";
+import founderStudio from "@/assets/founder-vijay-studio.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
