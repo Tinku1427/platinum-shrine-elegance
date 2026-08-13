@@ -245,14 +245,14 @@ function Home() {
             </li>
             <li className="flex flex-col items-center gap-3">
               <Mail size={20} className="text-platinum-dark" />
-              <a href="mailto:info@pureplatinum.in" className="hover:text-ivory transition-colors">
-                info@pureplatinum.in
+              <a href="mailto:info@pureplatinum.co.in" className="hover:text-ivory transition-colors">
+                info@pureplatinum.co.in
               </a>
             </li>
             <li className="flex flex-col items-center gap-3">
               <Phone size={20} className="text-platinum-dark" />
               <span>
-                <a href="tel:+919122663797" className="hover:text-ivory transition-colors">+91 91226 63797</a>
+                <a href="tel:+919320556743" className="hover:text-ivory transition-colors">+91 93205 56743</a>
                 <br />
                 <span className="text-platinum-dark text-xs">Trade enquiries</span>
               </span>
