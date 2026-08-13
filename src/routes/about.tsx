@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { SiteLayout, PageHero } from "@/components/site-layout";
 import hero from "@/assets/lifestyle-kite-pendant.jpg";
-import founderStudio from "@/assets/founder-vijay-portrait.jpg";
-import founderPortrait from "@/assets/founder-vijay-pokharna.jpg";
+import founderPortrait from "@/assets/founder-vijay-portrait.jpg";
+import founderStudio from "@/assets/founder-vijay-pokharna.jpg";
 import { SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
@@ -176,7 +176,7 @@ function About() {
                   src={founderStudio}
                   alt="Vijay Pokharna, Founder & CEO of Pure Platinum"
                   loading="lazy"
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="mt-5 text-center">
