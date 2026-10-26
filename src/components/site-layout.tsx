@@ -11,6 +11,7 @@ const NAV = [
   { label: "Our Story", to: "/about" as const },
   { label: "Collection", to: "/collection" as const },
   { label: "Manufacturing", to: "/manufacturing" as const },
+  { label: "Partner", to: "/partner" as const },
   { label: "Contact", to: "/contact" as const },
 ];
 
