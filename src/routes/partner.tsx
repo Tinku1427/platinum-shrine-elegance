@@ -114,13 +114,12 @@ function Partner() {
     name: "",
     business: "",
     mobile: "",
-    whatsapp: "",
     email: "",
     city: "",
     state: "",
-    type: "Independent Jewellery Store",
+    type: "Retail Store (1-3 Stores)",
     outlets: "",
-    selling: "Exploring the category",
+    selling: "Ready Stock",
     message: "",
   });
   const [sent, setSent] = useState(false);
@@ -129,7 +128,7 @@ function Partner() {
     e.preventDefault();
     const subject = encodeURIComponent(`Retail Partnership enquiry — ${form.business || form.name}`);
     const body = encodeURIComponent(
-      `Full Name: ${form.name}\nBusiness / Store: ${form.business}\nMobile: ${form.mobile}\nWhatsApp: ${form.whatsapp}\nBusiness Email: ${form.email}\nCity: ${form.city}\nState: ${form.state}\nType of Business: ${form.type}\nRetail Outlets: ${form.outlets}\nCurrently selling platinum: ${form.selling}\n\n${form.message}`,
+      `Full Name: ${form.name}\nBusiness / Store: ${form.business}\nMobile: ${form.mobile}\nBusiness Email: ${form.email}\nCity: ${form.city}\nState: ${form.state}\nType of Retailer: ${form.type}\nRetail Outlets: ${form.outlets}\nPlatinum Business: ${form.selling}\n\n${form.message}`,
     );
     window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${subject}&body=${body}`;
     setSent(true);
@@ -349,9 +348,6 @@ function Partner() {
                 <Field label="Mobile Number" required>
                   <input required value={form.mobile} onChange={(e) => setForm({ ...form, mobile: e.target.value })} className={inputCls} />
                 </Field>
-                <Field label="WhatsApp Number">
-                  <input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} className={inputCls} />
-                </Field>
                 <Field label="Business Email" required>
                   <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} />
                 </Field>
@@ -366,20 +362,19 @@ function Partner() {
                 </Field>
               </div>
 
-              <Field label="Type of Business">
+              <Field label="Type of Retailers">
                 <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className={`${inputCls} [&>option]:bg-navy-deep`}>
-                  <option>Independent Jewellery Store</option>
-                  <option>Jewellery Showroom</option>
-                  <option>Multi-Location Retail Business</option>
-                  <option>Other</option>
+                  <option>Retail Store (1-3 Stores)</option>
+                  <option>Multi Store Retailer (More than 3 Stores)</option>
+                  <option>Others</option>
                 </select>
               </Field>
 
-              <Field label="Are you currently selling platinum jewellery?">
+              <Field label="Describe your current Platinum Jewellery Business?">
                 <select value={form.selling} onChange={(e) => setForm({ ...form, selling: e.target.value })} className={`${inputCls} [&>option]:bg-navy-deep`}>
-                  <option>Yes</option>
-                  <option>No</option>
-                  <option>Exploring the category</option>
+                  <option>Ready Stock</option>
+                  <option>Order Only</option>
+                  <option>Exploring the Category</option>
                 </select>
               </Field>
 
