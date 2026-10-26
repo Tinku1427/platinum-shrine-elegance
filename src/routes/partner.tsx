@@ -27,7 +27,9 @@ export const Route = createFileRoute("/partner")({
   component: Partner,
 });
 
-const ENQUIRY_EMAIL = "info@pureplatinum.co.in";
+// Web3Forms — free form delivery to your inbox. Get a key at https://web3forms.com
+// (enter info@pureplatinum.co.in there), then paste it below. Submissions are emailed automatically.
+const WEB3FORMS_ACCESS_KEY = "58ed30da-4825-4e64-a4a3-54a0dd98a42a";
 
 const HIGHLIGHTS = [
   "Dedicated Retailer Onboarding Support",
@@ -122,16 +124,36 @@ function Partner() {
     selling: "Ready Stock",
     message: "",
   });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Retail Partnership enquiry — ${form.business || form.name}`);
-    const body = encodeURIComponent(
-      `Full Name: ${form.name}\nBusiness / Store: ${form.business}\nMobile: ${form.mobile}\nBusiness Email: ${form.email}\nCity: ${form.city}\nState: ${form.state}\nType of Retailer: ${form.type}\nRetail Outlets: ${form.outlets}\nPlatinum Business: ${form.selling}\n\n${form.message}`,
-    );
-    window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Retail Partnership enquiry — ${form.business || form.name}`,
+          from_name: "Pure Platinum — Partner Form",
+          "Full Name": form.name,
+          "Business / Store": form.business,
+          "Mobile Number": form.mobile,
+          "Business Email": form.email,
+          City: form.city,
+          State: form.state,
+          "Type of Retailer": form.type,
+          "Retail Outlets": form.outlets,
+          "Platinum Business": form.selling,
+          Message: form.message,
+        }),
+      });
+      const data = await res.json();
+      setStatus(data?.success ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -327,7 +349,7 @@ function Partner() {
             </p>
           </div>
 
-          {sent ? (
+          {status === "sent" ? (
             <div className="border border-champagne/40 bg-[var(--surface-white)] p-8 md:p-12 text-center">
               <Check size={28} className="text-champagne mx-auto mb-5" />
               <h3 className="font-display text-2xl text-ivory mb-3">Thank you for your interest in Pure Platinum!</h3>
@@ -384,10 +406,18 @@ function Partner() {
 
               <button
                 type="submit"
-                className="group inline-flex items-center gap-3 border border-platinum rounded-[2px] text-ivory px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-ivory hover:text-navy-deep transition-colors duration-700"
+                disabled={status === "sending"}
+                className="group inline-flex items-center gap-3 border border-platinum rounded-[2px] text-ivory px-10 py-4 text-[0.7rem] uppercase tracking-[0.35em] hover:bg-ivory hover:text-navy-deep transition-colors duration-700 disabled:opacity-60 disabled:pointer-events-none"
               >
-                Apply for Retail Partnership <Send size={14} className="transition-transform group-hover:translate-x-1" />
+                {status === "sending" ? "Sending…" : "Apply for Retail Partnership"}
+                <Send size={14} className="transition-transform group-hover:translate-x-1" />
               </button>
+              {status === "error" && (
+                <p className="text-[0.8rem] text-[#A34D4D] pt-1">
+                  Something went wrong sending your enquiry. Please try again, or email us directly at{" "}
+                  <a href="mailto:info@pureplatinum.co.in" className="underline">info@pureplatinum.co.in</a>.
+                </p>
+              )}
               <p className="text-[0.7rem] uppercase tracking-[0.25em] text-platinum-dark pt-2">
                 Our team will review your inquiry and contact you to discuss the next steps.
               </p>
