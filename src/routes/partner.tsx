@@ -201,6 +201,83 @@ function Partner() {
         </div>
       </section>
 
+      {/* MEMBERSHIP OFFER */}
+      <section className="bg-navy-mid py-20 md:py-28 border-y border-champagne/15">
+        <div className="mx-auto max-w-4xl px-6 lg:px-10">
+          <div className="text-center mb-10 md:mb-12">
+            <div className="eyebrow mb-4">Exclusive Retailer Membership Offer</div>
+            <h2 className="font-display text-3xl md:text-5xl text-ivory leading-tight">
+              Become a partner at a special introductory price.
+            </h2>
+            <p className="mt-5 text-platinum/80 max-w-2xl mx-auto">
+              Join our retailer network and unlock exclusive rewards and professional business
+              training.
+            </p>
+          </div>
+
+          <div className="bg-[var(--surface-white)] border border-champagne/25 shadow-[var(--shadow-soft)] p-8 md:p-12">
+            {/* Price */}
+            <div className="text-center pb-8 border-b border-platinum/15">
+              <div className="eyebrow mb-3">Membership Price</div>
+              <div className="flex items-end justify-center gap-4">
+                <span className="font-display text-2xl text-platinum-dark line-through">₹35,000</span>
+                <span className="font-display text-5xl md:text-6xl text-ivory">₹15,000</span>
+              </div>
+              <div className="mt-3 text-[15px] text-platinum/80">
+                + 18% GST — <span className="text-ivory">₹17,700</span> inclusive of GST
+              </div>
+            </div>
+
+            {/* Benefits */}
+            <ul className="mt-8 space-y-6">
+              <li className="flex items-start gap-4">
+                <Check size={18} className="text-champagne mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-display text-lg text-ivory">₹30,000 Wallet Balance</div>
+                  <p className="text-[15px] text-platinum/80 leading-relaxed">
+                    Redeemable against making charges, subject to programme terms and redemption
+                    limits.
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <Check size={18} className="text-champagne mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-display text-lg text-ivory">1 Gram Platinum Bar</div>
+                  <p className="text-[15px] text-platinum/80 leading-relaxed">
+                    Dispatched within 72 hours of membership confirmation.
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <Check size={18} className="text-champagne mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-display text-lg text-ivory">Professional Training</div>
+                  <p className="text-[15px] text-platinum/80 leading-relaxed">
+                    Comprehensive training under our Retailer Empowerment Program to enhance product
+                    knowledge and sales skills.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            {/* Limited offer + CTA */}
+            <div className="mt-10 text-center border-t border-platinum/15 pt-8">
+              <div className="inline-block border border-champagne/40 px-5 py-2 text-[0.62rem] uppercase tracking-[0.3em] text-champagne mb-5">
+                Limited-Time Offer — First 30 Retailers Only
+              </div>
+              <p className="text-[15px] text-platinum/80 mb-7">Offer valid until 30 November 2026.</p>
+              <a href="#partner-form" className="btn-gold hover:btn-gold-hover">
+                Become a Pure Platinum Partner <ArrowRight size={14} />
+              </a>
+              <p className="text-[0.7rem] uppercase tracking-[0.25em] text-platinum-dark mt-6">
+                Terms and conditions apply.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* THE OPPORTUNITY */}
       <section className="bg-navy-mid py-20 md:py-28 border-y border-champagne/15">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
