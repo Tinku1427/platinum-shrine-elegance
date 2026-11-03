@@ -11,7 +11,6 @@ const NAV = [
   { label: "Our Story", to: "/about" as const },
   { label: "Collection", to: "/collection" as const },
   { label: "Manufacturing", to: "/manufacturing" as const },
-  { label: "Partner", to: "/partner" as const },
   { label: "Contact", to: "/contact" as const },
 ];
 
@@ -156,6 +155,18 @@ export function SiteFooter() {
       <div className="py-14 border-t border-platinum/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col items-center gap-7">
           <BrandLogo variant="dark" lockup className="w-40 md:w-48" />
+
+          <div className="flex flex-col items-center gap-2.5">
+            <div className="text-[0.58rem] uppercase tracking-[0.4em] text-platinum-dark">
+              Important Links
+            </div>
+            <Link
+              to="/partner"
+              className="text-[0.72rem] uppercase tracking-[0.3em] text-platinum hover:text-ivory transition-colors"
+            >
+              Become Our Partner
+            </Link>
+          </div>
 
           <div className="text-[0.62rem] uppercase tracking-[0.4em] text-platinum-dark text-center px-4">
             © {new Date().getFullYear()} Pure Platinum · All rights reserved
