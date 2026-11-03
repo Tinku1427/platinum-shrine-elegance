@@ -259,12 +259,18 @@ function Home() {
             </li>
           </ul>
 
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/contact"
               className="inline-flex items-center border border-platinum px-10 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
             >
               Reach Us
+            </Link>
+            <Link
+              to="/partner"
+              className="inline-flex items-center border border-platinum px-10 py-3.5 text-[0.7rem] uppercase tracking-[0.4em] text-ivory hover:bg-platinum hover:text-navy-deep transition-colors"
+            >
+              Become Our Partner
             </Link>
           </div>
         </div>
