@@ -218,7 +218,7 @@ function Partner() {
           <div className="bg-[var(--surface-white)] border border-champagne/25 shadow-[var(--shadow-soft)] p-8 md:p-12">
             {/* Price */}
             <div className="text-center pb-8 border-b border-platinum/15">
-              <div className="eyebrow mb-3">Membership Price</div>
+              <div className="eyebrow mb-3">Membership Offer</div>
               <div className="flex items-end justify-center gap-4">
                 <span className="font-display text-2xl text-platinum-dark line-through">₹35,000</span>
                 <span className="font-display text-5xl md:text-6xl text-ivory">₹15,000</span>
